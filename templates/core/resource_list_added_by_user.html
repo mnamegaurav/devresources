@@ -1,0 +1,15 @@
+{% extends 'core/base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-8">
+            {% for resource in all_resources %}
+                <h3>Name: {{ resource.title }}</h3>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
