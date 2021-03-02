@@ -154,4 +154,4 @@ from devresources.hitcount_config import *
 try:
     from devresources.local_settings import *
 except ImportError as e:
-    from devresources.prod_settings import *
+    pass
