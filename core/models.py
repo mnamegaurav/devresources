@@ -41,6 +41,8 @@ class ResourceCategory(models.Model):
         auto_save_current_user(self)
         if not self.slug:
             self.slug = slugify(self.title)
+        else:
+            self.slug = slugify(self.slug)
         super(ResourceCategory, self).save(*args, **kwargs)
 
     def first_letter(self):
