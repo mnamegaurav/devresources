@@ -1,0 +1,53 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #f1f1f1;
+}
+
+.height__100vh{
+    height: 100vh;
+}
+
+.neumorphic__card{
+    box-shadow: 5px 5px 14px 0px #9b9b9b;
+    transition-duration: 600ms;
+}
+
+.neumorphic__card:hover{
+    box-shadow: 8px 14px 20px 0px #9b9b9b;
+}
+
+.neumorphic__button{
+    border-radius: 16px;
+    background: #e0e0e0;
+    box-shadow:  12px 12px 24px #9b9b9b,
+             -12px -12px 24px #ffffff;
+    transition-duration: 400ms;
+}
+
+.neumorphic__button:hover{
+    box-shadow:  12px 12px 24px #9b9b9bb8,
+             -12px -12px 24px #ffffff9e;
+}
+
+.neumorphic__button:focus{
+    outline: none;
+}
+
+.round__button{
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    transition-duration: 400ms;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+.hidden{
+    display: none;
+}

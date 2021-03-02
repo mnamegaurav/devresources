@@ -1,0 +1,111 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% load hitcount_tags %}
+
+{% block body %}
+
+<div class="container">
+
+  <div class="row px-md-5">
+    <div class="col-12 pb-1">
+      <p class="text-secondary text-center display-6">Dev Resources</p>
+      <p class="text-dark text-center display-8">One destination for all the developer's learning resources.</p>
+    </div>
+  </div>
+
+  <!-- Top Watched Section Start -->
+  <div class="row px-md-5 mt-3" id="top_resource_categories_cards">
+    <!-- <div class="col-12 pt-5 pb-3">
+      <h6 class="border-bottom border-danger pb-3 text-danger">Top Ones</h6>
+    </div> -->
+    {% for resource_category in top_resource_categories %}
+    <div class="col-12 col-sm-6 col-xl-4 mb-2" id="{{ resource_category.slug }}">
+      <a href="{% url 'resource_list_view' resource_category.slug %}" class="text-decoration-none">
+        <div class="neumorphic__card card bg-{% cycle 'success' 'dark' 'primary' 'danger' 'warning' 'secondary' 'info' %} mb-3">
+          <div class="card-body text-{% cycle 'light' 'light' 'light' 'light' 'dark' 'light' %} d-flex align-middle flex-wrap">
+            <h5 class="card-title me-2 my-auto text-wrap">{{ resource_category.title|lower }}</h5>
+            <p class="card-text text-end ms-auto my-auto align-middle">
+              <span class="badge rounded-pill bg-light text-dark d-flex justify-content-center align-middle">
+                <i class="bi bi-eye-fill"></i>&nbsp;
+                {% get_hit_count for resource_category %}
+              </span>
+            </p>
+          </div>
+        </div>
+      </a>
+    </div>
+    {% endfor %}
+  </div>
+  <!-- Top Watched Section End -->
+
+
+  <!-- Search Categories Form Start -->
+  <div class="row px-md-5 my-4">
+    <!-- <div class="col-12 pt-3 pb-1">
+      <p class="text-secondary text-center display-5">Search for more...</p>
+    </div> -->
+    <div class="col-12">
+      <!-- <form id="search_form"> -->
+        <div class="neumorphic__card input-group input-group-lg mb-3">
+          <span class="input-group-text d-none d-md-block bg-light text-secondary" id="basic-addon3">devresource.in/</span>
+          <input name="search_term" type="text" class="form-control" id="id_search_term" aria-describedby="basic-addon3" placeholder="Search..." onkeyup="searchItems();">
+          <span class="input-group-text">
+            <i class="bi bi-search"></i>
+          </span>
+        </div>
+      <!-- </form> -->
+    </div>
+  </div>
+  <!-- Search Categories Form Start -->
+
+
+
+  <!-- All Categories Start -->
+  <div class="row px-md-5 mb-3">
+    <!-- <div class="col-12 pt-5 pb-3">
+      <h6 class="border-bottom border-danger pb-3 text-danger">All Resources</h6>
+    </div> -->
+
+    {% regroup all_resource_categories by first_letter as sorted_resource_categories %}
+    {% for resource_category_group in sorted_resource_categories %}
+      <div class="col-12 row resource_category_group m-auto    px-0">
+        <div class="col-12 pt-3 pb-3">
+          <h6 class="border-bottom pb-3 text-secondary">
+            <strong>{{ resource_category_group.grouper|lower }}</strong>
+          </h6>
+        </div>
+        <div class="col-12 row    px-0 m-auto">
+          {% for resource_category in resource_category_group.list %}
+          <div class="col-12 col-md-6 mb-2 resource_category_card     px-auto" id="{{ resource_category.slug }}">
+            <a href="{% url 'resource_list_view' resource_category.slug %}" class="text-decoration-none">
+              <div class="neumorphic__card card bg-{% cycle 'warning' 'primary' 'secondary' 'danger' 'dark' %} mb-3">
+                <div class="card-body text-{% cycle 'dark' 'light' 'light' 'light' 'light' %} d-flex align-middle flex-wrap">
+                  <h5 class="card-title me-2 my-auto text-wrap">{{ resource_category.title|lower }}</h5>
+                  <p class="card-text text-end ms-auto my-auto align-middle">
+                    <span class="badge rounded-pill bg-light text-dark d-flex justify-content-center align-middle">
+                      <i class="bi bi-eye-fill"></i>&nbsp;
+                      {% get_hit_count for resource_category %}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </a>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="col-12 row text-center m-auto hidden" id="no_results_text">
+      <p class="display-5 text-danger m-0">Oops! no results to display</p>
+    </div>
+  </div>
+  <!-- All Categories End -->
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'core/main.js' %}"></script>
+{% endblock %}

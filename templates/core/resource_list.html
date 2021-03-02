@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+
+{% block body %}
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+
+      <div class="row">
+
+        {% for resource in all_resources %}
+        <div class="col-12 col-md-6 col-lg-4">
+          <a href="{{ resource.url }}" class="text-decoration-none">
+            <div class="card text-center text-white bg-dark">
+              {% if resource.image %}
+                <img src="{{ resource.image.url }}">
+              {% endif %}
+              <div class="card-body">
+                <h5 class="card-title">{{ resource.title }}</h5>
+                {% if resource.description %}
+                  <p class="card-text">{{ resource.description }}</p>
+                {% endif %}
+              </div>
+              <div class="card-footer">
+                {% for category_name in resource.category.all %}
+                  <small class="text-dark badge rounded-pill bg-light">
+                    {{ category_name }}
+                  </small>
+                {% endfor %}
+              </div>
+            </div>
+          </a>
+        </div>
+        {% endfor %}
+
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
