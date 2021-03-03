@@ -132,6 +132,7 @@ MEDIA_ROOT = BASE_DIR/'media'
 
 AUTH_USER_MODEL = 'accounts.User'
 
+
 from devresources.jazzmin_config import *
 from devresources.hitcount_config import *
 

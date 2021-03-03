@@ -66,7 +66,7 @@ class Resource(models.Model):
         )
 
     class Meta:
-        ordering = ['-added_on']
+        ordering = ['-updated_on']
         verbose_name = 'Resource'
         verbose_name_plural = 'Resources'
 

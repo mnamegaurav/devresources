@@ -1,10 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import View, ListView
 from django.views.generic.edit import (
     CreateView, 
     UpdateView, 
-    DeleteView,
     )
 from django.contrib.messages.views import SuccessMessageMixin
 
@@ -113,4 +112,4 @@ class ResourceDeleteView(SuccessMessageMixin, View):
         except Exception as e:
             pass
         
-        return redirect(success_url)
+        return redirect(self.success_url)

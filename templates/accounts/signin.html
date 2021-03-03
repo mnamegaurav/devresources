@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row px-md-5">
+    <div class="col-12 pb-1">
+      <p class="text-secondary text-center display-6">Signin</p>
+    </div>
+  </div>
+
+  {{ form.as_p }}
+
+  <div class="row px-md-5">
+    <div class="col-12 pb-1">
+      <!-- <form id="search_form"> -->
+        <div class="neumorphic__card input-group input-group-lg mb-3">
+          <span class="input-group-text d-none d-md-block bg-light text-secondary" id="basic-addon3">devresource.in/</span>
+          <input name="search_term" type="text" class="form-control" id="id_search_term" aria-describedby="basic-addon3" placeholder="Search..." onkeyup="searchItems();">
+          <span class="input-group-text">
+            <i class="bi bi-search"></i>
+          </span>
+        </div>
+      <!-- </form> -->
+    </div>
+  </div> 
+
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+{% endblock %}

@@ -13,9 +13,15 @@
           <a class="navbar-brand text-reset text-decoration-none round__button neumorphic__button" href="/">
             <i class="bi bi-house-fill"></i>
           </a>
-          <a target="_blank" class="navbar-brand text-reset text-decoration-none px-3 neumorphic__button" href="https://devjunction.in/">
-            <small><strong>DevJunction.in</strong></small>
-          </a>
+          {% if request.user.is_authenticated %}
+            <a href="{% url 'resource_create_view' %}" class="navbar-brand text-reset text-decoration-none px-3 py-2 neumorphic__button">
+              <i class="bi bi-plus-circle-fill"></i>
+            </a>
+          {% else %}
+            <a href="{% url 'signin_view' %}" class="navbar-brand text-reset text-decoration-none px-3 py-2 neumorphic__button">
+              <i class="bi bi-person-plus-fill"></i>
+            </a>
+          {% endif %}
         </div>
       </nav>
       <!-- Navbar End -->

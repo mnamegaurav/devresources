@@ -17,36 +17,42 @@
     <div class="col-12 col-md-10 mx-auto">
       <form method="POST">
         {% csrf_token %}
-        <div class="card neumorphic__card bg-light text-dark mt-5">
+        <div class="card neumorphic__card bg-light text-dark mt-3">
           <div class="card-header">
             <p class="text-dark text-center text-muted my-auto">Edit</p>
           </div>
           <div class="card-body row">
 
-            <div class="col-12 col-md-7 mb-3">
+            <div class="col-12 mb-2">
+              {{ form.non_field_errors }}
+            </div>
+
+            <div class="col-12 mb-3">
               {{ form.title }}
             </div>
 
-            <div class="col-12 col-md-5 mb-3">
+            <!-- <div class="col-12 col-md-5 mb-3">
               {{ form.thumbnail }}
-            </div>
+            </div> -->
 
             <div class="col-12 mb-3">
               {{ form.url }}
             </div>
 
-            <div class="col-12 mb-3">
+            <!-- <div class="col-12 mb-3">
               {{ form.description }}
-            </div>
+            </div> -->
 
-            <div class="col-12 col-md-12 mb-3">
+            <div class="col-12 mb-3">
               {{ form.category }}
             </div>
 
           </div>
           <div class="card-footer text-end">
-            <a class="text-decoration-none neumorphic__buttton btn border btn-sm text-danger" href="{% url 'resource_list_by_me_view' %}">Cancel</a>
-            <button class="text-decoration-none neumorphic__buttton btn border btn-sm text-success">Update</button>
+            <a class="text-decoration-none neumorphic__buttton btn btn-lg text-danger" href="{% url 'resource_list_by_me_view' %}">
+              <i class="bi bi-x-circle-fill"></i>
+            </a>
+            <button class="text-decoration-none neumorphic__buttton btn btn-lg text-success"><i class="bi bi-check-circle-fill"></i></button>
           </div>
         </form>
       </div>
