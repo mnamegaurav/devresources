@@ -15,6 +15,7 @@ from core.models import (
     ResourceCategory,
     Resource,
     )
+from core.forms import ResourceForm
 # Create your views here.
 
 class HomeView(View):
@@ -62,6 +63,7 @@ class ResourceListByCategoryView(View, HitCountMixin):
 
         context = {
             'all_resources': all_resources,
+            'category_slug': category_slug,
         }
 
         return render(request, self.template_name, context)
@@ -87,28 +89,15 @@ class ResourceCreateView(SuccessMessageMixin, CreateView):
     template_name = 'core/resource_create_form.html'
     success_message = "Resource has been created successfully"
     success_url = reverse_lazy('resource_list_by_me_view')
-    model = Resource
-    fields = (
-        'title',
-        'thumbnail', 
-        'description',
-        'url',
-        'category',
-        )
+    form_class = ResourceForm
 
 
 class ResourceUpdateView(SuccessMessageMixin, UpdateView):
     template_name = 'core/resource_update_form.html'
     success_message = "Resource has been updated successfully"
     success_url = reverse_lazy('resource_list_by_me_view')
-    model = Resource
-    fields = (
-        'title',
-        'thumbnail', 
-        'description',
-        'url',
-        'category',
-        )
+    form_class = ResourceForm
+    queryset = Resource.objects.filter(is_active=True)
 
 
 class ResourceDeleteView(SuccessMessageMixin, View):

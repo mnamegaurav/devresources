@@ -1,17 +1,65 @@
 {% extends 'core/base.html' %}
 
-{% block body %}
+{% block extra_css %}
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
 
 <div class="container">
-    <div class="row">
-        <div class="col-8">
-            <form method="POST">
-                {% csrf_token %}
-                {{ form.as_p }}
-                <button class="btn btn-primary">Save</button>
-            </form>
-        </div>
+  <div class="row px-md-5">
+    <div class="col-12 pb-1 border-bottom">
+      <p class="text-secondary text-center display-6">Dev Resources</p>
+      <p class="text-dark text-center display-8">One destination for all the developer's learning resources.</p>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-12 col-md-10 mx-auto">
+      <form method="POST">
+        {% csrf_token %}
+        <div class="card neumorphic__card bg-light text-dark mt-5">
+          <div class="card-header">
+            <p class="text-dark text-center text-muted my-auto">Create A New Resource</p>
+          </div>
+          <div class="card-body row">
+
+            <div class="col-12 mb-2">
+              {{ form.non_field_errors }}
+            </div>
+            
+            <div class="col-12 col-md-7 mb-3">
+              {{ form.title }}
+            </div>
+
+            <div class="col-12 col-md-5 mb-3">
+              {{ form.thumbnail }}
+            </div>
+
+            <div class="col-12 mb-3">
+              {{ form.url }}
+            </div>
+
+            <div class="col-12 mb-3">
+              {{ form.description }}
+            </div>
+
+            <div class="col-12 col-md-12 mb-3">
+              {{ form.category }}
+            </div>
+
+          </div>
+          <div class="card-footer text-end">
+            <a class="text-decoration-none neumorphic__buttton btn border btn-sm text-danger" href="{% url 'resource_list_by_me_view' %}">Cancel</a>
+            <button class="text-decoration-none neumorphic__buttton btn border btn-sm text-success">Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 {% endblock %}

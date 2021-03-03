@@ -44,10 +44,14 @@ body{
     transition-duration: 400ms;
 }
 
-.form-control:focus{
+.form-control:focus, .btn:focus{
     box-shadow: none;
 }
 
 .hidden{
     display: none;
+}
+
+#id_category li{
+    padding: 5px 10px 5px 0px;
 }

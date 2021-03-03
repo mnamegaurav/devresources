@@ -1,17 +1,26 @@
 {% extends 'core/base.html' %}
 
-{% block body %}
+{% block content %}
 
 <div class="container">
-  <div class="row">
+
+  <div class="row px-md-5">
+    <div class="col-12 pb-1 border-bottom">
+      <!-- <p class="text-secondary text-center display-6">Dev Resources</p>
+      <p class="text-dark text-center display-8">One destination for all the developer's learning resources.</p> -->
+      <p class="text-success text-center display-6">"{{ category_slug }}"</p>
+    </div>
+  </div>
+
+  <div class="row mt-4">
     <div class="col-12">
 
       <div class="row">
 
         {% for resource in all_resources %}
-        <div class="col-12 col-md-6 col-lg-4">
-          <a href="{{ resource.url }}" class="text-decoration-none">
-            <div class="card text-center text-white bg-dark">
+        <div class="col-12 col-md-6 col-lg-4 pb-4">
+          <a target="_blank" href="{{ resource.url }}" class="text-decoration-none">
+            <div class="card text-center text-{% cycle 'light' 'light' 'light' 'light' 'dark' 'light' %} bg-{% cycle 'success' 'dark' 'primary' 'danger' 'warning' 'secondary' 'info' %}">
               {% if resource.image %}
                 <img src="{{ resource.image.url }}">
               {% endif %}
@@ -21,13 +30,13 @@
                   <p class="card-text">{{ resource.description }}</p>
                 {% endif %}
               </div>
-              <div class="card-footer">
+              <!-- <div class="card-footer">
                 {% for category_name in resource.category.all %}
                   <small class="text-dark badge rounded-pill bg-light">
                     {{ category_name }}
                   </small>
                 {% endfor %}
-              </div>
+              </div> -->
             </div>
           </a>
         </div>

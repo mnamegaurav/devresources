@@ -1,160 +1,106 @@
+{% extends 'base.html' %}
 {% load static %}
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <meta content='/' name='app:pageurl'>
-    <title>DevResources — A developer destination for all the learning resources.</title>
-    <meta content='DevResources — A developer destination for all the learning resources.' property='og:title'>
-    <meta content='DevResources — A developer destination for all the learning resources.' property='twitter:title'>
-    <meta content='website' property='og:type'>
-    <meta content="{% static 'img/website.jpg' %}" property='og:image'>
-    <meta content="{% static 'img/website.jpg' %}" property='twitter:image'>
-    <meta content='900' property='og:image:width'>
-    <meta content='471' property='og:image:height'>
-    <meta content="A developer destination for all the learning resources." name="description">
-    <meta content="A developer destination for all the learning resources." property="og:description">
-    <meta content="A developer destination for all the learning resources." property="twitter:description">
-    <link rel="canonical" href="https://devresources.in/">
-    <meta name="og:url" content="https://devresources.in/">
-    <link rel="prefetch" href="https://devresources.in">
-    <link rel="prerender" href="https://devresources.in">
-    <meta content='Devresources Learning' property='og:site_name'>
-    <meta content='Others' property='article:section'>
+{% block body %}
 
-    <meta name="description"
-        content="A developer destination for all the learning resources.">
-    <meta name="keywords"
-        content="devresources, devresources gaurav, devresources django, devresources python tips, devresources django tips, devresources django orm, python, django, web development, software development, projects, online courses, django blogs, devresources learning resources, devresources">
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://devresources.in/" />
-    <meta property="og:title" content="devresources.in">
-    <meta property="og:description"
-        content="A developer destination for all the learning resources." />
+<div class="container-fluid">
+  <div class="row height__100vh">
+    <div class="col-12 col-lg-8 mb-5">
 
-    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'img/favicon.png' %}">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" type="text/css" href="{% static 'core/main.css' %}">
-
-    <title>DevJunction.in</title>
-
-    {% block extra_css %}{% endblock %}
-
-  </head>
-  <body>
-
-    <div class="container-fluid">
-      <div class="row height__100vh">
-        <div class="col-12 col-lg-8 mb-5">
-
-          <!-- Navbar Start -->
-          <nav class="navbar pb-3 pt-4 mb-4">
-            <div class="container px-0 px-md-5">
-              <a class="navbar-brand text-reset text-decoration-none round__button neumorphic__button" href="/">
-                <i class="bi bi-house-fill"></i>
-              </a>
-              <a class="navbar-brand text-reset text-decoration-none px-3 neumorphic__button" href="https://devjunction.in/">
-                <small><strong>DevJunction.in</strong></small>
-              </a>
-            </div>
-          </nav>
-          <!-- Navbar End -->
-
-          {% block body %}{% endblock %}
-
+      <!-- Navbar Start -->
+      <nav class="navbar pb-3 pt-4 mb-4">
+        <div class="container px-0 px-md-5">
+          <a class="navbar-brand text-reset text-decoration-none round__button neumorphic__button" href="/">
+            <i class="bi bi-house-fill"></i>
+          </a>
+          <a target="_blank" class="navbar-brand text-reset text-decoration-none px-3 neumorphic__button" href="https://devjunction.in/">
+            <small><strong>DevJunction.in</strong></small>
+          </a>
         </div>
-        <div class="col-12 col-lg-4 text-center" style="background: linear-gradient(#e66465, #9198e5);">
-          
-          <!-- About Section Start -->
-          <section class="sticky-top pt-4">
-            <!-- <h3 class="text-light pt-4"><strong>about</strong></h3> -->
-            <div class="container">
+      </nav>
+      <!-- Navbar End -->
 
-              <div class="row">
-                <div class="col-12 my-3">
-                  <img src="{% static 'img/fresh_logo_circle-min.png' %}" class="rounded-circle mx-auto"  style="height: 100px; width: auto;object-fit: cover;">
-                </div>
-              </div>
+      {% block content %}{% endblock %}
 
-              <div class="row">
-                <div class="col-12 my-3">
-                  <h6 class="text-dark"><strong>Who or What is DevResources ?</strong></h6>
-                  <p class="text-light display-9">DevResources is an <strong>Open Source</strong>, collaboration initiative started with the intention to share all the learning resources needed by <strong>beginner developer</strong> to a <strong>professional</strong> in one place.</p>
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-12 my-3 ">
-                  <h6 class="text-dark"><strong>How can you add more resources ?</strong></h6>
-                  <p class="text-light display-9">We are working on it...</p>
-                  <!-- <p class="text-light display-9">Simply by <a href="signin_view" class="text-decoration-none">signing in</a>.</p> -->
-                </div>
-              </div>
-
-              <div class="row">
-                <div class="col-12 my-2">
-                  <button type="button" class="btn btn-dark btn-sm">
-                    <i class="bi bi-heart text-danger pe-2"></i>Donate
-                  </button>
-                </div>
-              </div>
-
-             <!--  <div class="row">
-                <div class="col-12">
-                  <div class="m-auto">
-                    <a class="text-light btn btn-sm btn-dark border-dark" href="/">
-                      <i class="bi bi-linkedin"></i>
-                    </a>
-                    <a class="text-light btn btn-sm btn-dark border-dark" href="/">
-                      <i class="bi bi-youtube"></i>
-                    </a>
-                    <a class="text-light btn btn-sm btn-dark border-dark" href="/">
-                      <i class="bi bi-discord"></i>
-                    </a>
-                  </div>
-                </div>
-              </div> -->
-
-              <div class="row">
-                <div class="col-12 mt-2">
-                  <div class="m-auto">
-                    <a target="_blank" class="text-decoration-underline text-dark" href="https://github.com/hamhaingaurav/devresources">
-                      <strong>Github</strong>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              <div class="row mb-4 mb-lg-auto">
-                <div class="col-12">
-                  <div class="m-auto">
-                    <a target="_blank" class="text-decoration-none text-dark" href="https://www.linkedin.com/in/hamhaingaurav/">
-                      <span style="font-size: 14px;">Created By - Gaurav Sharma</span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </section>
-          <!-- About Section End -->
-
-        </div>
-      </div>
     </div>
-    
-    
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+    <div class="col-12 col-lg-4 text-center" style="background: linear-gradient(#e66465, #9198e5);">
+      
+      <!-- About Section Start -->
+      <section class="sticky-top pt-4">
+        <!-- <h3 class="text-light pt-4"><strong>about</strong></h3> -->
+        <div class="container">
 
-    {% block extra_js %}{% endblock %}
+          <div class="row">
+            <div class="col-12 my-3">
+              <img src="{% static 'img/fresh_logo_circle-min.png' %}" class="rounded-circle mx-auto"  style="height: 100px; width: auto;object-fit: cover;">
+            </div>
+          </div>
 
-  </body>
-</html>
+          <div class="row">
+            <div class="col-12 my-3">
+              <h6 class="text-dark"><strong>Who or What is DevResources ?</strong></h6>
+              <p class="text-light display-9">DevResources is an <strong>Open Source</strong>, collaboration initiative started with the intention to share all the learning resources needed by <strong>beginner developer</strong> to a <strong>professional</strong> in one place.</p>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 my-3 ">
+              <h6 class="text-dark"><strong>How can you add more resources ?</strong></h6>
+              <p class="text-light display-9">We are working on it...</p>
+              <!-- <p class="text-light display-9">Simply by <a href="signin_view" class="text-decoration-none">signing in</a>.</p> -->
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12 my-2">
+              <button type="button" class="btn btn-dark btn-sm">
+                <i class="bi bi-heart text-danger pe-2"></i>Donate
+              </button>
+            </div>
+          </div>
+
+         <!--  <div class="row">
+            <div class="col-12">
+              <div class="m-auto">
+                <a target="_blank" class="text-light btn btn-sm btn-dark border-dark" href="/">
+                  <i class="bi bi-linkedin"></i>
+                </a>
+                <a target="_blank" class="text-light btn btn-sm btn-dark border-dark" href="/">
+                  <i class="bi bi-youtube"></i>
+                </a>
+                <a target="_blank" class="text-light btn btn-sm btn-dark border-dark" href="/">
+                  <i class="bi bi-discord"></i>
+                </a>
+              </div>
+            </div>
+          </div> -->
+
+          <div class="row">
+            <div class="col-12 mt-2">
+              <div class="m-auto">
+                <a target="_blank" class="text-decoration-underline text-dark" href="https://github.com/hamhaingaurav/devresources">
+                  <strong>Github</strong>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-4 mb-lg-auto">
+            <div class="col-12">
+              <div class="m-auto">
+                <a target="_blank" class="text-decoration-none text-dark" href="https://www.linkedin.com/in/hamhaingaurav/">
+                  <span style="font-size: 14px;">Created By - Gaurav Sharma</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      <!-- About Section End -->
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
