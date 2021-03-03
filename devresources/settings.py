@@ -84,22 +84,6 @@ WSGI_APPLICATION = 'devresources.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.postgresql',
-    #     'NAME': os.environ['DB_NAME'],
-    #     'USER': os.environ['DB_USER'],
-    #     'PORT': os.environ['DB_PORT'],
-    #     'HOST': os.environ['DB_HOST'],
-    #     'PASSWORD': os.environ['DB_PASSWORD'],
-    # }
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
@@ -144,7 +128,7 @@ STATICFILES_DIRS = [BASE_DIR/'static_files',]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 AUTH_USER_MODEL = 'accounts.User'
 
@@ -154,4 +138,25 @@ from devresources.hitcount_config import *
 try:
     from devresources.local_settings import *
 except ImportError as e:
-    from devresources.prod_settings import *
+    pass
+
+
+
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': os.environ['DB_NAME'],
+            'USER': os.environ['DB_USER'],
+            'PORT': os.environ['DB_PORT'],
+            'HOST': os.environ['DB_HOST'],
+            'PASSWORD': os.environ['DB_PASSWORD'],
+        }
+    }

@@ -1,1 +1,1 @@
-​web: gunicorn devresources.wsgi
+web: gunicorn devresources.wsgi

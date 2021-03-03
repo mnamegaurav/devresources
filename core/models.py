@@ -13,7 +13,7 @@ User = get_user_model()
 
 class ResourceCategory(models.Model):
     title = models.CharField(max_length=140)
-    slug = models.SlugField(max_length=50, unique=True, editable=False)
+    slug = models.SlugField(max_length=50, unique=True)
     is_active = models.BooleanField(default=True)
     added_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
@@ -39,7 +39,10 @@ class ResourceCategory(models.Model):
 
     def save(self, *args, **kwargs):
         auto_save_current_user(self)
-        self.slug = slugify(self.title)
+        if not self.slug:
+            self.slug = slugify(self.title)
+        else:
+            self.slug = slugify(self.slug)
         super(ResourceCategory, self).save(*args, **kwargs)
 
     def first_letter(self):
