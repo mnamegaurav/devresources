@@ -24,7 +24,7 @@ urlpatterns = [
     # URls for only authenticated users
     path(
         'resource/list/', 
-        ResourceListAddedByUserView.as_view(),
+        login_required(ResourceListAddedByUserView.as_view()),
         name='resource_list_by_me_view'
         ),
     path(

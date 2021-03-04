@@ -14,24 +14,29 @@
             <i class="bi bi-house-fill"></i>
           </a>
           {% if request.user.is_authenticated %}
-            <div class="navbar-brand d-flex">
-              <a href="{% url 'resource_create_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2">
+            <div class="navbar-brand d-flex me-0">
+              <a href="{% url 'resource_create_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add More Resources">
                 <i class="bi bi-plus-circle-fill"></i>
               </a>
-              <a href="{% url 'resource_list_by_me_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2">
-                <i class="bi bi-card-checklist"></i>
+              <a href="{% url 'resource_list_by_me_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Resources Added By You">
+                <i class="bi bi-list-task"></i>
               </a>
               <form method="POST" action="{% url 'signout_view' %}">
                 {% csrf_token %}
-                <button class="px-3 py-2 neumorphic__button ms-2 btn btn-lg">
+                <button class="px-3 py-2 neumorphic__button ms-2 btn btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" title="SignOut">
                   <i class="bi bi-box-arrow-right"></i>
                 </button>
               </form>
             </div>
           {% else %}
-            <a href="{% url 'signin_view' %}" class="navbar-brand text-reset text-decoration-none px-3 py-2 neumorphic__button">
-              <i class="bi bi-person-plus-fill"></i>
-            </a>
+            <div class="navbar-brand d-flex me-0">
+              <a href="{% url 'signin_view' %}" class="ms-2 text-reset text-decoration-none px-3 py-2 neumorphic__button">
+                <i class="bi bi-box-arrow-in-left"></i> Signin
+              </a>
+              <a href="{% url 'signup_view' %}" class="ms-2 text-reset text-decoration-none px-3 py-2 neumorphic__button">
+                <i class="bi bi-person-fill"></i> Signup
+              </a>
+            </div>
           {% endif %}
         </div>
       </nav>
@@ -65,7 +70,7 @@
           <div class="row">
             <div class="col-12 my-3">
               <h6 class="text-dark"><strong>Who or What is DevResources ?</strong></h6>
-              <p class="text-light display-9">DevResources is an <strong>Open Source</strong>, collaboration initiative started with the intention to share all the learning resources needed by <strong>beginner developer</strong> to a <strong>professional</strong> in one place.</p>
+              <p class="text-light">DevResources is an <strong>Open Source</strong>, collaboration initiative started with the intention to share all the learning resources needed by <strong>beginner developer</strong> to a <strong>professional</strong> in one place.</p>
             </div>
           </div>
 
@@ -73,9 +78,9 @@
             <div class="col-12 my-3 ">
               <h6 class="text-dark"><strong>How can you add more resources ?</strong></h6>
               {% if request.user.is_authenticated %}
-                <p class="text-light display-9">Click on Plus icon at the right corner, or <a href="{% url 'resource_create_view' %}" class="text-decoration-none">Click here.</a></p>
+                <p class="text-light">Click on Plus icon at the right corner, or <a href="{% url 'resource_create_view' %}" class="text-decoration-none">Click here.</a></p>
               {% else %}
-                <p class="text-light display-9">Simply by <a href="{% url 'signin_view' %}" class="text-decoration-none">signing in</a></p>
+                <p class="text-light"><a href="{% url 'signin_view' %}" class="text-decoration-none"><strong>Sign in</strong></a> and you are ready to add.</p>
               {% endif %}
             </div>
           </div>
@@ -106,8 +111,9 @@
           </div> -->
 
           <div class="row">
-            <div class="col-12 my-2">
+            <div class="col-12 my-3">
               <div class="m-auto">
+                <p class="m-auto">Want to contribute ?</p>
                 <a target="_blank" class="text-light btn btn-sm btn-dark" href="https://github.com/hamhaingaurav/devresources">
                   <i class="bi bi-github"></i>
                   <strong>Github</strong>
@@ -120,7 +126,7 @@
             <div class="col-12">
               <div class="m-auto">
                 <a target="_blank" class="text-decoration-none text-dark" href="https://www.linkedin.com/in/hamhaingaurav/">
-                  <span style="font-size: 14px;">Made with <i class="bi bi-suit-heart-fill"></i> by Gaurav Sharma <i class="bi bi-linkedin"></i></span>
+                  <span style="font-size: 14px;">Made with <i class="bi bi-suit-heart-fill text-danger"></i> by Gaurav Sharma <i class="bi bi-linkedin"></i></span>
                 </a>
               </div>
             </div>

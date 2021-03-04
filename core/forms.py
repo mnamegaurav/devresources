@@ -14,7 +14,7 @@ class ResourceForm(forms.ModelForm):
             'category',
             )
         widgets = {
-            'category': forms.CheckboxSelectMultiple(),
+            # 'category': forms.CheckboxSelectMultiple(),
             # 'description': forms.Textarea(),
         }
 

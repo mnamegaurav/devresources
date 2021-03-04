@@ -7,12 +7,14 @@
 {% block content %}
 
 <div class="container">
+
   <div class="row px-md-5">
     <div class="col-12 pb-1 border-bottom">
-      <p class="text-secondary text-center display-6">Dev Resources</p>
-      <p class="text-dark text-center display-8">One destination for all the developer's learning resources.</p>
+      <p class="text-center display-4 text-danger">Dev Resources</p>
+      <p class="text- text-center h4">One destination for all the developer's learning resources.</p>
     </div>
   </div>
+
   <div class="row">
     <div class="col-12 col-md-10 mx-auto">
       <form method="POST">
@@ -52,7 +54,7 @@
 
             <div class="col-12 mb-3">
               <label for="{{ form.category.auto_id }}" class="form-label border-bottom w-100 pb-2 text-muted">
-                {{ form.category.label }}
+                Choose few categories
               </label>
               {{ form.category }}
               {% if form.category.errors %}
@@ -64,10 +66,10 @@
 
           </div>
           <div class="card-footer text-end">
-            <a class="text-decoration-none neumorphic__buttton btn btn-lg text-danger" href="{% url 'resource_list_by_me_view' %}">
-              <i class="bi bi-x-circle-fill"></i>
+            <a class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-danger" href="{% url 'resource_list_by_me_view' %}">
+              <i class="bi bi-x-circle-fill"></i> Cancel
             </a>
-            <button class="text-decoration-none neumorphic__buttton btn btn-lg text-success"><i class="bi bi-check-circle-fill"></i></button>
+            <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success"><i class="bi bi-check-circle-fill"></i> Save</button>
           </div>
         </form>
       </div>
@@ -78,5 +80,14 @@
 {% endblock %}
 
 {% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script type="text/javascript">
+  $('#id_category').select2({
+    placeholder: 'Select a category',
+    width: '100%',
+  });
+</script>
 {% endblock %}
