@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
+from django.contrib import messages
 from django.views.generic import View, ListView
 from django.views.generic.edit import (
     CreateView, 
@@ -28,7 +29,7 @@ class HomeView(View):
                 is_active=True
             ).order_by(
                 '-hit_count__hits'
-            )[:6]
+            )[:3]
 
         context = {
             'all_resource_categories': all_resource_categories,
@@ -70,12 +71,24 @@ class ResourceListByCategoryView(View, HitCountMixin):
 
 class ResourceListAddedByUserView(View):
     template_name = 'core/resource_list_added_by_user.html'
+    url_kwarg = 'tag'
 
     def get(self, request, *args, **kwargs):
-        # filtering the resources by is_active and current url slug
-        all_resources = Resource.objects.filter(
-            added_by=request.user
-            )
+        category = request.GET.get(self.url_kwarg)
+
+        if category:
+            # filtering the resources by current user
+            all_resources = Resource.objects.filter(
+                added_by=request.user,
+                category__slug=category,
+                is_active=True
+                )
+        else:
+            # filtering the resources by current user
+            all_resources = Resource.objects.filter(
+                added_by=request.user,
+                is_active=True
+                )
 
         context = {
             'all_resources': all_resources,
@@ -86,21 +99,24 @@ class ResourceListAddedByUserView(View):
 
 class ResourceCreateView(SuccessMessageMixin, CreateView):
     template_name = 'core/resource_create_form.html'
-    success_message = "Resource has been created successfully"
+    success_message = "Successfully added"
     success_url = reverse_lazy('resource_list_by_me_view')
     form_class = ResourceForm
 
 
 class ResourceUpdateView(SuccessMessageMixin, UpdateView):
     template_name = 'core/resource_update_form.html'
-    success_message = "Resource has been updated successfully"
+    success_message = "Successfully updated"
     success_url = reverse_lazy('resource_list_by_me_view')
     form_class = ResourceForm
-    queryset = Resource.objects.filter(is_active=True)
+
+    def get_queryset(self):
+        queryset = Resource.objects.filter(added_by=self.request.user)
+        return queryset
 
 
-class ResourceDeleteView(SuccessMessageMixin, View):
-    success_message = "Resource has been created successfully"
+class ResourceDeleteView(View):
+    success_message = "Successfully deleted"
     success_url = reverse_lazy('resource_list_by_me_view')
 
     def post(self, request, *args, **kwargs):
@@ -108,7 +124,9 @@ class ResourceDeleteView(SuccessMessageMixin, View):
 
         try:
             resource_obj = Resource.objects.get(pk=resource_pk)
-            resource_obj.delete()
+            resource_obj.is_active = False
+            resource_obj.save()
+            messages.success(request, self.success_message, extra_tags="success")
         except Exception as e:
             pass
         

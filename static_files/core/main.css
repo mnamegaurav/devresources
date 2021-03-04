@@ -44,7 +44,7 @@ body{
     transition-duration: 400ms;
 }
 
-.form-control:focus, .btn:focus{
+.form-control:focus, .btn:focus, .btn-close:focus{
     box-shadow: none;
 }
 

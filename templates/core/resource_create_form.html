@@ -23,28 +23,43 @@
           </div>
           <div class="card-body row">
 
+            {% if form.non_field_errors %}
             <div class="col-12 mb-2">
-              {{ form.non_field_errors }}
+              <p class="text-danger text-center">
+                <i class="bi bi-exclamation-circle"></i>
+                {{ form.non_field_errors }}
+              </p>
             </div>
+            {% endif %}
             
             <div class="col-12 mb-3">
               {{ form.title }}
+              {% if form.title.errors %}
+                <div class="text-danger">
+                  {{ form.title.errors }}
+                </div>
+              {% endif %}
             </div>
-
-            <!-- <div class="col-12 mb-3">
-              {{ form.thumbnail }}
-            </div> -->
 
             <div class="col-12 mb-3">
               {{ form.url }}
+              {% if form.url.errors %}
+                <div class="text-danger">
+                  {{ form.url.errors }}
+                </div>
+              {% endif %}
             </div>
 
-            <!-- <div class="col-12 mb-3">
-              {{ form.description }}
-            </div> -->
-
             <div class="col-12 mb-3">
+              <label for="{{ form.category.auto_id }}" class="form-label border-bottom w-100 pb-2 text-muted">
+                {{ form.category.label }}
+              </label>
               {{ form.category }}
+              {% if form.category.errors %}
+                <div class="text-danger">
+                  {{ form.category.errors }}
+                </div>
+              {% endif %}
             </div>
 
           </div>

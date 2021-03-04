@@ -131,7 +131,7 @@ MEDIA_ROOT = BASE_DIR/'media'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 AUTH_USER_MODEL = 'accounts.User'
-
+LOGIN_URL = 'signin_view'
 
 from devresources.jazzmin_config import *
 from devresources.hitcount_config import *

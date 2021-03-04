@@ -14,7 +14,7 @@ User = get_user_model()
 class ResourceCategory(models.Model):
     title = models.CharField(max_length=140)
     slug = models.SlugField(max_length=50, unique=True)
-    is_active = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=False)
     added_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     added_by = models.ForeignKey(

@@ -14,9 +14,20 @@
             <i class="bi bi-house-fill"></i>
           </a>
           {% if request.user.is_authenticated %}
-            <a href="{% url 'resource_create_view' %}" class="navbar-brand text-reset text-decoration-none px-3 py-2 neumorphic__button">
-              <i class="bi bi-plus-circle-fill"></i>
-            </a>
+            <div class="navbar-brand d-flex">
+              <a href="{% url 'resource_create_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2">
+                <i class="bi bi-plus-circle-fill"></i>
+              </a>
+              <a href="{% url 'resource_list_by_me_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2">
+                <i class="bi bi-card-checklist"></i>
+              </a>
+              <form method="POST" action="{% url 'signout_view' %}">
+                {% csrf_token %}
+                <button class="px-3 py-2 neumorphic__button ms-2 btn btn-lg">
+                  <i class="bi bi-box-arrow-right"></i>
+                </button>
+              </form>
+            </div>
           {% else %}
             <a href="{% url 'signin_view' %}" class="navbar-brand text-reset text-decoration-none px-3 py-2 neumorphic__button">
               <i class="bi bi-person-plus-fill"></i>
@@ -25,6 +36,15 @@
         </div>
       </nav>
       <!-- Navbar End -->
+
+      {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{% if message.tags %}{{ message.tags }}{% else %}success{% endif %} alert-dismissible fade show w-75 mx-auto" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+      {% endif %}
 
       {% block content %}{% endblock %}
 
@@ -52,18 +72,22 @@
           <div class="row">
             <div class="col-12 my-3 ">
               <h6 class="text-dark"><strong>How can you add more resources ?</strong></h6>
-              <p class="text-light display-9">We are working on it...</p>
-              <!-- <p class="text-light display-9">Simply by <a href="signin_view" class="text-decoration-none">signing in</a>.</p> -->
+              {% if request.user.is_authenticated %}
+                <p class="text-light display-9">Click on Plus icon at the right corner, or <a href="{% url 'resource_create_view' %}" class="text-decoration-none">Click here.</a></p>
+              {% else %}
+                <p class="text-light display-9">Simply by <a href="{% url 'signin_view' %}" class="text-decoration-none">signing in</a></p>
+              {% endif %}
             </div>
           </div>
 
-          <div class="row">
+          <!-- <div class="row">
             <div class="col-12 my-2">
               <button type="button" class="btn btn-dark btn-sm">
-                <i class="bi bi-heart text-danger pe-2"></i>Donate
+                <i class="bi bi-gift-fill text-danger"></i>
+                <strong>Donate</strong>
               </button>
             </div>
-          </div>
+          </div> -->
 
          <!--  <div class="row">
             <div class="col-12">
@@ -82,9 +106,10 @@
           </div> -->
 
           <div class="row">
-            <div class="col-12 mt-2">
+            <div class="col-12 my-2">
               <div class="m-auto">
-                <a target="_blank" class="text-decoration-underline text-dark" href="https://github.com/hamhaingaurav/devresources">
+                <a target="_blank" class="text-light btn btn-sm btn-dark" href="https://github.com/hamhaingaurav/devresources">
+                  <i class="bi bi-github"></i>
                   <strong>Github</strong>
                 </a>
               </div>
@@ -95,7 +120,7 @@
             <div class="col-12">
               <div class="m-auto">
                 <a target="_blank" class="text-decoration-none text-dark" href="https://www.linkedin.com/in/hamhaingaurav/">
-                  <span style="font-size: 14px;">Created By - Gaurav Sharma</span>
+                  <span style="font-size: 14px;">Made with <i class="bi bi-suit-heart-fill"></i> by Gaurav Sharma <i class="bi bi-linkedin"></i></span>
                 </a>
               </div>
             </div>

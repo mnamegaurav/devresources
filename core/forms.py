@@ -39,5 +39,5 @@ class ResourceForm(forms.ModelForm):
         #         'placeholder': 'Title',
         #     })
         self.fields['category'].widget.attrs.update({
-                'class': 'list-inline d-inline-flex flex-wrap',
+                'class': 'list-inline d-inline-flex flex-wrap m-auto',
             })

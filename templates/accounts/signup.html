@@ -5,25 +5,62 @@
 
 <div class="container">
 
-  <div class="row px-md-5">
-    <div class="col-12 pb-1">
+  <div class="row px-md-5 my-5">
+    <div class="col-12 offset-md-2 col-md-8 pb-1">
       <p class="text-secondary text-center display-6">Signup</p>
     </div>
-  </div>
-
-  {{ form.as_p }}
-
-  <div class="row px-md-5">
-    <div class="col-12 pb-1">
-      <!-- <form id="search_form"> -->
+    <div class="col-12 offset-md-2 col-md-8 pb-1">
+      {% if form.non_field_errors %}
+      <div class="col-12 mb-2">
+        <p class="text-danger text-center">
+          <i class="bi bi-exclamation-circle"></i>
+          {{ form.non_field_errors }}
+        </p>
+      </div>
+      {% endif %}
+      <form id="signin_form" method="POST" action="{% url 'signup_view' %}">
+        {% csrf_token %}
         <div class="neumorphic__card input-group input-group-lg mb-3">
-          <span class="input-group-text d-none d-md-block bg-light text-secondary" id="basic-addon3">devresource.in/</span>
-          <input name="search_term" type="text" class="form-control" id="id_search_term" aria-describedby="basic-addon3" placeholder="Search..." onkeyup="searchItems();">
-          <span class="input-group-text">
-            <i class="bi bi-search"></i>
-          </span>
+          <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+          <input name="email" type="email" class="form-control" id="id_email" placeholder="Email" required>
         </div>
-      <!-- </form> -->
+        {% if form.email.errors %}
+          <div class="text-danger">
+            {{ form.email.errors }}
+          </div>
+        {% endif %}
+
+        <div class="neumorphic__card input-group input-group-lg mb-3">
+          <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+          <input name="password1" type="password" class="form-control" id="id_password1" placeholder="Password" required>
+          <ul><li>Your password can’t be too similar to your other personal information.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul>
+        </div>
+        {% if form.password1.errors %}
+          <div class="text-danger">
+            {{ form.password1.errors }}
+          </div>
+        {% endif %}
+
+        <div class="neumorphic__card input-group input-group-lg mb-3">
+          <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+          <input name="password2" type="password" class="form-control" id="id_password2" placeholder="Retype Password" required>
+        </div>
+        {% if form.password2.errors %}
+          <div class="text-danger">
+            {{ form.password2.errors }}
+          </div>
+        {% endif %}
+
+        <div class="text-start">
+          <a href="{% url 'signin_view' %}">Already have an account? Signin</a>
+        </div>
+
+        <div class="mb-3 mx-auto text-center mt-3">
+          <button class="neumorphic__button btn btn-lg">Signup</button>
+        </div>
+
+      </form>
+      
     </div>
   </div> 
 
