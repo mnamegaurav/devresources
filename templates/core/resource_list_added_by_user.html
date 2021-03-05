@@ -1,15 +1,127 @@
 {% extends 'core/base.html' %}
 
-{% block body %}
+{% block extra_css %}
+<link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" type="text/css">
+{% endblock %}
 
-<div class="container">
-    <div class="row">
-        <div class="col-8">
-            {% for resource in all_resources %}
-                <h3>Name: {{ resource.title }}</h3>
-            {% endfor %}
-        </div>
+{% block content %}
+
+<div class="container px-0 px-md-5">
+  {% if not all_resources %}
+  <div class="row">
+    <div class="col-12 text-center pb-4">
+      <a href="{% url 'resource_create_view' %}" class="text-success text-decoration-none neumorphic__button btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add more resources">
+        <i class="bi bi-plus-circle-fill display-6"></i>
+      </a>
     </div>
+  </div>
+  {% endif %}
+  <div class="row">
+    <div class="col-12">
+
+      <div class="neumorphic__card">
+        <div class="card-header bg-dark">
+          <p class="text-light m-auto text-center my-2">My Resources</p>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover mx-auto my-auto" id="resourceTable">
+            <thead>
+              <tr>
+                <th scope="col">Title</th>
+                <th scope="col">Categories</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+
+              {% for resource in all_resources %}
+              <tr class="table-{% cycle 'primary' 'secondary' 'danger' 'warning' 'info' 'success' %}">
+                <th class="ps-3">
+                  <a href="{{ resource.url }}" class="text-decoration-none text-reset">
+                    {{ resource.title }}
+                    <i class="bi bi-folder-symlink-fill px-1"></i>
+                  </a>
+                </th>
+                <!-- <td>{{ resource.added_on }}</td> -->
+                <td style="width: 50%">
+                  {% for category_name in resource.category.all %}
+                  <a href="{% url 'resource_list_view' category_name.slug %}" class="text-reset text-decoration-none">
+                    <small class="text-muted badge rounded-pill bg-light">
+                      {{ category_name }}
+                    </small>
+                  </a>
+                  {% endfor %}
+                </td>
+                <td class="text-success">
+                  <a href="{% url 'resource_update_view' resource.pk %}" class="text-decoration-none text-reset">
+                    <i class="bi bi-pencil-square"></i>
+                  </a>
+                </td>
+                <td class="text-danger">
+                  <a href="#" class="text-decoration-none text-reset mx-2" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ resource.pk }}">
+                    <i class="bi bi-trash-fill"></i>
+                  </a>
+                  <div class="modal fade" id="deleteModal-{{ resource.pk }}" tabindex="-1" aria-labelledby="deleteModal-{{ resource.pk }}" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog modal-dialog-centered">
+                      <div class="modal-content">
+                        <div class="modal-body">
+                          <h5>Are you sure you want to delete it right now ?</h5>
+
+                          <form method="POST" action="{% url 'resource_delete_view' resource.pk %}">
+                            {% csrf_token %}
+                            <button class="text-decoration-none neumorphic__buttton btn btn-lg text-success" data-bs-dismiss="modal">
+                              <i class="bi bi-arrow-left-circle-fill"></i>
+                            </button>
+                            <button class="text-decoration-none neumorphic__buttton btn btn-lg text-danger">
+                              <i class="bi bi-trash-fill"></i>
+                            </button>
+                          </form>                      
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+              {% endfor %}
+
+            </tbody>
+          </table>  
+        </div>
+      </div>    
+    </div>
+  </div>
+  <!-- <div class="row">
+    <div class="col-12 text-center pt-4">
+      <p class="text-danger">Note: You have to wait for the approval after adding a resource.</p>
+    </div>
+  </div> -->
 </div>
 
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" type="text/javascript"></script>
+
+<script type="text/javascript">
+  const dataTable = new simpleDatatables.DataTable("#resourceTable", {
+    searchable: true,
+    fixedHeight: false,
+    header: true,
+    footer: false,
+    truncatePager: true,
+    perPage: 10,
+    // perPageSelect: false,
+    labels: {
+      placeholder: "Search...",
+      perPage: "{select} results per page",
+      noRows: "Oops! No results to display",
+      info: "Showing {start} to {end} of total {rows} results",
+    },
+    layout: {
+      top: "{info}{search}",
+      bottom: "{select}{pager}",
+    },
+  })
+</script>
 {% endblock %}

@@ -9,17 +9,16 @@ class User(AbstractUser):
 
     # Optional fields
     full_name = models.CharField(max_length=100, null=True, blank=True)
-    picture = models.ImageField(upload_to='profile_pictures', null=True, blank=True)
-    about = models.TextField(null=True, blank=True)
+    username = models.CharField(max_length=100, null=True, blank=True)
     website = models.URLField(null=True, blank=True)
 
     first_name = None
     last_name = None
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = ['username',]
+    REQUIRED_FIELDS = []
 
     objects = CustomUserManager()
 
     def __str__(self):
-        return self.username
+        return self.email

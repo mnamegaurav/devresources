@@ -44,10 +44,18 @@ body{
     transition-duration: 400ms;
 }
 
-.form-control:focus{
-    box-shadow: none;
+.form-control:focus, 
+.btn:focus, 
+.btn-close:focus,
+.btn-check:focus+.btn-outline-dark, 
+.btn-outline-dark:focus {
+    box-shadow: none !important;
 }
 
 .hidden{
     display: none;
+}
+
+#id_category li{
+    padding: 5px 10px 5px 0px;
 }

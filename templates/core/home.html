@@ -2,14 +2,14 @@
 {% load static %}
 {% load hitcount_tags %}
 
-{% block body %}
+{% block content %}
 
 <div class="container">
 
   <div class="row px-md-5">
     <div class="col-12 pb-1">
-      <p class="text-secondary text-center display-6">Dev Resources</p>
-      <p class="text-dark text-center display-8">One destination for all the developer's learning resources.</p>
+      <p class="text-center display-4 text-danger">Dev Resources</p>
+      <p class="text- text-center h4">One destination for all the developer's learning resources.</p>
     </div>
   </div>
 
@@ -19,7 +19,7 @@
       <h6 class="border-bottom border-danger pb-3 text-danger">Top Ones</h6>
     </div> -->
     {% for resource_category in top_resource_categories %}
-    <div class="col-12 col-sm-6 col-xl-4 mb-2" id="{{ resource_category.slug }}">
+    <div class="col-12 col-sm-6 col-xl-4 mx-auto mb-2" id="{{ resource_category.slug }}">
       <a href="{% url 'resource_list_view' resource_category.slug %}" class="text-decoration-none">
         <div class="neumorphic__card card bg-{% cycle 'success' 'dark' 'primary' 'danger' 'warning' 'secondary' 'info' %} mb-3">
           <div class="card-body text-{% cycle 'light' 'light' 'light' 'light' 'dark' 'light' %} d-flex align-middle flex-wrap">
@@ -74,9 +74,9 @@
             <strong>{{ resource_category_group.grouper|lower }}</strong>
           </h6>
         </div>
-        <div class="col-12 row    px-0 m-auto">
+        <div class="col-12 row justify-content-center    px-0 m-auto">
           {% for resource_category in resource_category_group.list %}
-          <div class="col-12 col-md-6 mb-2 resource_category_card     px-auto" id="{{ resource_category.slug }}">
+          <div class="col-12 col-md-6 col-xxl-4 mb-2 resource_category_card     px-auto" id="{{ resource_category.slug }}">
             <a href="{% url 'resource_list_view' resource_category.slug %}" class="text-decoration-none">
               <div class="neumorphic__card card bg-{% cycle 'warning' 'primary' 'secondary' 'danger' 'dark' %} mb-3">
                 <div class="card-body text-{% cycle 'dark' 'light' 'light' 'light' 'light' %} d-flex align-middle flex-wrap">
