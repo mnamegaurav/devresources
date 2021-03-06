@@ -11,8 +11,8 @@ body{
     height: 100vh;
 }
 
-.neumorphic__card.card .pie{
-    width: 40px;
+.neumorphic__card.card .count__shape{
+    min-width: 40px;
     border-radius: 10% 0 100% 0;
     background-color: white;
     height: 30px;
@@ -20,9 +20,11 @@ body{
     top: 0;
     left: 0;
     color: black;
-    /*text-align: center;*/
     padding-left: 7px;
-    font-size: 15px;
+}
+
+.neumorphic__card.card .count__shape span{
+    font-size: 13px;
     font-weight: 700;
 }
 
