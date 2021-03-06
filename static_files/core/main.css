@@ -11,6 +11,20 @@ body{
     height: 100vh;
 }
 
+.neumorphic__card.card .pie{
+    width: 30px;
+    border-radius: 10% 0 100% 0;
+    background-color: white;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 700;
+}
+
 .neumorphic__card{
     box-shadow: 5px 5px 14px 0px #9b9b9b;
     transition-duration: 600ms;

@@ -23,13 +23,16 @@
       <a href="{% url 'resource_list_view' resource_category.slug %}" class="text-decoration-none">
         <div class="neumorphic__card card bg-{% cycle 'success' 'dark' 'primary' 'danger' 'warning' 'secondary' 'info' %} mb-3">
           <div class="card-body text-{% cycle 'light' 'light' 'light' 'light' 'dark' 'light' %} d-flex align-middle flex-wrap">
-            <h5 class="card-title me-2 my-auto text-wrap">{{ resource_category.title|lower }}</h5>
+            <h5 class="card-title ms-3 me-2 my-auto text-wrap">{{ resource_category.title|lower }}</h5>
             <p class="card-text text-end ms-auto my-auto align-middle">
               <span class="badge rounded-pill bg-light text-dark d-flex justify-content-center align-middle">
                 <i class="bi bi-eye-fill"></i>&nbsp;
                 {% get_hit_count for resource_category %}
               </span>
             </p>
+            <div class="pie">
+              <span>{{ resource_category.resource_set.count }}</span>
+            </div>
           </div>
         </div>
       </a>
@@ -80,13 +83,16 @@
             <a href="{% url 'resource_list_view' resource_category.slug %}" class="text-decoration-none">
               <div class="neumorphic__card card bg-{% cycle 'warning' 'primary' 'secondary' 'danger' 'dark' %} mb-3">
                 <div class="card-body text-{% cycle 'dark' 'light' 'light' 'light' 'light' %} d-flex align-middle flex-wrap">
-                  <h5 class="card-title me-2 my-auto text-wrap">{{ resource_category.title|lower }}</h5>
+                  <h5 class="card-title ms-3 me-2 my-auto text-wrap">{{ resource_category.title|lower }}</h5>
                   <p class="card-text text-end ms-auto my-auto align-middle">
                     <span class="badge rounded-pill bg-light text-dark d-flex justify-content-center align-middle">
                       <i class="bi bi-eye-fill"></i>&nbsp;
                       {% get_hit_count for resource_category %}
                     </span>
                   </p>
+                  <div class="pie">
+                    <span>{{ resource_category.resource_set.count }}</span>
+                  </div>
                 </div>
               </div>
             </a>
