@@ -4,10 +4,10 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container px-0">
 
-  <div class="row px-md-5">
-    <div class="col-12 pb-1">
+  <div class="row px-md-5 px-0">
+    <div class="col-12 pb-1 px-0">
       <p class="text-center display-4 text-danger">Dev Resources</p>
       <p class="text- text-center h4">One destination for all the developer's learning resources.</p>
     </div>
@@ -23,13 +23,23 @@
       <a href="{% url 'resource_list_view' resource_category.slug %}" class="text-decoration-none">
         <div class="neumorphic__card card bg-{% cycle 'success' 'dark' 'primary' 'danger' 'warning' 'secondary' 'info' %} mb-3">
           <div class="card-body text-{% cycle 'light' 'light' 'light' 'light' 'dark' 'light' %} d-flex align-middle flex-wrap">
-            <h5 class="card-title me-2 my-auto text-wrap">{{ resource_category.title|lower }}</h5>
+
+            <div class="count__shape">
+              <span>{{ resource_category.resource_set.count }}</span>
+              <span><i class="bi bi-dot"></i></span>
+            </div>
+
+            <h5 class="card-title ms-4 me-2 my-auto text-wrap">
+              {{ resource_category.title|lower }}
+            </h5>
+
             <p class="card-text text-end ms-auto my-auto align-middle">
               <span class="badge rounded-pill bg-light text-dark d-flex justify-content-center align-middle">
                 <i class="bi bi-eye-fill"></i>&nbsp;
                 {% get_hit_count for resource_category %}
               </span>
             </p>
+
           </div>
         </div>
       </a>
@@ -70,7 +80,7 @@
     {% for resource_category_group in sorted_resource_categories %}
       <div class="col-12 row resource_category_group m-auto    px-0">
         <div class="col-12 pt-3 pb-3">
-          <h6 class="border-bottom pb-3 text-secondary">
+          <h6 class="border-bottom pb-3 text-secondary display-6">
             <strong>{{ resource_category_group.grouper|lower }}</strong>
           </h6>
         </div>
@@ -80,13 +90,21 @@
             <a href="{% url 'resource_list_view' resource_category.slug %}" class="text-decoration-none">
               <div class="neumorphic__card card bg-{% cycle 'warning' 'primary' 'secondary' 'danger' 'dark' %} mb-3">
                 <div class="card-body text-{% cycle 'dark' 'light' 'light' 'light' 'light' %} d-flex align-middle flex-wrap">
-                  <h5 class="card-title me-2 my-auto text-wrap">{{ resource_category.title|lower }}</h5>
+
+                  <div class="count__shape">
+                    <span>{{ resource_category.resource_set.count }}</span>
+                    <span><i class="bi bi-dot"></i></span>
+                  </div>
+
+                  <h5 class="card-title ms-4 me-2 my-auto text-wrap">{{ resource_category.title|lower }}</h5>
+
                   <p class="card-text text-end ms-auto my-auto align-middle">
                     <span class="badge rounded-pill bg-light text-dark d-flex justify-content-center align-middle">
                       <i class="bi bi-eye-fill"></i>&nbsp;
                       {% get_hit_count for resource_category %}
                     </span>
                   </p>
+
                 </div>
               </div>
             </a>
