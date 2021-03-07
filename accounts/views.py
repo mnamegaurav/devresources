@@ -61,9 +61,31 @@ class SignUpView(View):
 
 
 class SignOutView(View):
-    success_message = "See you soon"
+    success_message = "See you soon."
 
     def post(self, request, *args, **kwargs):
         logout(request)
         messages.success(request, self.success_message, extra_tags="success")
+        return redirect('/')
+
+
+class ProfileView(View):
+    template_name = 'accounts/profile.html'
+    success_message = 'Successfully saved the profile.'
+
+    def get(self, request, *args, **kwargs):
+
+        # render the form
+        # ...
+
+        # data to show for dashboard
+        # ...
+
+        return render(request, self.template_name)
+
+    def post(self, request, *args, **kwargs):
+
+        # save the profile data
+        # ...
+
         return redirect('/')
