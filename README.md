@@ -1,76 +1,71 @@
-# devresources
-One destination for all the developer's learning resources.
+# DevResources
+## One destination for all the developer's learning resources.
 
-### Live -
-https://devresources-guru.herokuapp.com/
+### [Live Link](https://devresources-guru.herokuapp.com/)
 
-### Contributing
+## Contributing:
 
-To install this project locally and imporove it:
+### To run this project locally-
 
-Create a python3 virtual environment.
+1. Create a python3 virtual environment:
 
-```
-python3 -m venv venv
-```
+    ```
+    $ python3 -m venv venv
+    ```
 
-Or, use [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html):
+    Or, use [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html):
 
-```
-virtualenv venv
-```
+    ```
+    $ virtualenv venv
+    ```
 
-### Install requirements
+2. Activate the virtual environment:
 
-```
-. venv/bin/activate
-pip install -r requirements.txt
-```
+    On Linux or Mac or any Unix based system-
+    
+    ```
+    $ source venv/bin/activate
+    ```
+    
+    On Windows-
+    ```
+    > venv\Scripts\activate
+    ```
 
-Errors during install help:
+3. Now Install the dependecies:
 
-- `Error: pg_config executable not found.` *and* you are using ubuntu
+    ```
+    $ pip install -r requirements.txt
+    ```
 
-You need to install Postgress & dev headers: `sudo apt install -y postgresql-client postgresql libpq-dev`
+4. Creating local settings:
+Create a `local_settings.py` file in the same directory where your `settings.py` resides.
 
-- './psycopg/psycopg.h:36:10: fatal error: libpq-fe.h: No such file or directory'
+    Copy this code in your `local_settings.py` file -
+    ```
+    DEBUG = True
+    ```
+    
+5. Creating `.env` file:
+Create a `.env` file in the same directory where your `manage.py` resides.
 
+    Copy this text in your `.env` file -
+    ```
+    SECRET_KEY = 'secretkey'
+    ```
 
-### Create database user
+6. Run the `migrate` command:
+    ```
+    $ python manage.py migrate
+    ```
 
-Example using postgress locally: [configure pg_hba.conf correctly](https://www3.ntu.edu.sg/home/ehchua/programming/sql/PostgreSQL_GetStarted.html#:~:text=To%20test%20the%20password%20login,prompt%20you%20for%20the%20password.) Or use sqlite
+7. Now you are ready to go:
 
-```
-sudo su postgresql
-createdb devresources
-createuser -P -s -e devresources # Warning! this creates a superuser
-```
+    #### Run the application
 
-### Copy .env.example to .env
-
-```
-cp .env.example to .env
-```
-**Change** the .env settings to your database username/password
-
-### Run database migrations
-```
-python manage.py migrate
-```
-
-### Seed the database
-
-See / insert database with inital values
-
-```
-python manage.py loaddata devresources/fixtures/ResourceCategory.yaml
-```
+    ```
+    $ python manage.py runserver
+    ```
 
 
-### Run the application
-
-```
-python manage.py runserver
-```
-
-Visit http://127.0.0.1:8000/
+## Thanks
