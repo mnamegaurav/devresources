@@ -58,6 +58,15 @@ cp .env.example to .env
 python manage.py migrate
 ```
 
+### Seed the database
+
+See / insert database with inital values
+
+```
+python manage.py loaddata devresources/fixtures/ResourceCategory.yaml
+```
+
+
 ### Run the application
 
 ```
