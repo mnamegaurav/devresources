@@ -29,6 +29,7 @@ class ResourceModelAdmin(admin.ModelAdmin):
         'added_on',
         'updated_on',
         'added_by',
+        'updated_by',
         )
-    list_filter = ('is_active', 'category',)
+    list_filter = ('is_active', 'category', 'added_by', 'updated_by')
     search_fields = ('title',)
