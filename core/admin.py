@@ -24,12 +24,11 @@ class ResourceModelAdmin(admin.ModelAdmin):
     filter_horizontal = ('category',)
     list_display = (
         'title',
-        'thumbnail',
-        'description',
         'url',
         'is_active',
         'added_on',
         'updated_on',
         'added_by',
         )
-    list_filter = ('title', 'is_active', 'category',)
+    list_filter = ('is_active', 'category',)
+    search_fields = ('title',)

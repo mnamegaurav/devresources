@@ -47,8 +47,8 @@ class ResourceCategory(models.Model):
 
 class Resource(models.Model):
     title = models.CharField(max_length=140)
-    thumbnail = models.ImageField(upload_to='thumbnails', null=True, blank=True)
-    description = models.CharField(max_length=240, null=True, blank=True)
+    # thumbnail = models.ImageField(upload_to='thumbnails', null=True, blank=True)
+    # description = models.CharField(max_length=240, null=True, blank=True)
     url = models.URLField(max_length=500)
     category = models.ManyToManyField(ResourceCategory)
     is_active = models.BooleanField(default=True)
@@ -56,6 +56,14 @@ class Resource(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     added_by = models.ForeignKey(
         User, 
+        related_name='resource_cb',
+        on_delete=models.PROTECT, 
+        null=True, blank=True,
+        editable=False
+        )
+    updated_by = models.ForeignKey(
+        User, 
+        related_name='resource_ub',
         on_delete=models.PROTECT, 
         null=True, blank=True,
         editable=False

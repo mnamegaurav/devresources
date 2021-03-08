@@ -8,3 +8,4 @@ def auto_save_current_user(obj):
         user = None
     if not obj.pk:
         obj.added_by = user
+    obj.updated_by = user
