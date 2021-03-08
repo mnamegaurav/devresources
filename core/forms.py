@@ -20,11 +20,11 @@ class ResourceForm(forms.ModelForm):
 
         self.fields['title'].widget.attrs.update({
                 'class': 'form-control form-control-sm',
-                'placeholder': 'Title',
+                'placeholder': 'Give it a simple Title...',
             })
         self.fields['url'].widget.attrs.update({
                 'class': 'form-control form-control-sm',
-                'placeholder': 'Resource URL',
+                'placeholder': 'Provide a Link...',
             })
         self.fields['category'].widget.attrs.update({
                 'class': 'list-inline d-inline-flex flex-wrap m-auto',

@@ -54,7 +54,7 @@
 
             <div class="col-12 mb-3">
               <label for="{{ form.category.auto_id }}" class="form-label border-bottom w-100 pb-2 text-muted">
-                Choose few categories
+                Select what can we learn from this resource ?
               </label>
               {{ form.category }}
               {% if form.category.errors %}
@@ -86,7 +86,7 @@
 
 <script type="text/javascript">
   $('#id_category').select2({
-    placeholder: 'Select a category',
+    placeholder: 'Choose multiple technologies...',
     width: '100%',
   });
 </script>
