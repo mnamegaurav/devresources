@@ -32,3 +32,4 @@ class ResourceModelAdmin(admin.ModelAdmin):
         'updated_on',
         'added_by',
         )
+    list_filter = ('title', 'is_active', 'category',)
