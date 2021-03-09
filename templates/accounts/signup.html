@@ -22,12 +22,34 @@
         {% csrf_token %}
         <div class="neumorphic__card input-group input-group-lg mb-3">
           <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+          <input name="full_name" type="text" maxlength="50" class="form-control" id="id_full_name"
+            placeholder="Full Name" required>
+        </div>
+        {% if form.full_name.errors %}
+        <div class="text-danger">
+          {{ form.full_name.errors }}
+        </div>
+        {% endif %}
+
+        <div class="neumorphic__card input-group input-group-lg mb-3">
+          <span class="input-group-text"><i class="bi bi-envelope"></i></span>
           <input name="email" type="email" class="form-control" id="id_email" placeholder="Email" required>
         </div>
         {% if form.email.errors %}
-          <div class="text-danger">
-            {{ form.email.errors }}
-          </div>
+        <div class="text-danger">
+          {{ form.email.errors }}
+        </div>
+        {% endif %}
+
+        <div class="neumorphic__card input-group input-group-lg mb-3">
+          <span class="input-group-text"><i class="bi bi-globe"></i></span>
+          <input name="website" type="url" class="form-control" id="id_website"
+            placeholder="website/social profile/github url" required>
+        </div>
+        {% if form.website.errors %}
+        <div class="text-danger">
+          {{ form.website.errors }}
+        </div>
         {% endif %}
 
         <div class="neumorphic__card input-group input-group-lg mb-3">

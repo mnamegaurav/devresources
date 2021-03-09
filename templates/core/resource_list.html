@@ -51,6 +51,21 @@
                   </a>
                   {% endfor %}
                 </div>
+
+              {% for user in users %}
+              {% if user.id is resource.added_by_id and user.full_name is not None%}
+              <div class="card-footer pb-4 d-flex align-items-center justify-content-center flex-wrap"
+                style="height: 100%;">
+                <a {% if user.website %} href="{{ user.website }}" {% endif %}
+                  class="text-decoration-none text-reset me-1">
+                  <small class="text-muted badge rounded-pill bg-light">
+                    Added By - {{ user.full_name }}
+                  </small>
+                </a>
+              </div>
+              {% endif %}
+              {% endfor %}
+
               </div>
             </a>
           </div>

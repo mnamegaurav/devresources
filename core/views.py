@@ -16,6 +16,11 @@ from core.models import (
     Resource,
     )
 from core.forms import ResourceForm
+from django.contrib.auth import get_user_model
+
+# Current User Model
+User = get_user_model()
+
 # Create your views here.
 
 class HomeView(View):
@@ -61,9 +66,12 @@ class ResourceListByCategoryView(View, HitCountMixin):
             category__slug=category_slug
             )
 
+        users = User.objects.all()
+
         context = {
             'all_resources': all_resources,
             'category_slug': category_slug,
+            'users': users,
         }
 
         return render(request, self.template_name, context)
