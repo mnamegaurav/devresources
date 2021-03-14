@@ -112,18 +112,8 @@ Create a `.env` file in the same directory where your `manage.py` resides.
  
 ### Contributors :zap:
 Thanks goes to these wonderful people 
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/yash2189"><img src="https://avatars.githubusercontent.com/u/31548778?s=460&v=4" width="200px;" alt=""/><br /><sub><b>Yash Ajgaonkar</b></sub></a><br />
-    <!-- <a href="https://github.com/yash2189" title="Code">💻</a> -->
-    </td>
-  </tr>
-</table>
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/chrisjsimpson"><img src="https://avatars.githubusercontent.com/u/1718624?s=460&u=c1240dc4f544632926454196eaabefd47957cc93&v=4" width="200px;" alt=""/><br /><sub><b>Chris J Simpson</b></sub></a><br />
-    <!-- <a href="https://github.com/chrisjsimpson" title="Code">💻</a> -->
-    </td>
-  </tr>
-</table>
+<a href="https://github.com/hamhaingaurav/devresources/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=hamhaingaurav/devresources" />
+</a>
 
+Made with [contributors-img](https://contrib.rocks).
