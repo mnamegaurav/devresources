@@ -5,7 +5,7 @@
 ### One destination for all the developer's learning resources.<br> Find all of your learning resources under one roof and add your own. 
 
 ### Live :sparkles: 
-You can find the project live [here](https://devresources-guru.herokuapp.com/) :point_left:
+You can find the project live [here](https://devresources.guru/) :point_left:
 
 ### Screenshot :camera: 
 ![cap](https://user-images.githubusercontent.com/31548778/110208967-fc2b3a00-7eaf-11eb-8c53-61447999f4e5.PNG)
