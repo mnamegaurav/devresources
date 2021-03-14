@@ -70,10 +70,10 @@
 
                           <form method="POST" action="{% url 'resource_delete_view' resource.pk %}">
                             {% csrf_token %}
-                            <button class="text-decoration-none neumorphic__buttton btn btn-lg text-success" data-bs-dismiss="modal">
+                            <button class="text-decoration-none neumorphic__buttton btn btn-lg text-success" data-bs-dismiss="modal" aria-label="do not delete button">
                               <i class="bi bi-arrow-left-circle-fill"></i>
                             </button>
-                            <button class="text-decoration-none neumorphic__buttton btn btn-lg text-danger">
+                            <button class="text-decoration-none neumorphic__buttton btn btn-lg text-danger" aria-label="delete button">
                               <i class="bi bi-trash-fill"></i>
                             </button>
                           </form>                      
