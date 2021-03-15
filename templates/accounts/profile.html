@@ -40,31 +40,64 @@
         <div class="card-header bg-dark">
           <p class="text-light m-auto text-center my-2">My Profile Details</p>
         </div>
-        <div class="card-body mx-auto my-3">
-        	<form action="{% url 'profile_view' %}">
-			      <div class="col input-group mb-2">
-							<input type="text" id="id_full_name" class="form-control" placeholder="Full Name" aria-label="Name" aria-describedby="button-addon2" disabled {% if request.user.full_name %} value="{{ request.user.full_name }}" {% endif %}>
-							<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="undisableTxt(this);"><i class="bi-pencil"></i></button>
+        <form action="{% url 'profile_view' %}" method="POST" class="form-floating">
+        	{% csrf_token %}
+        	<div class="card-body mx-auto my-3">
+
+			      <div class="mb-2 form-floating">
+							<input name="{{ form.full_name.name }}" type="text" id="{{ form.full_name.auto_id }}" class="form-control {% if form.full_name.errors %}is-invalid{% endif %}" placeholder="{{ form.full_name.label }}" aria-label="{{ form.full_name.label }}" aria-describedby="button-addon2" disabled {% if form.full_name.value %} value="{{ form.full_name.value }}" {% endif %} />
+							<label class="text-muted" for="{{ form.full_name.auto_id }}">{{ form.full_name.label }}</label>
+							{% if form.full_name.errors %}
+								<div class="invalid-feedback">
+			            {{ form.full_name.errors }}
+			          </div>
+			         {% endif %}
 						</div>
-			      <div class="col input-group mb-2">
-							<input type="email" id="id_email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" disabled required {% if request.user.email %} value="{{ request.user.email }}" {% endif %}>
-							<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="undisableTxt(this);"><i class="bi-pencil"></i></button>
+		          
+			      <div class="mb-2 form-floating">
+							<input name="{{ form.email.name }}" type="email" id="{{ form.email.auto_id }}" class="form-control {% if form.email.errors %}is-invalid{% endif %}" placeholder="{{ form.email.label }}" aria-label="{{ form.email.label }}" aria-describedby="button-addon2" disabled required {% if form.email.value %} value="{{ form.email.value }}" {% endif %} />
+							<label class="text-muted" for="{{ form.email.auto_id }}">{{ form.email.label }}</label>
+							{% if form.email.errors %}
+								<div class="invalid-feedback">
+			            {{ form.email.errors }}
+			          </div>
+			         {% endif %}
 						</div>
-			      <div class="col input-group mb-2">
-							<input type="text" id="id_username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="button-addon2" disabled {% if request.user.username %} value="{{ request.user.username }}" {% endif %}>
-							<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="undisableTxt(this);"><i class="bi-pencil"></i></button>
+
+			      <div class="mb-2 form-floating">
+							<input name="{{ form.username.name }}" type="text" id="{{ form.username.auto_id }}" class="form-control {% if form.username.errors %}is-invalid{% endif %}" placeholder="{{ form.username.label }}" aria-label="{{ form.username.label }}" aria-describedby="button-addon2" disabled {% if form.username.value %} value="{{ form.username.value }}" {% endif %} />
+							<label class="text-muted" for="{{ form.username.auto_id }}">{{ form.username.label }}</label>
+							{% if form.username.errors %}
+								<div class="invalid-feedback">
+			            {{ form.username.errors }}
+			          </div>
+			         {% endif %}
 						</div>
-			      <div class="col input-group mb-2">
-							<input type="text" id="id_website" class="form-control" placeholder="Website/Github/Social" aria-label="Website" aria-describedby="button-addon2" disabled {% if request.user.website %} value="{{ request.user.website }}" {% endif %}>
-							<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="undisableTxt(this);"><i class="bi-pencil"></i></button>
+
+			      <div class="mb-2 form-floating">
+							<input name="{{ form.website.name }}" type="url" id="{{ form.username.auto_id }}" class="form-control {% if form.website.errors %}is-invalid{% endif %}" placeholder="Website/Github/Social" aria-label="Website or Github or Social account" aria-describedby="button-addon2" disabled {% if form.website.value %} value="{{ form.website.value }}" {% endif %} />
+							<label class="text-muted" for="{{ form.website.auto_id }}">Website/Social Profile/Github</label>
+							{% if form.website.errors %}
+								<div class="invalid-feedback">
+			            {{ form.website.errors }}
+			          </div>
+			         {% endif %}
 						</div>
-					</form>
-				</div>
-				<div class="card-footer text-end">
-	        <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success" type="submit" aria-label="Update my profile">
-	        	<i class="bi bi-check-circle-fill"></i> Update
-	        </button>
-      	</div>
+
+					</div>
+					<div class="card-footer text-end">
+						<button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-primary" aria-label="Edit my profile details" onclick="enableInpurFields(this);" type="button" id="editBtn">
+		        	<i class="bi bi-pencil"></i> Edit
+		        </button>
+		        <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-danger" aria-label="Cancel editing my profile details" onclick="cancelEdit(this);" type="button" id="cancelEditBtn" style="display: none;">
+		        	<i class="bi bi-x-circle-fill"></i> Cancel
+		        </button>
+		        <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success" type="submit" aria-label="Update my profile" id="updateBtn" style="display: none;">
+		        	<i class="bi bi-check-circle-fill"></i> Update
+		        </button>
+		        
+	      	</div>
+      	</form>
     	</div>
     </div>
 
@@ -76,9 +109,24 @@
 <!-- Your Extra Javascript goes here -->
 <script>
 
-	function undisableTxt(el) {
-		console.log(el)
-	  	el.previousElementSibling.disabled = false;
+	const inputElements = document.querySelectorAll('input[disabled]')
+
+	function enableInpurFields(el) {
+		inputElements.forEach((e)=>{
+			e.disabled = false;
+		})
+		updateBtn.style.display='inline-block';
+		cancelEditBtn.style.display='inline-block';
+		el.style.display = 'none';
+	}
+
+	function cancelEdit(el){
+		updateBtn.style.display='none';
+		cancelEditBtn.style.display='none';
+		editBtn.style.display='inline-block';
+		inputElements.forEach((e)=>{
+			e.disabled = true;
+		})
 	}
 	
 </script>
