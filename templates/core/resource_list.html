@@ -55,7 +55,7 @@
                 </a>
                 {% endfor %}
               </div>
-              {% if resource.added_by.full_name is not None %}
+              {% if resource.added_by.full_name %}
               <div class="card-footer pb-4 d-flex align-items-center justify-content-center flex-wrap"
                 style="height: 100%;">
                 <a target="_blank" rel="noreferrer" href="{{ resource.added_by.website }}"
