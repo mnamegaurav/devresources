@@ -100,20 +100,4 @@ Create a `.env` file in the same directory where your `manage.py` resides.
     $ python manage.py runserver
     ```
  
-## Developer ✨
-
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/hamhaingaurav"><img src="https://avatars.githubusercontent.com/u/34805677?s=400&u=a0f45325750d037434da90119a237286785bf16a&v=4" width="200px;" alt=""/><br /><sub><b>Gaurav Sharma</b></sub></a><br />
-    <!-- <a href="https://github.com/hamhaingaurav" title="Code">💻</a> -->
-    </td>
-  </tr>
-</table>
- 
-### Contributors :zap:
-Thanks goes to these wonderful people 
-<a href="https://github.com/hamhaingaurav/devresources/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=hamhaingaurav/devresources" />
-</a>
-
-Made with [contributors-img](https://contrib.rocks).
+# Thanks
