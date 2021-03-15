@@ -4,184 +4,81 @@
 
 {% block extra_css %}
 <!-- Your Extra CSS goes here -->
-<style>
-	@media screen and (min-width: 768px) {
-		nav {
-			display: none;
-		}
-	}
-</style>
 {% endblock %}
 
 {% block content %}
 
 <div class="container px-0 justify-content-center">
-	<nav class="mb-2">
-	  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-	    <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true">Profile</button>
-	    <button class="nav-link" id="nav-stats-tab" data-bs-toggle="tab" data-bs-target="#nav-stats" type="button" role="tab" aria-controls="nav-stats" aria-selected="false">Stats</button>
-	  </div>
-	</nav>
-	<div class="tab-content" id="nav-tabContent">
-	  <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-	  	<div class="row">
-				<div class="col-xs-12 col-md-6 mb-2">
-					<div class="neumorphic__card">
-		        <div class="card-header bg-dark">
-		          <p class="text-light m-auto text-center my-2">My Profile</p>
-		        </div>
-		        <div class="col-11 mx-auto my-3">
-				      <div class="col input-group mb-2">
-								<input type="text" id="name" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2" disabled>
-								<button class="btn btn-outline-secondary" type="button" onclick=undisableTxt("name") id="button-addon2">Edit</button>
-							</div>
-				      <div class="col input-group mb-2">
-								<input type="email" id="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" disabled>
-								<button class="btn btn-outline-secondary" type="button" onclick=undisableTxt("email") id="button-addon2">Edit</button>
-							</div>
-				      <div class="col input-group mb-2">
-								<input type="text" id="uname" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="button-addon2" disabled>
-								<button class="btn btn-outline-secondary" type="button" onclick=undisableTxt("uname") id="button-addon2">Edit</button>
-							</div>
-				      <div class="col input-group mb-2">
-								<input type="text" id="web" class="form-control" placeholder="Website" aria-label="Website" aria-describedby="button-addon2" disabled>
-								<button class="btn btn-outline-secondary" type="button" onclick=undisableTxt("web") id="button-addon2">Edit</button>
-							</div>
-						</div>
-						<div class="card-footer text-center">
-			        <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success"><i class="bi bi-check-circle-fill"></i> Update</button>
-			        <a class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-danger" href="">
-			          <i class="bi bi-x-circle-fill"></i> Cancel
-			        </a>
-			      </div>
-		      </div>
-				</div>
-			</div>
-	  </div>
-	  <div class="tab-pane fade" id="nav-stats" role="tabpanel" aria-labelledby="nav-stats-tab">
-	  	<div class="col-xs-12 col-md-5">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<div class="neumorphic__card mb-2">
-							<div class="card-header bg-success">
-								<p class="text-light m-auto text-center">Resources</p>
-							</div>
-							<div class="col-11 mx-auto">
-								<p class="text-dark m-auto p-2 text-center">244 <i class="bi bi-check-circle-fill"></i></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="neumorphic__card mb-2">
-							<div class="card-header bg-danger">
-								<p class="text-light m-auto text-center">Clicks</p>
-							</div>
-							<div class="col-11 mx-auto">
-								<p class="text-dark m-auto p-2 text-center">244 <i class="bi bi-arrow-up-circle-fill"></i></p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12 col-md-12">
-						<div class="neumorphic__card">
-							<div class="card-header bg-light">
-								<p class="text-dark m-auto text-center">TOP-5</p>
-							</div>
-							<table class="table table-borderless">
-	 							<tr>
-							    <th>title</th>
-							    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-							  </tr>
-							  <tr>
-							    <th>title</th>
-							    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-							  </tr>
-							  <tr>
-							    <th>title</th>
-							    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-							  </tr>
-							  <tr>
-							    <th>title</th>
-							    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-							  </tr>
-							  <tr>
-							    <th>title</th>
-							    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-							  </tr>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-	  </div>
-	</div>
-  <!-- <div class="row">
-		<div class="col-md-5 offset-md-5">
-			<div class="row">
-				<div class="col-md-6 offset-md-6">
+	<div class="row px-md-5 my-5">
+
+    <div class="col-12 pb-1">
+    	<div class="row">
+				<div class="col-6">
 					<div class="neumorphic__card mb-2">
 						<div class="card-header bg-success">
 							<p class="text-light m-auto text-center">Resources</p>
 						</div>
 						<div class="col-11 mx-auto">
-							<p class="text-dark m-auto p-2 text-center">244 <i class="bi bi-check-circle-fill"></i></p>
+							<p class="text-dark m-auto p-2 text-center">
+								{{ request.user.added_resource_count }}<i class="bi bi-check-circle-fill"></i></p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 offset-md-6">
+				<div class="col-6">
 					<div class="neumorphic__card mb-2">
 						<div class="card-header bg-danger">
 							<p class="text-light m-auto text-center">Clicks</p>
 						</div>
 						<div class="col-11 mx-auto">
-							<p class="text-dark m-auto p-2 text-center">244 <i class="bi bi-arrow-up-circle-fill"></i></p>
+							<p class="text-dark m-auto p-2 text-center">
+								244<i class="bi bi-arrow-up-circle-fill"></i></p>
 						</div>
 					</div>
 				</div>
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="neumorphic__card">
-						<div class="card-header bg-light">
-							<p class="text-dark m-auto text-center">TOP-5</p>
+    	<div class="neumorphic__card mt-3">
+        <div class="card-header bg-dark">
+          <p class="text-light m-auto text-center my-2">My Profile Details</p>
+        </div>
+        <div class="card-body mx-auto my-3">
+        	<form action="{% url 'profile_view' %}">
+			      <div class="col input-group mb-2">
+							<input type="text" id="id_full_name" class="form-control" placeholder="Full Name" aria-label="Name" aria-describedby="button-addon2" disabled {% if request.user.full_name %} value="{{ request.user.full_name }}" {% endif %}>
+							<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="undisableTxt(this);"><i class="bi-pencil"></i></button>
 						</div>
-						<table class="table table-borderless">
- 							<tr>
-						    <th>title</th>
-						    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-						  </tr>
-						  <tr>
-						    <th>title</th>
-						    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-						  </tr>
-						  <tr>
-						    <th>title</th>
-						    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-						  </tr>
-						  <tr>
-						    <th>title</th>
-						    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-						  </tr>
-						  <tr>
-						    <th>title</th>
-						    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-						  </tr>
-						</table>
-					</div>
+			      <div class="col input-group mb-2">
+							<input type="email" id="id_email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" disabled required {% if request.user.email %} value="{{ request.user.email }}" {% endif %}>
+							<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="undisableTxt(this);"><i class="bi-pencil"></i></button>
+						</div>
+			      <div class="col input-group mb-2">
+							<input type="text" id="id_username" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="button-addon2" disabled {% if request.user.username %} value="{{ request.user.username }}" {% endif %}>
+							<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="undisableTxt(this);"><i class="bi-pencil"></i></button>
+						</div>
+			      <div class="col input-group mb-2">
+							<input type="text" id="id_website" class="form-control" placeholder="Website/Github/Social" aria-label="Website" aria-describedby="button-addon2" disabled {% if request.user.website %} value="{{ request.user.website }}" {% endif %}>
+							<button class="btn btn-outline-secondary" type="button" id="button-addon2" onclick="undisableTxt(this);"><i class="bi-pencil"></i></button>
+						</div>
+					</form>
 				</div>
-			</div>
-		</div>
-	</div> -->
-</div>
+				<div class="card-footer text-end">
+	        <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success" type="submit" aria-label="Update my profile">
+	        	<i class="bi bi-check-circle-fill"></i> Update
+	        </button>
+      	</div>
+    	</div>
+    </div>
 
+  </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
 <!-- Your Extra Javascript goes here -->
 <script>
-	function undisableTxt(id) {
-	  document.getElementById(id).disabled = false;
+
+	function undisableTxt(el) {
+		console.log(el)
+	  	el.previousElementSibling.disabled = false;
 	}
 	
 </script>
