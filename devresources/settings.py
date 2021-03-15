@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 import dotenv
 from pathlib import Path
+from devresources.jazzmin_config import *
+from devresources.hitcount_config import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -130,14 +132,11 @@ MEDIA_ROOT = BASE_DIR/'media'
 AUTH_USER_MODEL = 'accounts.User'
 LOGIN_URL = 'signin_view'
 
-from devresources.jazzmin_config import *
-from devresources.hitcount_config import *
-
+# Imports below are intentionally placed here to override the existing values. e.g: DEBUG
 try:
     from devresources.local_settings import *
 except ImportError as e:
     pass
-
 
 
 if DEBUG:
