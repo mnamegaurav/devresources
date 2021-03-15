@@ -7,7 +7,10 @@ from django.contrib.auth import (
     get_user_model,
     )
 
-from accounts.forms import CustomUserCreationForm
+from accounts.forms import (
+    CustomUserCreationForm, 
+    CustomUserChangeForm
+    )
 # Create your views here.
 User = get_user_model()
 
@@ -72,20 +75,25 @@ class SignOutView(View):
 class ProfileView(View):
     template_name = 'accounts/profile.html'
     success_message = 'Successfully saved the profile.'
+    form_class = CustomUserChangeForm
 
     def get(self, request, *args, **kwargs):
 
-        # render the form
-        # ...
+        form = self.form_class(instance=request.user)
+        context = {'form': form}
 
-        # data to show for dashboard
-        # ...
-
-        return render(request, self.template_name)
+        return render(request, self.template_name, context)
 
     def post(self, request, *args, **kwargs):
 
         # save the profile data
-        # ...
+        form = self.form_class(request.POST, instance=request.user)
 
-        return redirect('/')
+        if form.is_valid():
+            form.save()
+            messages.success(request, self.success_message, extra_tags="success")
+            return redirect('profile_view')
+        else:
+            messages.error(request, 'Please recheck all the details.', extra_tags="danger")
+            context = {'form': form}
+            return render(request, self.template_name, context)

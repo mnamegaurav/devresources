@@ -4,184 +4,135 @@
 
 {% block extra_css %}
 <!-- Your Extra CSS goes here -->
-<style>
-	@media screen and (min-width: 768px) {
-		nav {
-			display: none;
-		}
-	}
-</style>
 {% endblock %}
 
 {% block content %}
 
 <div class="container px-0 justify-content-center">
-	<nav class="mb-2">
-	  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-	    <button class="nav-link active" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="true">Profile</button>
-	    <button class="nav-link" id="nav-stats-tab" data-bs-toggle="tab" data-bs-target="#nav-stats" type="button" role="tab" aria-controls="nav-stats" aria-selected="false">Stats</button>
-	  </div>
-	</nav>
-	<div class="tab-content" id="nav-tabContent">
-	  <div class="tab-pane fade show active" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-	  	<div class="row">
-				<div class="col-xs-12 col-md-6 mb-2">
-					<div class="neumorphic__card">
-		        <div class="card-header bg-dark">
-		          <p class="text-light m-auto text-center my-2">My Profile</p>
-		        </div>
-		        <div class="col-11 mx-auto my-3">
-				      <div class="col input-group mb-2">
-								<input type="text" id="name" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="button-addon2" disabled>
-								<button class="btn btn-outline-secondary" type="button" onclick=undisableTxt("name") id="button-addon2">Edit</button>
-							</div>
-				      <div class="col input-group mb-2">
-								<input type="email" id="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="button-addon2" disabled>
-								<button class="btn btn-outline-secondary" type="button" onclick=undisableTxt("email") id="button-addon2">Edit</button>
-							</div>
-				      <div class="col input-group mb-2">
-								<input type="text" id="uname" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="button-addon2" disabled>
-								<button class="btn btn-outline-secondary" type="button" onclick=undisableTxt("uname") id="button-addon2">Edit</button>
-							</div>
-				      <div class="col input-group mb-2">
-								<input type="text" id="web" class="form-control" placeholder="Website" aria-label="Website" aria-describedby="button-addon2" disabled>
-								<button class="btn btn-outline-secondary" type="button" onclick=undisableTxt("web") id="button-addon2">Edit</button>
-							</div>
-						</div>
-						<div class="card-footer text-center">
-			        <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success"><i class="bi bi-check-circle-fill"></i> Update</button>
-			        <a class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-danger" href="">
-			          <i class="bi bi-x-circle-fill"></i> Cancel
-			        </a>
-			      </div>
-		      </div>
-				</div>
-			</div>
-	  </div>
-	  <div class="tab-pane fade" id="nav-stats" role="tabpanel" aria-labelledby="nav-stats-tab">
-	  	<div class="col-xs-12 col-md-5">
-				<div class="row">
-					<div class="col-xs-12 col-md-6">
-						<div class="neumorphic__card mb-2">
-							<div class="card-header bg-success">
-								<p class="text-light m-auto text-center">Resources</p>
-							</div>
-							<div class="col-11 mx-auto">
-								<p class="text-dark m-auto p-2 text-center">244 <i class="bi bi-check-circle-fill"></i></p>
-							</div>
-						</div>
-					</div>
-					<div class="col-xs-12 col-md-6">
-						<div class="neumorphic__card mb-2">
-							<div class="card-header bg-danger">
-								<p class="text-light m-auto text-center">Clicks</p>
-							</div>
-							<div class="col-11 mx-auto">
-								<p class="text-dark m-auto p-2 text-center">244 <i class="bi bi-arrow-up-circle-fill"></i></p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-xs-12 col-md-12">
-						<div class="neumorphic__card">
-							<div class="card-header bg-light">
-								<p class="text-dark m-auto text-center">TOP-5</p>
-							</div>
-							<table class="table table-borderless">
-	 							<tr>
-							    <th>title</th>
-							    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-							  </tr>
-							  <tr>
-							    <th>title</th>
-							    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-							  </tr>
-							  <tr>
-							    <th>title</th>
-							    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-							  </tr>
-							  <tr>
-							    <th>title</th>
-							    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-							  </tr>
-							  <tr>
-							    <th>title</th>
-							    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-							  </tr>
-							</table>
-						</div>
-					</div>
-				</div>
-			</div>
-	  </div>
+
+	<div class="row px-md-5">
+		<div class="col-12 pb-1 justify-content-center text-center">
+			<a href="{% url 'resource_list_by_me_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button btn btn-lg ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Resources Added By You"><i class="bi bi-list-task"></i> My Resources</a>
+		</div>
 	</div>
-  <!-- <div class="row">
-		<div class="col-md-5 offset-md-5">
-			<div class="row">
-				<div class="col-md-6 offset-md-6">
+	<div class="row px-md-5 my-5">
+
+    <div class="col-12 pb-1">
+    	<div class="row">
+				<div class="col-12">
 					<div class="neumorphic__card mb-2">
 						<div class="card-header bg-success">
 							<p class="text-light m-auto text-center">Resources</p>
 						</div>
 						<div class="col-11 mx-auto">
-							<p class="text-dark m-auto p-2 text-center">244 <i class="bi bi-check-circle-fill"></i></p>
+							<p class="text-dark m-auto p-2 text-center">
+								<strong>{{ request.user.added_resource_count }}</strong>&nbsp;<i class="bi bi-check-circle-fill"></i></p>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-6 offset-md-6">
+				<!-- <div class="col-6">
 					<div class="neumorphic__card mb-2">
 						<div class="card-header bg-danger">
 							<p class="text-light m-auto text-center">Clicks</p>
 						</div>
 						<div class="col-11 mx-auto">
-							<p class="text-dark m-auto p-2 text-center">244 <i class="bi bi-arrow-up-circle-fill"></i></p>
+							<p class="text-dark m-auto p-2 text-center">
+								<strong>{{ request.user.added_resource_category_view_count }}</strong>&nbsp;<i class="bi bi-arrow-up-circle-fill"></i></p>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="neumorphic__card">
-						<div class="card-header bg-light">
-							<p class="text-dark m-auto text-center">TOP-5</p>
-						</div>
-						<table class="table table-borderless">
- 							<tr>
-						    <th>title</th>
-						    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-						  </tr>
-						  <tr>
-						    <th>title</th>
-						    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-						  </tr>
-						  <tr>
-						    <th>title</th>
-						    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-						  </tr>
-						  <tr>
-						    <th>title</th>
-						    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-						  </tr>
-						  <tr>
-						    <th>title</th>
-						    <td>100 <i class="bi bi-arrow-up-circle-fill"></i></td>
-						  </tr>
-						</table>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div> -->
-</div>
+    	<div class="neumorphic__card mt-3">
+        <div class="card-header bg-dark">
+          <p class="text-light m-auto text-center my-2">My Profile Details</p>
+        </div>
+        <form action="{% url 'profile_view' %}" method="POST" class="form-floating">
+        	{% csrf_token %}
+        	<div class="card-body mx-auto my-3">
 
+			      <div class="mb-2 form-floating">
+							<input name="{{ form.full_name.name }}" type="text" id="{{ form.full_name.auto_id }}" class="form-control {% if form.full_name.errors %}is-invalid{% endif %}" placeholder="{{ form.full_name.label }}" aria-label="{{ form.full_name.label }}" aria-describedby="button-addon2" disabled {% if form.full_name.value %} value="{{ form.full_name.value }}" {% endif %} />
+							<label class="text-muted" for="{{ form.full_name.auto_id }}">{{ form.full_name.label }}</label>
+							{% if form.full_name.errors %}
+								<div class="invalid-feedback">
+			            {{ form.full_name.errors }}
+			          </div>
+			         {% endif %}
+						</div>
+		          
+			      <div class="mb-2 form-floating">
+							<input name="{{ form.email.name }}" type="email" id="{{ form.email.auto_id }}" class="form-control {% if form.email.errors %}is-invalid{% endif %}" placeholder="{{ form.email.label }}" aria-label="{{ form.email.label }}" aria-describedby="button-addon2" disabled required {% if form.email.value %} value="{{ form.email.value }}" {% endif %} />
+							<label class="text-muted" for="{{ form.email.auto_id }}">{{ form.email.label }}</label>
+							{% if form.email.errors %}
+								<div class="invalid-feedback">
+			            {{ form.email.errors }}
+			          </div>
+			         {% endif %}
+						</div>
+
+			      <div class="mb-2 form-floating">
+							<input name="{{ form.username.name }}" type="text" id="{{ form.username.auto_id }}" class="form-control {% if form.username.errors %}is-invalid{% endif %}" placeholder="{{ form.username.label }}" aria-label="{{ form.username.label }}" aria-describedby="button-addon2" disabled {% if form.username.value %} value="{{ form.username.value }}" {% endif %} />
+							<label class="text-muted" for="{{ form.username.auto_id }}">{{ form.username.label }}</label>
+							{% if form.username.errors %}
+								<div class="invalid-feedback">
+			            {{ form.username.errors }}
+			          </div>
+			         {% endif %}
+						</div>
+
+			      <div class="mb-2 form-floating">
+							<input name="{{ form.website.name }}" type="url" id="{{ form.username.auto_id }}" class="form-control {% if form.website.errors %}is-invalid{% endif %}" placeholder="Website/Github/Social" aria-label="Website or Github or Social account" aria-describedby="button-addon2" disabled {% if form.website.value %} value="{{ form.website.value }}" {% endif %} />
+							<label class="text-muted" for="{{ form.website.auto_id }}">Website/Social Profile/Github</label>
+							{% if form.website.errors %}
+								<div class="invalid-feedback">
+			            {{ form.website.errors }}
+			          </div>
+			         {% endif %}
+						</div>
+
+					</div>
+					<div class="card-footer text-end">
+						<button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-primary" aria-label="Edit my profile details" onclick="enableInpurFields(this);" type="button" id="editBtn">
+		        	<i class="bi bi-pencil"></i> Edit
+		        </button>
+		        <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-danger" aria-label="Cancel editing my profile details" onclick="cancelEdit(this);" type="button" id="cancelEditBtn" style="display: none;">
+		        	<i class="bi bi-x-circle-fill"></i> Cancel
+		        </button>
+		        <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success" type="submit" aria-label="Update my profile" id="updateBtn" style="display: none;">
+		        	<i class="bi bi-check-circle-fill"></i> Update
+		        </button>
+		        
+	      	</div>
+      	</form>
+    	</div>
+    </div>
+
+  </div>
+</div>
 {% endblock %}
 
 {% block extra_js %}
 <!-- Your Extra Javascript goes here -->
 <script>
-	function undisableTxt(id) {
-	  document.getElementById(id).disabled = false;
+
+	const inputElements = document.querySelectorAll('input[disabled]')
+
+	function enableInpurFields(el) {
+		inputElements.forEach((e)=>{
+			e.disabled = false;
+		})
+		updateBtn.style.display='inline-block';
+		cancelEditBtn.style.display='inline-block';
+		el.style.display = 'none';
+	}
+
+	function cancelEdit(el){
+		updateBtn.style.display='none';
+		cancelEditBtn.style.display='none';
+		editBtn.style.display='inline-block';
+		inputElements.forEach((e)=>{
+			e.disabled = true;
+		})
 	}
 	
 </script>
