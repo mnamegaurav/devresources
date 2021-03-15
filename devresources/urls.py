@@ -33,7 +33,7 @@ urlpatterns = [
     path('', include('core.urls')),
 ]
 
-if settings.DEBUG==True:
+if settings.DEBUG:
     urlpatterns.extend(
         static(
             settings.MEDIA_URL, 
