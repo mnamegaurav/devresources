@@ -18,8 +18,8 @@
               <a href="{% url 'resource_create_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add More Resources">
                 <i class="bi bi-plus-circle-fill"></i>
               </a>
-              <a href="{% url 'resource_list_by_me_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Resources Added By You">
-                <i class="bi bi-list-task"></i>
+              <a href="{% url 'profile_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile">
+                <i class="bi bi-person-fill"></i>
               </a>
               <form method="POST" action="{% url 'signout_view' %}">
                 {% csrf_token %}
