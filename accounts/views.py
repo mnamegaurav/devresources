@@ -8,7 +8,7 @@ from django.contrib.auth import (
     )
 
 from accounts.forms import (
-    CustomUserCreatationForm, 
+    CustomUserCreationForm, 
     CustomUserChangeForm
     )
 # Create your views here.
@@ -42,7 +42,7 @@ class SignInView(View):
 
 class SignUpView(View):
     template_name = 'accounts/signup.html'
-    form_class = CustomUserCreatationForm
+    form_class = CustomUserCreationForm
     success_message = "Almost there, put your email and password here"
 
     def get(self, request, *args, **kwargs):

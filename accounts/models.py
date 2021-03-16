@@ -39,4 +39,3 @@ class User(AbstractUser):
         """
         count = 'N/A'
         return count
-    
