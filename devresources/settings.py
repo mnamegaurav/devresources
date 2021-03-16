@@ -12,8 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 import dotenv
 from pathlib import Path
-from devresources.jazzmin_config import *
-from devresources.hitcount_config import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -157,3 +155,7 @@ else:
             'PASSWORD': os.environ['DB_PASSWORD'],
         }
     }
+
+
+from devresources.jazzmin_config import *
+from devresources.hitcount_config import *
