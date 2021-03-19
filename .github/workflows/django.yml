@@ -1,10 +1,7 @@
 name: Django CI
 
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
+# Execute the workflow with every push
+on: [push]
 
 jobs:
   build:
