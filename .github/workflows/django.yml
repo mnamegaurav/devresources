@@ -7,8 +7,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      # Secret key to execute the Pipeline without failure
+      # Env variables to execute the Pipeline without failure
       SECRET_KEY: v7m3c=uj%^uq^atc&brlv@8c420!9f_+=)@m(#-tka!@*#pogv
+      DEBUG: true
     strategy:
       max-parallel: 4
       matrix:
