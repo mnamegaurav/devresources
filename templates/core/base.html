@@ -52,6 +52,9 @@
       {% endif %}
 
       {% block content %}{% endblock %}
+      {% block aboutcontent %}{% endblock %}
+      {% block contactcontent %}{% endblock %}
+
 
     </div>
     <div class="col-12 col-lg-4 text-center" style="background: linear-gradient(#e66465, #9198e5);">
@@ -127,6 +130,12 @@
               <div class="m-auto">
                 <a target="_blank" class="text-decoration-none text-dark" href="https://www.linkedin.com/in/hamhaingaurav/">
                   <span style="font-size: 14px;">Made with <i class="bi bi-suit-heart-fill text-danger"></i> by Gaurav Sharma <i class="bi bi-linkedin"></i></span>
+                </a><br>
+                <a target="_blank" class="text-decoration-none text-dark" href="{% url 'about' %}">
+                  <span style="font-size: 14px;">About Us |</span> 
+                </a>
+                <a target="_blank" class="text-decoration-none text-dark" href="{% url 'contact' %}">
+                  <span style="font-size: 14px;">  Contact Us</span>
                 </a>
               </div>
             </div>
