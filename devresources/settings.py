@@ -30,7 +30,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'devresources.guru']
 
 
 # Application definition
@@ -50,7 +50,6 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -128,19 +127,14 @@ STATICFILES_DIRS = [BASE_DIR/'static_files',]
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR/'media'
 
-# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
 AUTH_USER_MODEL = 'accounts.User'
 LOGIN_URL = 'signin_view'
 
-from devresources.jazzmin_config import *
-from devresources.hitcount_config import *
-
+# Imports below are intentionally placed here to override the existing values. e.g: DEBUG
 try:
     from devresources.local_settings import *
 except ImportError as e:
     pass
-
 
 
 if DEBUG:
@@ -161,3 +155,7 @@ else:
             'PASSWORD': os.environ['DB_PASSWORD'],
         }
     }
+
+
+from devresources.jazzmin_config import *
+from devresources.hitcount_config import *

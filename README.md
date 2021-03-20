@@ -5,7 +5,7 @@
 ### One destination for all the developer's learning resources.<br> Find all of your learning resources under one roof and add your own. 
 
 ### Live :sparkles: 
-You can find the project live [here](https://devresources-guru.herokuapp.com/) :point_left:
+You can find the project live [here](https://devresources.guru/) :point_left:
 
 ### Screenshot :camera: 
 ![cap](https://user-images.githubusercontent.com/31548778/110208967-fc2b3a00-7eaf-11eb-8c53-61447999f4e5.PNG)
@@ -100,30 +100,4 @@ Create a `.env` file in the same directory where your `manage.py` resides.
     $ python manage.py runserver
     ```
  
-## Developer ✨
-
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/hamhaingaurav"><img src="https://avatars.githubusercontent.com/u/34805677?s=400&u=a0f45325750d037434da90119a237286785bf16a&v=4" width="200px;" alt=""/><br /><sub><b>Gaurav Sharma</b></sub></a><br />
-    <!-- <a href="https://github.com/hamhaingaurav" title="Code">💻</a> -->
-    </td>
-  </tr>
-</table>
- 
-### Contributors :zap:
-Thanks goes to these wonderful people 
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/yash2189"><img src="https://avatars.githubusercontent.com/u/31548778?s=460&v=4" width="200px;" alt=""/><br /><sub><b>Yash Ajgaonkar</b></sub></a><br />
-    <!-- <a href="https://github.com/yash2189" title="Code">💻</a> -->
-    </td>
-  </tr>
-</table>
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/chrisjsimpson"><img src="https://avatars.githubusercontent.com/u/1718624?s=460&u=c1240dc4f544632926454196eaabefd47957cc93&v=4" width="200px;" alt=""/><br /><sub><b>Chris J Simpson</b></sub></a><br />
-    <!-- <a href="https://github.com/chrisjsimpson" title="Code">💻</a> -->
-    </td>
-  </tr>
-</table>
-
+# Thanks

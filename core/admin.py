@@ -16,6 +16,8 @@ class ResourceCategoryModelAdmin(admin.ModelAdmin):
         'updated_on', 
         'added_by',
         )
+    prepopulated_fields = {"slug": ("title",)}
+    
 
 
 @admin.register(Resource)

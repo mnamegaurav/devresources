@@ -6,7 +6,7 @@
 
 {% block content %}
 
-<div class="container">
+<div class="container px-0">
 
   <div class="row px-md-5">
     <div class="col-12 pb-1 border-bottom">
@@ -64,12 +64,14 @@
               {% endif %}
             </div>
 
+            <p class="text-danger text-center my-auto"><strong>Note:&nbsp;</strong>You are not allowed to add any paid resources for which user has to pay any kind of money, if we find you doing that, we will delete the resources or also would block your account temporarily.</p>
+            
           </div>
           <div class="card-footer text-end">
-            <a class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-danger" href="{% url 'resource_list_by_me_view' %}">
+            <a class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-danger" href="{% url 'resource_list_by_me_view' %}" aria-label="cancel updatng the resource button">
               <i class="bi bi-x-circle-fill"></i> Cancel
             </a>
-            <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success"><i class="bi bi-check-circle-fill"></i> Save</button>
+            <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success" aria-label="update the resource button"><i class="bi bi-check-circle-fill"></i> Save</button>
           </div>
         </form>
       </div>

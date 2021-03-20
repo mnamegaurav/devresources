@@ -18,12 +18,12 @@
               <a href="{% url 'resource_create_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add More Resources">
                 <i class="bi bi-plus-circle-fill"></i>
               </a>
-              <a href="{% url 'resource_list_by_me_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Resources Added By You">
-                <i class="bi bi-list-task"></i>
+              <a href="{% url 'profile_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile">
+                <i class="bi bi-person-fill"></i>
               </a>
               <form method="POST" action="{% url 'signout_view' %}">
                 {% csrf_token %}
-                <button class="px-3 py-2 neumorphic__button ms-2 btn btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" title="SignOut">
+                <button class="px-3 py-2 neumorphic__button ms-2 btn btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" title="SignOut" aria-label="signout button">
                   <i class="bi bi-box-arrow-right"></i>
                 </button>
               </form>
@@ -47,7 +47,7 @@
         {% for message in messages %}
         <div class="alert alert-{% if message.tags %}{{ message.tags }}{% else %}success{% endif %} alert-dismissible fade show w-75 mx-auto" role="alert">
           {{ message }}
-          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close the notification"></button>
         </div>
         {% endfor %}
       {% endif %}
@@ -67,7 +67,7 @@
 
           <div class="row">
             <div class="col-12 my-3">
-              <img src="{% static 'img/logo.png' %}" class="rounded-circle mx-auto"  style="height: 100px; width: auto;object-fit: cover;">
+              <img src="{% static 'img/logo.png' %}" class="rounded-circle mx-auto"  style="height: 100px; width: auto;object-fit: cover;" alt="Dev Junction Logo">
             </div>
           </div>
 
@@ -91,7 +91,7 @@
 
           <!-- <div class="row">
             <div class="col-12 my-2">
-              <button type="button" class="btn btn-dark btn-sm">
+              <button type="button" class="btn btn-dark btn-sm" aria-label="donate button">
                 <i class="bi bi-gift-fill text-danger"></i>
                 <strong>Donate</strong>
               </button>
@@ -101,13 +101,13 @@
          <!--  <div class="row">
             <div class="col-12">
               <div class="m-auto">
-                <a target="_blank" class="text-light btn btn-sm btn-dark border-dark" href="/">
+                <a target="_blank" rel="noreferrer" class="text-light btn btn-sm btn-dark border-dark" href="/">
                   <i class="bi bi-linkedin"></i>
                 </a>
-                <a target="_blank" class="text-light btn btn-sm btn-dark border-dark" href="/">
+                <a target="_blank" rel="noreferrer" class="text-light btn btn-sm btn-dark border-dark" href="/">
                   <i class="bi bi-youtube"></i>
                 </a>
-                <a target="_blank" class="text-light btn btn-sm btn-dark border-dark" href="/">
+                <a target="_blank" rel="noreferrer" class="text-light btn btn-sm btn-dark border-dark" href="/">
                   <i class="bi bi-discord"></i>
                 </a>
               </div>
@@ -118,7 +118,7 @@
             <div class="col-12 my-3">
               <div class="m-auto">
                 <p class="m-auto">Want to contribute ?</p>
-                <a target="_blank" class="text-light btn btn-sm btn-dark" href="https://github.com/hamhaingaurav/devresources">
+                <a target="_blank" rel="noreferrer" class="text-light btn btn-sm btn-dark" href="https://github.com/hamhaingaurav/devresources">
                   <i class="bi bi-github"></i>
                   <strong>Github</strong>
                 </a>
@@ -129,7 +129,7 @@
           <div class="row mb-4 mb-lg-auto">
             <div class="col-12">
               <div class="m-auto">
-                <a target="_blank" class="text-decoration-none text-dark" href="https://www.linkedin.com/in/hamhaingaurav/">
+                <a target="_blank" rel="noreferrer" class="text-decoration-none text-dark" href="https://www.linkedin.com/in/hamhaingaurav/">
                   <span style="font-size: 14px;">Made with <i class="bi bi-suit-heart-fill text-danger"></i> by Gaurav Sharma <i class="bi bi-linkedin"></i></span>
                 </a><br>
                 <a target="_blank" class="text-decoration-none text-dark" href="{% url 'about' %}">
