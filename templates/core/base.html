@@ -41,7 +41,7 @@
         </div>
       </nav>
       <!-- Navbar End -->
-       {% block aboutcontent %}{% endblock %}
+       
 
       {% if messages %}
         {% for message in messages %}
@@ -54,7 +54,7 @@
 
       {% block content %}{% endblock %}
      
-      {% block contactcontent %}{% endblock %}
+      
 
 
     </div>
@@ -133,10 +133,10 @@
                   <span style="font-size: 14px;">Made with <i class="bi bi-suit-heart-fill text-danger"></i> by Gaurav Sharma <i class="bi bi-linkedin"></i></span>
                 </a><br>
                 <a target="_blank" class="text-decoration-none text-dark" href="{% url 'about' %}">
-                  <span style="font-size: 14px;">About Us |</span> 
+                  <span style="font-size: 14px;"><u>About Us</u> |</span> 
                 </a>
                 <a target="_blank" class="text-decoration-none text-dark" href="{% url 'contact' %}">
-                  <span style="font-size: 14px;">  Contact Us</span>
+                  <span style="font-size: 14px;">  <u>Contact Us</u></span>
                 </a>
               </div>
             </div>

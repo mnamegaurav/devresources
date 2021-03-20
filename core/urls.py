@@ -1,8 +1,10 @@
 from django.urls import path
 from django.contrib.auth.decorators import login_required
-from . import views
+
 from core.views import (
     HomeView,
+    AboutView,
+    ContactView,
     ResourceListByCategoryView,
     ResourceListAddedByUserView,
     ResourceCreateView,
@@ -22,13 +24,14 @@ urlpatterns = [
         name='resource_list_view'
         ),
     path(
-        'About_Us/',views.about,
-        name='about'
-        ),
+        'about/',AboutView.as_view(),
+        name='about'),
+    
     path(
-        'Contact_Us/',views.contact,
+        'contact/',ContactView.as_view(),
         name='contact'
-    ),
+        ),
+   
 
     # URls for only authenticated users
     path(
