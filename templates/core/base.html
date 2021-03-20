@@ -41,6 +41,7 @@
         </div>
       </nav>
       <!-- Navbar End -->
+       {% block aboutcontent %}{% endblock %}
 
       {% if messages %}
         {% for message in messages %}
@@ -52,7 +53,7 @@
       {% endif %}
 
       {% block content %}{% endblock %}
-      {% block aboutcontent %}{% endblock %}
+     
       {% block contactcontent %}{% endblock %}
 
 
