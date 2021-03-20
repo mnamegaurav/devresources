@@ -133,9 +133,9 @@ class ResourceDeleteView(View):
         return redirect(self.success_url)
 
 def about(request):
-    templates = 'core/about.html'
+    templates = './about.html'
     return render(request,templates)
 
 def contact(request):
-    templates = 'core/contact.html'
+    templates = './contact.html'
     return render(request,templates)
