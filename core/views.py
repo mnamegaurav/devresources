@@ -132,9 +132,7 @@ class ResourceDeleteView(View):
         
         return redirect(self.success_url)
 
-# def about(request):
-#     templates = './about.html'
-#     return render(request,templates)
+
 
 class AboutView(View):
     template_name = './about.html'
@@ -155,6 +153,3 @@ class ContactView(View):
         return render(request, self.template_name)
     
 
-# def contact(request):
-#     templates = './contact.html'
-#     return render(request,templates)
