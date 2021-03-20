@@ -1,3 +1,4 @@
+from urllib import parse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
@@ -16,12 +17,12 @@ from core.models import (
     Resource,
     )
 from core.forms import ResourceForm
-# Create your views here.
+
 
 class HomeView(View):
     template_name = 'core/home.html'
 
-    def get(self, request, *arga, **kwargs):
+    def get(self, request, *args, **kwargs):
         all_resource_categories = ResourceCategory.objects.filter(is_active=True)
         
         # filtering the resource categories by hit count and is_active field
@@ -31,13 +32,15 @@ class HomeView(View):
                 '-hit_count__hits'
             )[:3]
 
+        parsed_website_url = parse.urlparse(request.build_absolute_uri('/'))
+
         context = {
             'all_resource_categories': all_resource_categories,
             'top_resource_categories': top_resource_categories,
+            'hostname': f'{parsed_website_url.hostname}{parsed_website_url.path}'
         }
 
         return render(request, self.template_name, context)
-
 
 
 class ResourceListByCategoryView(View, HitCountMixin):
