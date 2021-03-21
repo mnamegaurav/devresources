@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
-from django.views.generic import View, ListView
+from django.views.generic import View, ListView ,TemplateView
 from django.views.generic.edit import (
     CreateView, 
     UpdateView, 
@@ -134,22 +134,12 @@ class ResourceDeleteView(View):
 
 
 
-class AboutView(View):
+class AboutView(TemplateView):
     template_name = './about.html'
-
-
-
-    def get(self, request, *arga, **kwargs):
-        
-        return render(request, self.template_name)
-
-
-class ContactView(View):
+    
+class ContactView(TemplateView):
     template_name = './contact.html'
-
-
-    def get(self, request, *arga, **kwargs):
-
-        return render(request, self.template_name)
+    
+    
     
 
