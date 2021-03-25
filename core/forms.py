@@ -49,14 +49,14 @@ class ContactUsForm(forms.ModelForm):
                 })
 
             self.fields['full_name'].widget.attrs.update({
-                'placeholder': 'Full Name'
+                'placeholder': 'Your good name'
                 })
 
             self.fields['email'].widget.attrs.update({
-                'placeholder': 'Email'
+                'placeholder': 'Your email'
                 })
 
             self.fields['message'].widget.attrs.update({
-                'placeholder': 'Message',
+                'placeholder': 'Write something to us...',
                 'rows': 3,
                 })
