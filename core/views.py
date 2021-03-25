@@ -8,9 +8,6 @@ from django.views.generic.edit import (
     UpdateView, 
     )
 from django.contrib.messages.views import SuccessMessageMixin
-from django.utils.decorators import method_decorator
-
-from ratelimit.decorators import ratelimit
 
 from hitcount.views import HitCountMixin
 from hitcount.models import HitCount
@@ -144,7 +141,6 @@ class AboutUsView(TemplateView):
     template_name = 'about.html'
     
 
-@method_decorator(ratelimit(key='ip', rate='10/d', method=ratelimit.UNSAFE), name='post')
 class ContactUsView(SuccessMessageMixin, CreateView):
     template_name = 'contact_us.html'
     success_message = "Thanks for contcting Us, We will get back to you soon."
