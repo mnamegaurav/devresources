@@ -144,7 +144,7 @@ class AboutUsView(TemplateView):
     template_name = 'about.html'
     
 
-@method_decorator(ratelimit(key='ip', rate='1/d', method=ratelimit.UNSAFE), name='post')
+@method_decorator(ratelimit(key='ip', rate='10/d', method=ratelimit.UNSAFE), name='post')
 class ContactUsView(SuccessMessageMixin, CreateView):
     template_name = 'contact_us.html'
     success_message = "Thanks for contcting Us, We will get back to you soon."
