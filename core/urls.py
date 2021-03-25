@@ -19,7 +19,7 @@ urlpatterns = [
         name='home_view'
         ),
     path(
-        'cat/<str:category_slug>/', 
+        'category/<str:category_slug>/', 
         ResourceListByCategoryView.as_view(),
         name='resource_list_view'
         ),
