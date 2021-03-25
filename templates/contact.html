@@ -1,0 +1,65 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+
+  <div class="row px-md-5 my-5">
+    <div class="col-12 offset-md-2 col-md-8 pb-1">
+      <p class="text-secondary text-center display-6">Contact Us</p>
+    </div>
+    <div class="col-12 offset-md-2 col-md-8 pb-1">
+      {% if form.non_field_errors %}
+      <div class="col-12 mb-2">
+        <p class="text-danger text-center">
+          <i class="bi bi-exclamation-circle"></i>
+          {{ form.non_field_errors }}
+        </p>
+      </div>
+      {% endif %}
+      <form id="contact_form" method="POST" action="#">
+        {% csrf_token %}
+        <div class="neumorphic__card input-group input-group-lg mb-3">
+          <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+          <input name="Username" type="text"  class="form-control" id="id_name" placeholder="Username" required>
+          
+        </div>
+        <div class="neumorphic__card input-group input-group-lg mb-3">
+          <span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
+                    
+          <input name="email" type="email" class="form-control" id="id_email" placeholder="Email" required>
+        </div>
+        {% if form.email.errors %}
+          <div class="text-danger">
+            {{ form.email.errors }}
+          </div>
+        {% endif %}
+        <div class="neumorphic__card input-group input-group-lg mb-3">
+          <span class="input-group-text"><i class="bi bi-chat-dots-fill"></i></span>
+          <textarea class="form-control" placeholder="Type message for your team" required></textarea>
+          
+        </div>
+        
+
+           
+        <div class="mb-3 mx-auto text-center mt-3">
+          <button class="neumorphic__button btn btn-lg">Submit</button>
+        </div>
+
+      </form>
+      
+    </div>
+  </div> 
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'core/main.js' %}"></script>
+{% endblock %}

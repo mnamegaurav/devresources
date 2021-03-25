@@ -2,7 +2,7 @@ from urllib import parse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
-from django.views.generic import View, ListView
+from django.views.generic import View, ListView ,TemplateView
 from django.views.generic.edit import (
     CreateView, 
     UpdateView, 
@@ -134,3 +134,15 @@ class ResourceDeleteView(View):
             pass
         
         return redirect(self.success_url)
+
+
+
+class AboutView(TemplateView):
+    template_name = './about.html'
+    
+class ContactView(TemplateView):
+    template_name = './contact.html'
+    
+    
+    
+
