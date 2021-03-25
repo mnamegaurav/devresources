@@ -159,3 +159,4 @@ else:
 
 from devresources.jazzmin_config import *
 from devresources.hitcount_config import *
+from devresources.ratelimit_config import *

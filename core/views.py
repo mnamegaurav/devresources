@@ -2,12 +2,15 @@ from urllib import parse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
-from django.views.generic import View, ListView ,TemplateView
+from django.views.generic import View, TemplateView
 from django.views.generic.edit import (
     CreateView, 
     UpdateView, 
     )
 from django.contrib.messages.views import SuccessMessageMixin
+from django.utils.decorators import method_decorator
+
+from ratelimit.decorators import ratelimit
 
 from hitcount.views import HitCountMixin
 from hitcount.models import HitCount
@@ -16,7 +19,7 @@ from core.models import (
     ResourceCategory,
     Resource,
     )
-from core.forms import ResourceForm
+from core.forms import ResourceForm, ContactUsForm
 
 
 class HomeView(View):
@@ -137,12 +140,13 @@ class ResourceDeleteView(View):
 
 
 
-class AboutView(TemplateView):
-    template_name = './about.html'
-    
-class ContactView(TemplateView):
-    template_name = './contact.html'
-    
-    
+class AboutUsView(TemplateView):
+    template_name = 'about.html'
     
 
+@method_decorator(ratelimit(key='ip', rate='1/d', method=ratelimit.UNSAFE), name='post')
+class ContactUsView(SuccessMessageMixin, CreateView):
+    template_name = 'contact_us.html'
+    success_message = "Thanks for contcting Us, We will get back to you soon."
+    success_url = reverse_lazy('contact_us_view')
+    form_class = ContactUsForm

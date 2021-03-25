@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 
 from core.views import (
     HomeView,
-    AboutView,
-    ContactView,
+    AboutUsView,
+    ContactUsView,
     ResourceListByCategoryView,
     ResourceListAddedByUserView,
     ResourceCreateView,
@@ -24,12 +24,14 @@ urlpatterns = [
         name='resource_list_view'
         ),
     path(
-        'about/',AboutView.as_view(),
-        name='about'),
+        'about-us/',
+        AboutUsView.as_view(),
+        name='about_us_view'),
     
     path(
-        'contact/',ContactView.as_view(),
-        name='contact'
+        'contact-us/',
+        ContactUsView.as_view(),
+        name='contact_us_view'
         ),
    
 

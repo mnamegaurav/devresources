@@ -1,7 +1,8 @@
 from django.contrib import admin
 from core.models import (
     ResourceCategory,
-    Resource
+    Resource,
+    ContactUs,
 )
 
 
@@ -35,3 +36,15 @@ class ResourceModelAdmin(admin.ModelAdmin):
         )
     list_filter = ('is_active', 'category', 'added_by', 'updated_by')
     search_fields = ('title',)
+
+
+
+@admin.register(ContactUs)
+class ContactUsModelAdmin(admin.ModelAdmin):
+    model = ContactUs
+    list_display = (
+        'full_name',
+        'email',
+        'message',
+        'added_on',
+        )
