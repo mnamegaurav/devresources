@@ -16,7 +16,7 @@ from core.models import (
     ResourceCategory,
     Resource,
     )
-from core.forms import ResourceForm, ContactUsForm
+from core.forms import ResourceForm, ContactForm
 
 
 class HomeView(View):
@@ -137,12 +137,12 @@ class ResourceDeleteView(View):
 
 
 
-class AboutUsView(TemplateView):
+class AboutView(TemplateView):
     template_name = 'about.html'
     
 
-class ContactUsView(SuccessMessageMixin, CreateView):
-    template_name = 'contact_us.html'
-    success_message = "Thanks for contcting Us, We will get back to you soon."
-    success_url = reverse_lazy('contact_us_view')
-    form_class = ContactUsForm
+class ContactView(SuccessMessageMixin, CreateView):
+    template_name = 'contact.html'
+    success_message = "Thanks for contcting us, We will get back to you soon."
+    success_url = reverse_lazy('contact_view')
+    form_class = ContactForm
