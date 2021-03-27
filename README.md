@@ -102,7 +102,7 @@ Create a `.env` file in the same directory where your `manage.py` resides.
 
 10. Optionally you can also add some dump data into your local database  using this command:
     
-    ### Add redacted dump data
+    #### Add redacted dump data
 
     ***Note***: Please run these commands in the same order it has been written here, either it will cause integrity error in your database.
 
