@@ -1,0 +1,494 @@
+[
+    {
+        "model": "core.resourcecategory",
+        "pk": 1,
+        "fields": {
+            "title": "Python",
+            "slug": "python",
+            "is_active": true,
+            "added_on": "2021-03-02T19:13:47.846Z",
+            "updated_on": "2021-03-02T19:13:47.846Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 2,
+        "fields": {
+            "title": "JavaScript",
+            "slug": "javascript",
+            "is_active": true,
+            "added_on": "2021-03-02T19:13:54.163Z",
+            "updated_on": "2021-03-02T19:13:54.163Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 3,
+        "fields": {
+            "title": "C++",
+            "slug": "cpp",
+            "is_active": true,
+            "added_on": "2021-03-02T19:19:55.735Z",
+            "updated_on": "2021-03-02T19:19:55.735Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 4,
+        "fields": {
+            "title": "C Language",
+            "slug": "c-language",
+            "is_active": true,
+            "added_on": "2021-03-02T19:20:24.183Z",
+            "updated_on": "2021-03-02T19:20:24.183Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 5,
+        "fields": {
+            "title": "Java",
+            "slug": "java",
+            "is_active": true,
+            "added_on": "2021-03-02T19:20:35.943Z",
+            "updated_on": "2021-03-02T19:20:35.943Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 6,
+        "fields": {
+            "title": "SQL",
+            "slug": "sql",
+            "is_active": true,
+            "added_on": "2021-03-02T19:20:46.456Z",
+            "updated_on": "2021-03-02T19:20:46.456Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 7,
+        "fields": {
+            "title": "Android",
+            "slug": "android",
+            "is_active": true,
+            "added_on": "2021-03-02T19:20:56.895Z",
+            "updated_on": "2021-03-02T19:20:56.895Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 8,
+        "fields": {
+            "title": "Flutter",
+            "slug": "flutter",
+            "is_active": true,
+            "added_on": "2021-03-02T19:21:16.275Z",
+            "updated_on": "2021-03-02T19:21:16.275Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 9,
+        "fields": {
+            "title": "CSS",
+            "slug": "css",
+            "is_active": true,
+            "added_on": "2021-03-02T19:21:45.525Z",
+            "updated_on": "2021-03-02T19:21:45.525Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 10,
+        "fields": {
+            "title": "Django",
+            "slug": "django",
+            "is_active": true,
+            "added_on": "2021-03-02T19:21:52.524Z",
+            "updated_on": "2021-03-02T19:21:52.524Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 11,
+        "fields": {
+            "title": "Node.js",
+            "slug": "node-js",
+            "is_active": true,
+            "added_on": "2021-03-02T19:22:07.002Z",
+            "updated_on": "2021-03-02T19:22:07.003Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 12,
+        "fields": {
+            "title": "MERN",
+            "slug": "mern",
+            "is_active": true,
+            "added_on": "2021-03-02T19:22:16.568Z",
+            "updated_on": "2021-03-02T19:22:16.568Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 15,
+        "fields": {
+            "title": "Web Design",
+            "slug": "web-design",
+            "is_active": true,
+            "added_on": "2021-03-02T19:22:53.135Z",
+            "updated_on": "2021-03-02T19:22:53.135Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 16,
+        "fields": {
+            "title": "ReactJS",
+            "slug": "react-js",
+            "is_active": true,
+            "added_on": "2021-03-02T19:23:25.183Z",
+            "updated_on": "2021-03-02T19:23:25.183Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 17,
+        "fields": {
+            "title": "React Native",
+            "slug": "react-native",
+            "is_active": true,
+            "added_on": "2021-03-02T19:23:39.688Z",
+            "updated_on": "2021-03-02T19:23:39.688Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 18,
+        "fields": {
+            "title": "Graphic Design",
+            "slug": "graphic-design",
+            "is_active": true,
+            "added_on": "2021-03-02T19:23:57.041Z",
+            "updated_on": "2021-03-02T19:23:57.041Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 19,
+        "fields": {
+            "title": "Databases",
+            "slug": "databases",
+            "is_active": true,
+            "added_on": "2021-03-06T06:18:10.573Z",
+            "updated_on": "2021-03-06T06:18:10.573Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 23,
+        "fields": {
+            "title": "Elixir",
+            "slug": "elixir",
+            "is_active": true,
+            "added_on": "2021-03-08T06:22:55.467Z",
+            "updated_on": "2021-03-08T06:22:55.467Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 24,
+        "fields": {
+            "title": "Go",
+            "slug": "go",
+            "is_active": true,
+            "added_on": "2021-03-08T06:23:03.126Z",
+            "updated_on": "2021-03-08T06:23:13.503Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 25,
+        "fields": {
+            "title": "HTML/CSS",
+            "slug": "html-css",
+            "is_active": true,
+            "added_on": "2021-03-08T06:23:25.589Z",
+            "updated_on": "2021-03-08T06:23:25.589Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 26,
+        "fields": {
+            "title": "Kotlin",
+            "slug": "kotlin",
+            "is_active": true,
+            "added_on": "2021-03-08T06:23:35.935Z",
+            "updated_on": "2021-03-08T06:23:35.935Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 27,
+        "fields": {
+            "title": "PHP",
+            "slug": "php",
+            "is_active": true,
+            "added_on": "2021-03-08T06:23:45.412Z",
+            "updated_on": "2021-03-08T06:23:45.412Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 28,
+        "fields": {
+            "title": "Ruby",
+            "slug": "ruby",
+            "is_active": true,
+            "added_on": "2021-03-08T06:23:56.040Z",
+            "updated_on": "2021-03-08T06:23:56.040Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 29,
+        "fields": {
+            "title": "Swift",
+            "slug": "swift",
+            "is_active": true,
+            "added_on": "2021-03-08T06:24:16.907Z",
+            "updated_on": "2021-03-08T06:24:16.907Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 30,
+        "fields": {
+            "title": "Programming",
+            "slug": "programming",
+            "is_active": true,
+            "added_on": "2021-03-08T06:24:28.272Z",
+            "updated_on": "2021-03-08T06:24:28.272Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 32,
+        "fields": {
+            "title": "Data  Science",
+            "slug": "data-science",
+            "is_active": true,
+            "added_on": "2021-03-08T06:25:00.367Z",
+            "updated_on": "2021-03-08T06:25:00.367Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 33,
+        "fields": {
+            "title": "Machine Learning",
+            "slug": "machine-learning",
+            "is_active": true,
+            "added_on": "2021-03-08T06:25:12.368Z",
+            "updated_on": "2021-03-08T06:25:12.368Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 34,
+        "fields": {
+            "title": "Deep Learning",
+            "slug": "deep-learning",
+            "is_active": true,
+            "added_on": "2021-03-08T06:25:24.098Z",
+            "updated_on": "2021-03-08T06:25:24.098Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 35,
+        "fields": {
+            "title": "NLP",
+            "slug": "nlp",
+            "is_active": true,
+            "added_on": "2021-03-08T06:25:35.565Z",
+            "updated_on": "2021-03-08T06:25:35.565Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 36,
+        "fields": {
+            "title": "Computer Vision",
+            "slug": "computer-vision",
+            "is_active": true,
+            "added_on": "2021-03-08T06:25:47.589Z",
+            "updated_on": "2021-03-08T06:25:47.589Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 37,
+        "fields": {
+            "title": "IOT - Internet Of things",
+            "slug": "iot",
+            "is_active": true,
+            "added_on": "2021-03-08T06:26:07.742Z",
+            "updated_on": "2021-03-08T06:26:07.742Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 38,
+        "fields": {
+            "title": "C#",
+            "slug": "C-sharp",
+            "is_active": true,
+            "added_on": "2021-03-08T06:26:28.786Z",
+            "updated_on": "2021-03-08T06:26:28.786Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 39,
+        "fields": {
+            "title": "ASP.NET",
+            "slug": "asp-dot-net",
+            "is_active": true,
+            "added_on": "2021-03-08T06:26:42.493Z",
+            "updated_on": "2021-03-08T06:26:42.493Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 40,
+        "fields": {
+            "title": "Competitive Programming",
+            "slug": "competitive-programming",
+            "is_active": true,
+            "added_on": "2021-03-08T06:29:38.954Z",
+            "updated_on": "2021-03-08T06:29:38.954Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 42,
+        "fields": {
+            "title": "Web Development",
+            "slug": "web-development",
+            "is_active": true,
+            "added_on": "2021-03-08T07:06:01.660Z",
+            "updated_on": "2021-03-08T07:06:01.660Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 43,
+        "fields": {
+            "title": "Frontend Development",
+            "slug": "frontend-development",
+            "is_active": true,
+            "added_on": "2021-03-08T07:06:19.767Z",
+            "updated_on": "2021-03-08T07:06:19.767Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 44,
+        "fields": {
+            "title": "Backend Development",
+            "slug": "backend-development",
+            "is_active": true,
+            "added_on": "2021-03-08T07:06:33.464Z",
+            "updated_on": "2021-03-08T07:06:33.464Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 45,
+        "fields": {
+            "title": "Rest APIs",
+            "slug": "rest-apis",
+            "is_active": true,
+            "added_on": "2021-03-08T07:11:25.932Z",
+            "updated_on": "2021-03-08T07:11:25.932Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 46,
+        "fields": {
+            "title": "APIs",
+            "slug": "apis",
+            "is_active": true,
+            "added_on": "2021-03-08T07:11:34.317Z",
+            "updated_on": "2021-03-08T07:11:34.317Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 49,
+        "fields": {
+            "title": "Jenkins",
+            "slug": "jenkins",
+            "is_active": true,
+            "added_on": "2021-03-08T07:33:12.351Z",
+            "updated_on": "2021-03-08T07:33:12.351Z",
+            "added_by": null
+        }
+    },
+    {
+        "model": "core.resourcecategory",
+        "pk": 50,
+        "fields": {
+            "title": "Angular",
+            "slug": "angular",
+            "is_active": true,
+            "added_on": "2021-03-14T06:09:52.471Z",
+            "updated_on": "2021-03-14T06:09:52.471Z",
+            "added_by": null
+        }
+    }
+]
