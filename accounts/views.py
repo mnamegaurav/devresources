@@ -18,11 +18,12 @@ User = get_user_model()
 class SignInView(View):
     template_name = 'accounts/signin.html'
     success_message = "Whoa! You are inside"
+    page_title = 'Sign In'
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return redirect('/')
-        return render(request, self.template_name)
+        return render(request, self.template_name,  {'page_title': self.page_title})
 
     def post(self, request, *args, **kwargs):
         email = request.POST.get('email')
@@ -32,7 +33,7 @@ class SignInView(View):
         
         if user is None:
             messages.error(request, 'Invalid Login.', extra_tags="danger")
-            return render(request, self.template_name) 
+            return render(request, self.template_name, {'page_title': self.page_title}) 
 
         login(request, user)
         messages.success(request, self.success_message, extra_tags="success")
@@ -44,11 +45,12 @@ class SignUpView(View):
     template_name = 'accounts/signup.html'
     form_class = CustomUserCreationForm
     success_message = "Almost there, put your email and password here"
+    page_title = 'Sign Up'
 
     def get(self, request, *args, **kwargs):
         if request.user.is_authenticated:
             return redirect('/')
-        return render(request, self.template_name, {'form': self.form_class()})
+        return render(request, self.template_name, {'form': self.form_class(), 'page_title': self.page_title})
 
     def post(self, request, *args, **kwargs):
         form = self.form_class(request.POST)
@@ -59,7 +61,7 @@ class SignUpView(View):
             return redirect('signin_view')
 
         messages.error(request, 'Something is missing, try again', extra_tags="danger")
-        context = {'form': form}
+        context = {'form': form, 'page_title': self.page_title}
         return render(request, self.template_name, context)
 
 
@@ -76,11 +78,14 @@ class ProfileView(View):
     template_name = 'accounts/profile.html'
     success_message = 'Successfully saved the profile.'
     form_class = CustomUserChangeForm
+    page_title = 'Profile'
 
     def get(self, request, *args, **kwargs):
 
         form = self.form_class(instance=request.user)
-        context = {'form': form}
+        context = {'form': form,
+        'page_title': self.page_title
+        }
 
         return render(request, self.template_name, context)
 
@@ -95,5 +100,7 @@ class ProfileView(View):
             return redirect('profile_view')
         else:
             messages.error(request, 'Please recheck all the details.', extra_tags="danger")
-            context = {'form': form}
+            context = {'form': form,
+            'page_title': self.page_title
+            }
             return render(request, self.template_name, context)
