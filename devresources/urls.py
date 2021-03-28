@@ -18,7 +18,19 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic.base import TemplateView
+from django.contrib.sitemaps.views import sitemap
 
+from devresources.sitemaps import (
+    StaticViewSitemap,
+    ResourceCategorySitemap,
+    )
+
+sitemap_arg = {
+    'sitemaps': {
+        'static': StaticViewSitemap,
+        'resource_categories': ResourceCategorySitemap,
+    }
+}
 
 urlpatterns = [
     path('devjunction/devresources/gaurav/admin/', admin.site.urls),
@@ -31,6 +43,13 @@ urlpatterns = [
     ),
     path('accounts/', include('accounts.urls')),
     path('', include('core.urls')),
+
+    path(
+        'sitemap.xml', 
+        sitemap, 
+        sitemap_arg, 
+        name='django.contrib.sitemaps.views.sitemap'
+        )
 ]
 
 if settings.DEBUG:

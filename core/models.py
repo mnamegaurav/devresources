@@ -83,3 +83,18 @@ class Resource(models.Model):
 
     def first_letter(self):
         return self.title[0]
+
+
+class ContactUs(models.Model):
+    full_name = models.CharField(max_length=140)
+    email = models.EmailField()
+    message = models.CharField(max_length=255)
+    added_on = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['-added_on']
+        verbose_name = 'Contact Us'
+        verbose_name_plural = 'Contact Us'
+
+    def __str__(self):
+        return self.full_name

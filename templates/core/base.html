@@ -41,7 +41,7 @@
         </div>
       </nav>
       <!-- Navbar End -->
-
+       
       {% if messages %}
         {% for message in messages %}
         <div class="alert alert-{% if message.tags %}{{ message.tags }}{% else %}success{% endif %} alert-dismissible fade show w-75 mx-auto" role="alert">
@@ -85,31 +85,6 @@
             </div>
           </div>
 
-          <!-- <div class="row">
-            <div class="col-12 my-2">
-              <button type="button" class="btn btn-dark btn-sm" aria-label="donate button">
-                <i class="bi bi-gift-fill text-danger"></i>
-                <strong>Donate</strong>
-              </button>
-            </div>
-          </div> -->
-
-         <!--  <div class="row">
-            <div class="col-12">
-              <div class="m-auto">
-                <a target="_blank" rel="noreferrer" class="text-light btn btn-sm btn-dark border-dark" href="/">
-                  <i class="bi bi-linkedin"></i>
-                </a>
-                <a target="_blank" rel="noreferrer" class="text-light btn btn-sm btn-dark border-dark" href="/">
-                  <i class="bi bi-youtube"></i>
-                </a>
-                <a target="_blank" rel="noreferrer" class="text-light btn btn-sm btn-dark border-dark" href="/">
-                  <i class="bi bi-discord"></i>
-                </a>
-              </div>
-            </div>
-          </div> -->
-
           <div class="row">
             <div class="col-12 my-3">
               <div class="m-auto">
@@ -127,7 +102,21 @@
               <div class="m-auto">
                 <a target="_blank" rel="noreferrer" class="text-decoration-none text-dark" href="https://www.linkedin.com/in/hamhaingaurav/">
                   <span style="font-size: 14px;">Made with <i class="bi bi-suit-heart-fill text-danger"></i> by Gaurav Sharma <i class="bi bi-linkedin"></i></span>
+                </a><br>
+                <a class="text-decoration-none text-dark" href="{% url 'about_view' %}">
+                  <span style="font-size: 14px;"><u>About Us</u> |</span> 
                 </a>
+                <a class="text-decoration-none text-dark" href="{% url 'contact_view' %}">
+                  <span style="font-size: 14px;">  <u>Contact Us</u></span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mt-4 mb-lg-auto">
+            <div class="col-12">
+              <div class="m-auto">
+                <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="hamhaingaurav" data-description="Support me on Buy me a coffee!" data-message="Hey, thanks for supporting me, it keeps me motivated to build more." data-color="#FFDD00" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
               </div>
             </div>
           </div>

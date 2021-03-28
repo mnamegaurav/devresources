@@ -1,7 +1,8 @@
+from urllib import parse
 from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.contrib import messages
-from django.views.generic import View, ListView
+from django.views.generic import View, TemplateView
 from django.views.generic.edit import (
     CreateView, 
     UpdateView, 
@@ -15,13 +16,13 @@ from core.models import (
     ResourceCategory,
     Resource,
     )
-from core.forms import ResourceForm
-# Create your views here.
+from core.forms import ResourceForm, ContactForm
+
 
 class HomeView(View):
     template_name = 'core/home.html'
 
-    def get(self, request, *arga, **kwargs):
+    def get(self, request, *args, **kwargs):
         all_resource_categories = ResourceCategory.objects.filter(is_active=True)
         
         # filtering the resource categories by hit count and is_active field
@@ -31,13 +32,15 @@ class HomeView(View):
                 '-hit_count__hits'
             )[:3]
 
+        parsed_website_url = parse.urlparse(request.build_absolute_uri('/'))
+
         context = {
             'all_resource_categories': all_resource_categories,
             'top_resource_categories': top_resource_categories,
+            'hostname': f'{parsed_website_url.hostname}{parsed_website_url.path}'
         }
 
         return render(request, self.template_name, context)
-
 
 
 class ResourceListByCategoryView(View, HitCountMixin):
@@ -131,3 +134,15 @@ class ResourceDeleteView(View):
             pass
         
         return redirect(self.success_url)
+
+
+
+class AboutView(TemplateView):
+    template_name = 'about.html'
+    
+
+class ContactView(SuccessMessageMixin, CreateView):
+    template_name = 'contact.html'
+    success_message = "Thanks for contcting us, We will get back to you soon."
+    success_url = reverse_lazy('contact_view')
+    form_class = ContactForm

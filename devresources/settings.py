@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'core.apps.CoreConfig',
     'accounts.apps.AccountsConfig',
     'hitcount',
@@ -159,3 +160,4 @@ else:
 
 from devresources.jazzmin_config import *
 from devresources.hitcount_config import *
+from devresources.ratelimit_config import *

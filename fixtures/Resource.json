@@ -1,0 +1,1598 @@
+[
+    {
+        "model": "core.resource",
+        "pk": 2,
+        "fields": {
+            "title": "w3School",
+            "url": "https://www.w3schools.com/",
+            "is_active": true,
+            "added_on": "2021-03-04T14:43:05.403Z",
+            "updated_on": "2021-03-04T14:43:05.403Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                4,
+                3,
+                9,
+                5,
+                2,
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 3,
+        "fields": {
+            "title": "Decorators",
+            "url": "https://realpython.com/primer-on-python-decorators/",
+            "is_active": true,
+            "added_on": "2021-03-05T05:38:43.864Z",
+            "updated_on": "2021-03-05T05:38:43.864Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 4,
+        "fields": {
+            "title": "Am I Responsive?",
+            "url": "http://ami.responsivedesign.is/",
+            "is_active": true,
+            "added_on": "2021-03-05T06:09:30.581Z",
+            "updated_on": "2021-03-05T06:09:30.581Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                9,
+                15
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 5,
+        "fields": {
+            "title": "Dartpad",
+            "url": "https://dartpad.dev/",
+            "is_active": true,
+            "added_on": "2021-03-05T06:18:33.588Z",
+            "updated_on": "2021-03-05T06:18:33.588Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                8
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 6,
+        "fields": {
+            "title": "FlutLab",
+            "url": "https://flutlab.io/",
+            "is_active": true,
+            "added_on": "2021-03-05T06:20:16.724Z",
+            "updated_on": "2021-03-05T06:20:16.724Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                8
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 7,
+        "fields": {
+            "title": "GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/",
+            "is_active": false,
+            "added_on": "2021-03-05T11:27:01.286Z",
+            "updated_on": "2021-03-05T11:48:51.168Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                4,
+                3,
+                9,
+                5,
+                2,
+                1,
+                6
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 8,
+        "fields": {
+            "title": "Blogs for Django Learning",
+            "url": "https://vision-secrets.com/category/django/",
+            "is_active": true,
+            "added_on": "2021-03-05T11:41:40.007Z",
+            "updated_on": "2021-03-05T11:41:40.007Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                10
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 9,
+        "fields": {
+            "title": "GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/c-programming-language/",
+            "is_active": true,
+            "added_on": "2021-03-05T11:51:17.547Z",
+            "updated_on": "2021-03-05T11:51:17.547Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                4
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 10,
+        "fields": {
+            "title": "GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/c-plus-plus/",
+            "is_active": true,
+            "added_on": "2021-03-05T11:52:14.758Z",
+            "updated_on": "2021-03-05T11:52:14.758Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 11,
+        "fields": {
+            "title": "GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/css-tutorials/",
+            "is_active": true,
+            "added_on": "2021-03-05T11:54:33.481Z",
+            "updated_on": "2021-03-05T11:54:33.481Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 12,
+        "fields": {
+            "title": "GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/java/",
+            "is_active": true,
+            "added_on": "2021-03-05T11:55:47.416Z",
+            "updated_on": "2021-03-05T11:55:47.416Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                5
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 13,
+        "fields": {
+            "title": "GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/javascript-tutorial/",
+            "is_active": true,
+            "added_on": "2021-03-05T11:56:36.170Z",
+            "updated_on": "2021-03-05T11:56:36.170Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 14,
+        "fields": {
+            "title": "GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/python-programming-language/",
+            "is_active": true,
+            "added_on": "2021-03-05T11:57:24.057Z",
+            "updated_on": "2021-03-05T11:57:24.057Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 15,
+        "fields": {
+            "title": "GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/sql-tutorial/",
+            "is_active": true,
+            "added_on": "2021-03-05T11:59:07.960Z",
+            "updated_on": "2021-03-05T11:59:07.960Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                6
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 16,
+        "fields": {
+            "title": "GeeksforGeeks",
+            "url": "https://www.geeksforgeeks.org/",
+            "is_active": true,
+            "added_on": "2021-03-05T12:01:00.328Z",
+            "updated_on": "2021-03-05T12:01:00.329Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                9,
+                2,
+                15
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 17,
+        "fields": {
+            "title": "CSS TRICKS",
+            "url": "https://css-tricks.com/",
+            "is_active": true,
+            "added_on": "2021-03-05T20:18:04.822Z",
+            "updated_on": "2021-03-05T20:19:30.764Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                9
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 18,
+        "fields": {
+            "title": "DEV Community",
+            "url": "https://dev.to/",
+            "is_active": true,
+            "added_on": "2021-03-05T20:20:12.637Z",
+            "updated_on": "2021-03-05T20:20:12.637Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": []
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 19,
+        "fields": {
+            "title": "Stackoverflow",
+            "url": "https://stackoverflow.com/",
+            "is_active": true,
+            "added_on": "2021-03-05T20:23:27.271Z",
+            "updated_on": "2021-03-05T20:23:27.271Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": []
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 20,
+        "fields": {
+            "title": "Sololearn",
+            "url": "https://www.sololearn.com/learning/1051",
+            "is_active": true,
+            "added_on": "2021-03-06T04:24:27.025Z",
+            "updated_on": "2021-03-06T04:24:27.025Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                3
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 21,
+        "fields": {
+            "title": "Codecademy",
+            "url": "https://www.codecademy.com/learn/introduction-to-javascript",
+            "is_active": true,
+            "added_on": "2021-03-06T04:27:57.471Z",
+            "updated_on": "2021-03-06T04:27:57.471Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 22,
+        "fields": {
+            "title": "Learn-js",
+            "url": "https://www.learn-js.org",
+            "is_active": true,
+            "added_on": "2021-03-06T04:29:19.416Z",
+            "updated_on": "2021-03-06T04:29:19.416Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 23,
+        "fields": {
+            "title": "Learnjavascript",
+            "url": "https://www.learnjavascript.online/",
+            "is_active": true,
+            "added_on": "2021-03-06T04:30:42.179Z",
+            "updated_on": "2021-03-06T04:30:42.179Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 24,
+        "fields": {
+            "title": "Learnjavascript",
+            "url": "https://www.learnjavascript.online/",
+            "is_active": false,
+            "added_on": "2021-03-06T04:31:21.958Z",
+            "updated_on": "2021-03-06T04:31:32.332Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 26,
+        "fields": {
+            "title": "Sololearn",
+            "url": "https://www.sololearn.com/learning/1060",
+            "is_active": true,
+            "added_on": "2021-03-06T04:33:30.613Z",
+            "updated_on": "2021-03-06T04:33:30.613Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                6
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 27,
+        "fields": {
+            "title": "Javascript Data Structures & Algorithms",
+            "url": "https://m.youtube.com/playlist?list=PLu2bZlW8EEeDNtaCy5Eq4jAIHkVNmUnn4",
+            "is_active": true,
+            "added_on": "2021-03-06T04:34:36.872Z",
+            "updated_on": "2021-03-06T04:34:36.872Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 28,
+        "fields": {
+            "title": "Javatpoint",
+            "url": "https://www.javatpoint.com/nodejs-tutorial",
+            "is_active": true,
+            "added_on": "2021-03-06T04:35:36.692Z",
+            "updated_on": "2021-03-06T04:35:36.692Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                11
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 29,
+        "fields": {
+            "title": "Javatpoint",
+            "url": "https://www.javatpoint.com/android-tutorial",
+            "is_active": true,
+            "added_on": "2021-03-06T04:36:38.626Z",
+            "updated_on": "2021-03-06T04:36:38.626Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 30,
+        "fields": {
+            "title": "Javatpoint",
+            "url": "https://www.javatpoint.com/django-tutorial",
+            "is_active": true,
+            "added_on": "2021-03-06T04:37:17.993Z",
+            "updated_on": "2021-03-06T04:37:17.993Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                10
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 31,
+        "fields": {
+            "title": "Jenkins",
+            "url": "https://youtube.com/playlist?list=PLhW3qG5bs-L_ZCOA4zNPSoGbnVQ-rp_dG",
+            "is_active": true,
+            "added_on": "2021-03-06T14:07:05.889Z",
+            "updated_on": "2021-03-08T07:33:19.458Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                5,
+                49
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 32,
+        "fields": {
+            "title": "Python Official Docs",
+            "url": "https://docs.python.org/3/",
+            "is_active": true,
+            "added_on": "2021-03-08T06:20:24.177Z",
+            "updated_on": "2021-03-08T07:49:43.177Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 35,
+        "fields": {
+            "title": "Simple Is Better than Complex",
+            "url": "https://simpleisbetterthancomplex.com/",
+            "is_active": true,
+            "added_on": "2021-03-08T07:05:15.471Z",
+            "updated_on": "2021-03-08T07:49:39.571Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                44,
+                19,
+                10,
+                30,
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 36,
+        "fields": {
+            "title": "Real Python",
+            "url": "https://realpython.com/",
+            "is_active": true,
+            "added_on": "2021-03-08T07:07:55.191Z",
+            "updated_on": "2021-03-08T07:49:34.569Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                44,
+                32,
+                34,
+                10,
+                33,
+                35,
+                30,
+                1,
+                42
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 37,
+        "fields": {
+            "title": "Classy DRF",
+            "url": "http://www.cdrf.co/",
+            "is_active": true,
+            "added_on": "2021-03-08T07:08:56.700Z",
+            "updated_on": "2021-03-08T07:08:56.700Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                44,
+                10,
+                30,
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 38,
+        "fields": {
+            "title": "Classy CBV - Django",
+            "url": "https://ccbv.co.uk/",
+            "is_active": true,
+            "added_on": "2021-03-08T07:09:33.558Z",
+            "updated_on": "2021-03-08T07:09:33.558Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                44,
+                10,
+                30,
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 39,
+        "fields": {
+            "title": "Django ORM Cookbook",
+            "url": "https://books.agiliq.com/projects/django-orm-cookbook/en/latest/index.html",
+            "is_active": true,
+            "added_on": "2021-03-08T07:10:34.211Z",
+            "updated_on": "2021-03-08T07:10:34.211Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                44,
+                19,
+                10,
+                30,
+                1,
+                42
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 40,
+        "fields": {
+            "title": "Rest APIs without DRF",
+            "url": "http://books.agiliq.com/projects/django-api-polls-tutorial/en/latest/apis-without-drf.html",
+            "is_active": true,
+            "added_on": "2021-03-08T07:12:48.345Z",
+            "updated_on": "2021-03-08T07:12:48.345Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                46,
+                44,
+                10,
+                1,
+                45,
+                42
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 43,
+        "fields": {
+            "title": "Free Code Camp",
+            "url": "https://www.freecodecamp.org/",
+            "is_active": true,
+            "added_on": "2021-03-08T07:17:55.002Z",
+            "updated_on": "2021-03-08T07:49:26.110Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                46,
+                44,
+                9,
+                19,
+                8,
+                43,
+                25,
+                2,
+                12,
+                30,
+                1,
+                17,
+                16,
+                45,
+                6,
+                42
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 44,
+        "fields": {
+            "title": "Android Basics in Kotlin - Google",
+            "url": "https://developer.android.com/courses/basic-android-kotlin-training/overview",
+            "is_active": true,
+            "added_on": "2021-03-09T03:55:39.499Z",
+            "updated_on": "2021-03-09T03:57:22.956Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7,
+                43,
+                26
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 45,
+        "fields": {
+            "title": "Advanced Android in Kotlin - Google",
+            "url": "https://developer.android.com/courses/kotlin-android-advanced/overview",
+            "is_active": true,
+            "added_on": "2021-03-09T03:56:23.078Z",
+            "updated_on": "2021-03-09T03:57:11.329Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7,
+                26
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 46,
+        "fields": {
+            "title": "Android Kotlin Fundamentals - Google",
+            "url": "https://developer.android.com/courses/kotlin-android-fundamentals/overview",
+            "is_active": true,
+            "added_on": "2021-03-09T03:57:01.101Z",
+            "updated_on": "2021-03-09T03:57:01.101Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7,
+                26
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 47,
+        "fields": {
+            "title": "Android Developer Fundamentals (Java) - Google",
+            "url": "https://developer.android.com/courses/fundamentals-training/overview-v2",
+            "is_active": true,
+            "added_on": "2021-03-09T03:58:21.742Z",
+            "updated_on": "2021-03-09T03:58:21.742Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7,
+                5
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 48,
+        "fields": {
+            "title": "Advanced Android Development (Java) - Google",
+            "url": "https://developer.android.com/courses/advanced-training/overview",
+            "is_active": true,
+            "added_on": "2021-03-09T03:58:49.040Z",
+            "updated_on": "2021-03-09T03:58:49.040Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7,
+                5
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 49,
+        "fields": {
+            "title": "Material Design to Android apps in Kotlin - Google",
+            "url": "https://developer.android.com/courses/pathways/mdc-kotlin",
+            "is_active": true,
+            "added_on": "2021-03-09T03:59:22.963Z",
+            "updated_on": "2021-03-09T03:59:22.963Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7,
+                26
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 50,
+        "fields": {
+            "title": "Location-based Features in Android - Google",
+            "url": "https://developer.android.com/courses/pathways/location-based-features-in-android",
+            "is_active": true,
+            "added_on": "2021-03-09T03:59:54.731Z",
+            "updated_on": "2021-03-09T03:59:54.731Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7,
+                5,
+                26
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 51,
+        "fields": {
+            "title": "Build Your First Android App in Kotlin",
+            "url": "https://codelabs.developers.google.com/codelabs/build-your-first-android-app-kotlin/index.html",
+            "is_active": true,
+            "added_on": "2021-03-09T04:00:59.561Z",
+            "updated_on": "2021-03-09T04:00:59.561Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7,
+                26
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 52,
+        "fields": {
+            "title": "Build Your First Android App in Java - Google",
+            "url": "https://codelabs.developers.google.com/codelabs/build-your-first-android-app/index.html",
+            "is_active": true,
+            "added_on": "2021-03-09T04:01:25.442Z",
+            "updated_on": "2021-03-09T04:01:25.442Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7,
+                5
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 53,
+        "fields": {
+            "title": "Kotlin Bootcamp for Programmers - Google",
+            "url": "https://developer.android.com/courses/kotlin-bootcamp/overview",
+            "is_active": true,
+            "added_on": "2021-03-09T04:02:05.354Z",
+            "updated_on": "2021-03-16T17:17:31.528Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                26
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 54,
+        "fields": {
+            "title": "React Full course",
+            "url": "https://fullstackopen.com/en",
+            "is_active": true,
+            "added_on": "2021-03-09T05:52:04.046Z",
+            "updated_on": "2021-03-09T05:54:25.242Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                46,
+                44,
+                19,
+                2,
+                17,
+                16,
+                42
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 55,
+        "fields": {
+            "title": "Official Docs",
+            "url": "https://golang.org/",
+            "is_active": true,
+            "added_on": "2021-03-09T06:03:38.460Z",
+            "updated_on": "2021-03-09T06:03:38.461Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                24
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 56,
+        "fields": {
+            "title": "Core Java",
+            "url": "https://www.javatpoint.com/java-tutorial",
+            "is_active": true,
+            "added_on": "2021-03-09T14:10:16.493Z",
+            "updated_on": "2021-03-09T14:10:16.493Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                5
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 57,
+        "fields": {
+            "title": "Mega ReactJS Tutorial - Project 1 - Name Generator",
+            "url": "https://www.youtube.com/watch?v=OjlqjmKsedY&list=PLGyA74h_S9NqJvvQ7-l9bUHHS6bMCkgo0",
+            "is_active": true,
+            "added_on": "2021-03-09T15:09:14.333Z",
+            "updated_on": "2021-03-09T15:09:14.333Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                43,
+                25,
+                16
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 58,
+        "fields": {
+            "title": "Mega ReactJS Tutorial - Project 2 - Flash Type",
+            "url": "https://www.youtube.com/watch?v=lNWKVmejuR0&list=PLGyA74h_S9NppHNrzUSjMQbnuHS9jlAcY",
+            "is_active": true,
+            "added_on": "2021-03-09T15:10:08.842Z",
+            "updated_on": "2021-03-09T15:10:08.842Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                43,
+                25,
+                16
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 59,
+        "fields": {
+            "title": "Angular University Blog",
+            "url": "https://blog.angular-university.io/",
+            "is_active": true,
+            "added_on": "2021-03-14T06:14:09.815Z",
+            "updated_on": "2021-03-14T06:14:09.815Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                50,
+                43
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 60,
+        "fields": {
+            "title": "Angular inDepth",
+            "url": "https://indepth.dev/angular",
+            "is_active": true,
+            "added_on": "2021-03-14T06:15:04.366Z",
+            "updated_on": "2021-03-14T06:15:04.366Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                50,
+                43
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 61,
+        "fields": {
+            "title": "Malcoded Blog",
+            "url": "https://malcoded.com/posts?filter=angular",
+            "is_active": true,
+            "added_on": "2021-03-14T06:17:56.291Z",
+            "updated_on": "2021-03-14T06:19:34.597Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                50,
+                43
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 62,
+        "fields": {
+            "title": "Netanel Basal's Blog",
+            "url": "https://netbasal.com/",
+            "is_active": true,
+            "added_on": "2021-03-14T06:18:54.329Z",
+            "updated_on": "2021-03-14T06:18:54.329Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                50,
+                43
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 63,
+        "fields": {
+            "title": "Tomas Trajan's Blog",
+            "url": "https://medium.com/@tomastrajan",
+            "is_active": true,
+            "added_on": "2021-03-14T06:20:41.449Z",
+            "updated_on": "2021-03-14T06:20:41.449Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                50,
+                43
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 64,
+        "fields": {
+            "title": "web.dev (Angular Performance)",
+            "url": "https://web.dev/angular/",
+            "is_active": true,
+            "added_on": "2021-03-14T06:21:14.217Z",
+            "updated_on": "2021-03-25T09:50:23.663Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7,
+                43
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 65,
+        "fields": {
+            "title": "Vanilla JS Projects",
+            "url": "https://www.vanillajavascriptprojects.com/",
+            "is_active": true,
+            "added_on": "2021-03-14T14:36:29.208Z",
+            "updated_on": "2021-03-14T14:36:29.208Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                43,
+                25,
+                2,
+                42
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 66,
+        "fields": {
+            "title": "Learn CSS",
+            "url": "https://css-tricks.com/",
+            "is_active": true,
+            "added_on": "2021-03-14T14:39:02.854Z",
+            "updated_on": "2021-03-14T14:39:02.854Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                9,
+                25,
+                15,
+                42
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 67,
+        "fields": {
+            "title": "Classy django forms",
+            "url": "https://cdf.9vo.lt/",
+            "is_active": true,
+            "added_on": "2021-03-14T15:17:32.484Z",
+            "updated_on": "2021-03-14T15:17:32.484Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                10
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 68,
+        "fields": {
+            "title": "Valentino's blog on django and react",
+            "url": "https://www.valentinog.com/blog/",
+            "is_active": true,
+            "added_on": "2021-03-14T15:19:04.541Z",
+            "updated_on": "2021-03-14T15:19:04.541Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                10,
+                16
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 69,
+        "fields": {
+            "title": "Django views the right way",
+            "url": "https://spookylukey.github.io/django-views-the-right-way/",
+            "is_active": true,
+            "added_on": "2021-03-14T15:20:48.794Z",
+            "updated_on": "2021-03-14T15:20:48.794Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                10
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 70,
+        "fields": {
+            "title": "Hurray! Get started with, thoroughly explained IoT, Embedded projects and concepts on thos website",
+            "url": "https://iotembeddedengineering.com/",
+            "is_active": true,
+            "added_on": "2021-03-14T16:48:53.895Z",
+            "updated_on": "2021-03-14T16:52:54.635Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                4,
+                37,
+                30,
+                42
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 71,
+        "fields": {
+            "title": "Develop your first Mobile App with Flutter",
+            "url": "https://flutter.dev/docs/get-started/codelab",
+            "is_active": true,
+            "added_on": "2021-03-14T20:09:43.114Z",
+            "updated_on": "2021-03-14T20:09:43.114Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                8
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 72,
+        "fields": {
+            "title": "Cognitiveclass",
+            "url": "https://cognitiveclass.ai/",
+            "is_active": true,
+            "added_on": "2021-03-15T05:17:55.261Z",
+            "updated_on": "2021-03-15T05:17:55.261Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                32,
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 73,
+        "fields": {
+            "title": "Neural Networks",
+            "url": "http://neuralnetworksanddeeplearning.com/chap1.html",
+            "is_active": true,
+            "added_on": "2021-03-15T07:04:40.888Z",
+            "updated_on": "2021-03-15T07:04:40.888Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                34,
+                33
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 74,
+        "fields": {
+            "title": "Choosing Right Estimator for your model",
+            "url": "https://scikit-learn.org/stable/tutorial/machine_learning_map/index.html",
+            "is_active": true,
+            "added_on": "2021-03-15T07:08:18.509Z",
+            "updated_on": "2021-03-15T07:08:18.509Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                32,
+                33
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 75,
+        "fields": {
+            "title": "Scrapy",
+            "url": "https://docs.scrapy.org/en/latest/",
+            "is_active": true,
+            "added_on": "2021-03-17T21:50:27.671Z",
+            "updated_on": "2021-03-17T21:50:27.671Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 76,
+        "fields": {
+            "title": "Setup Django with Redis and channels (Daphne , Gunicorn)",
+            "url": "https://saurabhgujjar.medium.com/django-channels-with-daphne-gunicorn-and-nginx-on-digitalocean-all-in-one-guide-28625eead962",
+            "is_active": true,
+            "added_on": "2021-03-18T04:33:28.490Z",
+            "updated_on": "2021-03-18T04:33:28.490Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                44,
+                10,
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 77,
+        "fields": {
+            "title": "Google",
+            "url": "https://gogle.com",
+            "is_active": false,
+            "added_on": "2021-03-25T06:33:39.028Z",
+            "updated_on": "2021-03-25T06:33:47.453Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                7
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 78,
+        "fields": {
+            "title": "Maria Korneeva's Blog",
+            "url": "https://browserperson.medium.com/",
+            "is_active": true,
+            "added_on": "2021-03-25T09:49:54.660Z",
+            "updated_on": "2021-03-25T09:49:54.660Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                50,
+                43
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 79,
+        "fields": {
+            "title": "JavaScript",
+            "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+            "is_active": true,
+            "added_on": "2021-03-26T18:35:27.820Z",
+            "updated_on": "2021-03-26T18:35:27.820Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 80,
+        "fields": {
+            "title": "W3Schools",
+            "url": "https://www.w3schools.com/cpp/",
+            "is_active": true,
+            "added_on": "2021-03-27T04:32:16.457Z",
+            "updated_on": "2021-03-27T04:32:16.457Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                3,
+                40,
+                30
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 81,
+        "fields": {
+            "title": "Learn C++",
+            "url": "https://www.learncpp.com/",
+            "is_active": true,
+            "added_on": "2021-03-27T04:32:54.050Z",
+            "updated_on": "2021-03-27T04:32:54.050Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                4,
+                3,
+                40,
+                30
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 82,
+        "fields": {
+            "title": "Programiz C++",
+            "url": "https://www.programiz.com/cpp-programming",
+            "is_active": true,
+            "added_on": "2021-03-27T04:33:31.142Z",
+            "updated_on": "2021-03-27T04:33:31.142Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                4,
+                3,
+                40,
+                30
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 83,
+        "fields": {
+            "title": "Standard C++",
+            "url": "https://isocpp.org/",
+            "is_active": true,
+            "added_on": "2021-03-27T04:33:58.067Z",
+            "updated_on": "2021-03-27T04:33:58.067Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                4,
+                3,
+                40,
+                30
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 84,
+        "fields": {
+            "title": "C++ Reference",
+            "url": "https://en.cppreference.com/w/cpp",
+            "is_active": true,
+            "added_on": "2021-03-27T04:47:47.115Z",
+            "updated_on": "2021-03-27T04:47:47.115Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                4,
+                3,
+                40,
+                30
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 85,
+        "fields": {
+            "title": "cplusplus.com",
+            "url": "http://cplusplus.com/",
+            "is_active": true,
+            "added_on": "2021-03-27T04:48:29.004Z",
+            "updated_on": "2021-03-27T04:48:29.004Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                4,
+                3,
+                40,
+                30
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 86,
+        "fields": {
+            "title": "The Cherno",
+            "url": "https://www.youtube.com/playlist?list=PLlrATfBNZ98dudnM48yfGUldqGD0S4FFb",
+            "is_active": true,
+            "added_on": "2021-03-27T04:49:10.233Z",
+            "updated_on": "2021-03-27T04:49:10.233Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                4,
+                3,
+                40,
+                30
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 87,
+        "fields": {
+            "title": "Dot Net Tricks",
+            "url": "https://www.dotnettricks.com/learn/aspnet",
+            "is_active": true,
+            "added_on": "2021-03-27T04:50:29.334Z",
+            "updated_on": "2021-03-27T04:50:29.334Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                39,
+                38
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 88,
+        "fields": {
+            "title": "Learn ASP.NET from Microsoft",
+            "url": "https://dotnet.microsoft.com/learn/aspnet",
+            "is_active": true,
+            "added_on": "2021-03-27T04:50:58.083Z",
+            "updated_on": "2021-03-27T04:50:58.083Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                39,
+                38
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 89,
+        "fields": {
+            "title": "Tutorials Point",
+            "url": "https://www.tutorialspoint.com/asp.net/index.htm",
+            "is_active": true,
+            "added_on": "2021-03-27T04:51:21.586Z",
+            "updated_on": "2021-03-27T04:51:21.586Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                39,
+                38
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 90,
+        "fields": {
+            "title": "Javatpoint ASP.NET",
+            "url": "https://www.javatpoint.com/asp-net-tutorial",
+            "is_active": true,
+            "added_on": "2021-03-27T04:51:46.364Z",
+            "updated_on": "2021-03-27T04:51:46.364Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                39,
+                38
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 91,
+        "fields": {
+            "title": "C# Corner",
+            "url": "https://www.c-sharpcorner.com/learn/learn-asp-net-mvc-50",
+            "is_active": true,
+            "added_on": "2021-03-27T04:52:16.121Z",
+            "updated_on": "2021-03-27T04:52:16.121Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                39,
+                38
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 92,
+        "fields": {
+            "title": "W3Schools",
+            "url": "https://www.w3schools.com/asp/default.ASP",
+            "is_active": true,
+            "added_on": "2021-03-27T04:52:34.393Z",
+            "updated_on": "2021-03-27T04:52:34.393Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                39,
+                38
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 93,
+        "fields": {
+            "title": "Python Open CV",
+            "url": "https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_tutorials.html",
+            "is_active": true,
+            "added_on": "2021-03-27T04:54:39.516Z",
+            "updated_on": "2021-03-27T04:54:39.516Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                36,
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 94,
+        "fields": {
+            "title": "Tutorials Point",
+            "url": "https://www.tutorialspoint.com/opencv/opencv_overview.htm",
+            "is_active": true,
+            "added_on": "2021-03-27T04:55:15.351Z",
+            "updated_on": "2021-03-27T04:55:15.351Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                36
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 95,
+        "fields": {
+            "title": "Kaggle",
+            "url": "https://www.kaggle.com/learn/computer-vision",
+            "is_active": true,
+            "added_on": "2021-03-27T04:55:32.842Z",
+            "updated_on": "2021-03-27T04:55:32.842Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                36
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 96,
+        "fields": {
+            "title": "Pyimagesearch",
+            "url": "https://www.pyimagesearch.com/start-here/",
+            "is_active": true,
+            "added_on": "2021-03-27T04:55:58.051Z",
+            "updated_on": "2021-03-27T04:55:58.051Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                36
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 97,
+        "fields": {
+            "title": "Edx Course from IBM",
+            "url": "https://www.edx.org/course/computer-vision-fundamentals",
+            "is_active": true,
+            "added_on": "2021-03-27T04:56:59.992Z",
+            "updated_on": "2021-03-27T04:56:59.992Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                36
+            ]
+        }
+    },
+    {
+        "model": "core.resource",
+        "pk": 98,
+        "fields": {
+            "title": "Coursera Course",
+            "url": "https://www.coursera.org/learn/computer-vision-basics",
+            "is_active": true,
+            "added_on": "2021-03-27T04:57:23.813Z",
+            "updated_on": "2021-03-27T04:57:23.813Z",
+            "added_by": null,
+            "updated_by": null,
+            "category": [
+                36
+            ]
+        }
+    }
+]

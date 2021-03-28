@@ -42,13 +42,13 @@ You can find the project live [here](https://devresources.guru/) :point_left:
   
 3. Create a python3 virtual environment:
 
-    ```
+    ```bash
     $ python3 -m venv venv
     ```
 
     Or, use [virtualenv](https://virtualenv.pypa.io/en/latest/installation.html):
 
-    ```
+    ```bash
     $ virtualenv venv
     ```
 
@@ -56,7 +56,7 @@ You can find the project live [here](https://devresources.guru/) :point_left:
 
     On Linux or Mac or any Unix based system-
     
-    ```
+    ```bash
     $ source venv/bin/activate
     ```
     
@@ -67,7 +67,7 @@ You can find the project live [here](https://devresources.guru/) :point_left:
 
 5. Now Install the dependecies:
 
-    ```
+    ```bash
     $ pip install -r requirements.txt
     ```
 
@@ -88,7 +88,7 @@ Create a `.env` file in the same directory where your `manage.py` resides.
     ```
 
 8. Run the `migrate` command:
-    ```
+    ```bash
     $ python manage.py migrate
     ```
 
@@ -96,8 +96,20 @@ Create a `.env` file in the same directory where your `manage.py` resides.
 
     #### Run the application
 
-    ```
+    ```bash
     $ python manage.py runserver
     ```
- 
+
+10. Optionally you can also add some dump data into your local database  using this command:
+    
+    #### Add redacted dump data
+
+    ***Note***: Please run these commands in the same order it has been written here, either it will cause integrity error in your database.
+
+    ```bash
+    $ python manage.py loaddata fixtures/ResourceCategory.json
+    
+    $ python manage.py loaddata fixtures/Resource.json
+    ```
+
 # Thanks
