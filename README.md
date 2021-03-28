@@ -88,6 +88,7 @@ Create a `.env` file in the same directory where your `manage.py` resides.
     ```
 
 8. Run the `migrate` command:
+
     ```bash
     $ python manage.py migrate
     ```
