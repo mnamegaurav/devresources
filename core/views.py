@@ -34,10 +34,16 @@ class HomeView(View):
 
         parsed_website_url = parse.urlparse(request.build_absolute_uri('/'))
 
+        if request.user.is_authenticated:
+            page_title = 'Home'
+        else:
+            page_title = 'One destination for all the developer\'s learning resources.'
+
         context = {
             'all_resource_categories': all_resource_categories,
             'top_resource_categories': top_resource_categories,
-            'hostname': f'{parsed_website_url.hostname}{parsed_website_url.path}'
+            'hostname': f'{parsed_website_url.hostname}{parsed_website_url.path}',
+            'page_title': page_title
         }
 
         return render(request, self.template_name, context)
@@ -67,6 +73,7 @@ class ResourceListByCategoryView(View, HitCountMixin):
         context = {
             'all_resources': all_resources,
             'category_slug': category_slug,
+            'page_title'   : category_slug.capitalize() 
         }
 
         return render(request, self.template_name, context)
@@ -75,6 +82,7 @@ class ResourceListByCategoryView(View, HitCountMixin):
 class ResourceListAddedByUserView(View):
     template_name = 'core/resource_list_added_by_user.html'
     url_kwarg = 'tag'
+    page_title = 'My Resources'
 
     def get(self, request, *args, **kwargs):
         category = request.GET.get(self.url_kwarg)
@@ -95,6 +103,7 @@ class ResourceListAddedByUserView(View):
 
         context = {
             'all_resources': all_resources,
+            'page_title': self.page_title
         }
 
         return render(request, self.template_name, context)
@@ -105,6 +114,7 @@ class ResourceCreateView(SuccessMessageMixin, CreateView):
     success_message = "Successfully added"
     success_url = reverse_lazy('resource_list_by_me_view')
     form_class = ResourceForm
+    extra_context={'page_title': 'Create A New Resource'}
 
 
 class ResourceUpdateView(SuccessMessageMixin, UpdateView):
@@ -112,6 +122,7 @@ class ResourceUpdateView(SuccessMessageMixin, UpdateView):
     success_message = "Successfully updated"
     success_url = reverse_lazy('resource_list_by_me_view')
     form_class = ResourceForm
+    extra_context={'page_title': 'Update Resource'}
 
     def get_queryset(self):
         queryset = Resource.objects.filter(added_by=self.request.user)
@@ -139,10 +150,12 @@ class ResourceDeleteView(View):
 
 class AboutView(TemplateView):
     template_name = 'about.html'
+    extra_context={'page_title': 'About Us'}
     
 
 class ContactView(SuccessMessageMixin, CreateView):
     template_name = 'contact.html'
-    success_message = "Thanks for contcting us, We will get back to you soon."
+    success_message = "Thanks for contacting us, We will get back to you soon."
     success_url = reverse_lazy('contact_view')
     form_class = ContactForm
+    extra_context={'page_title': 'Contact Us'}

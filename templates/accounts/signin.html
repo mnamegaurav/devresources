@@ -1,5 +1,6 @@
 {% extends 'core/base.html' %}
 {% load static %}
+{% block title %} {{page_title}} {% endblock %}
 
 {% block content %}
 
@@ -7,7 +8,7 @@
 
   <div class="row px-md-5 my-5">
     <div class="col-12 offset-md-2 col-md-8 pb-1">
-      <p class="text-secondary text-center display-6">Signin</p>
+      <p class="text-secondary text-center display-6">Sign In</p>
     </div>
     <div class="col-12 offset-md-2 col-md-8 pb-1">
       <form id="signin_form" method="POST" action="{% url 'signin_view' %}">
@@ -24,7 +25,7 @@
           <a href="{% url 'signup_view' %}">Create an account</a>
         </div>
         <div class="mb-3 mx-auto text-center mt-3">
-          <button class="neumorphic__button btn btn-lg" aria-label="signin button">Signin</button>
+          <button class="neumorphic__button btn btn-lg" aria-label="signin button">Sign in</button>
         </div>
       </form>
       
