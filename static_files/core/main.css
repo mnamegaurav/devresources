@@ -7,6 +7,12 @@ body{
     background-color: #f1f1f1;
 }
 
+.about__section{
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+}
+
 .height__100vh{
     height: 100vh;
 }
