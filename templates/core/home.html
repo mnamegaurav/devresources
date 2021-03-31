@@ -40,8 +40,7 @@
           <div class="card-body text-{% cycle 'light' 'light' 'light' 'light' 'dark' 'light' %} d-flex align-middle flex-wrap">
 
             <div class="count__shape">
-              <span>{{ resource_category.resource_set.count }}</span>
-              <span><i class="bi bi-dot"></i></span>
+              <span>{{ resource_category.resource_set.count }} <span class="dot">&#183;</span></span>
             </div>
 
             <h5 class="card-title ms-4 me-2 my-auto text-wrap">
@@ -107,8 +106,7 @@
                 <div class="card-body text-{% cycle 'dark' 'light' 'light' 'light' 'light' %} d-flex align-middle flex-wrap">
 
                   <div class="count__shape">
-                    <span>{{ resource_category.resource_set.count }}</span>
-                    <span><i class="bi bi-dot"></i></span>
+                    <span>{{ resource_category.resource_set.count }} <span class="dot">&#183;</span></span>
                   </div>
 
                   <h5 class="card-title ms-4 me-2 my-auto text-wrap">{{ resource_category.title|lower }}</h5>
