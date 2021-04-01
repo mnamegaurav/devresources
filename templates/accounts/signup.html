@@ -32,9 +32,15 @@
 
         <div class="neumorphic__card input-group input-group-lg mb-3">
           <span class="input-group-text"><i class="bi bi-key-fill"></i></span>
-          <input name="password1" type="password" class="form-control" id="id_password1" placeholder="Password" required>
-          <ul><li>Your password can’t be too similar to your email.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul>
+          <input name="password1" type="password" class="form-control" id="id_password1" placeholder="Password" required>  
         </div>
+<!--  <div class="neumorphic__card pass_info"> 
+          <ul><li>Your password can’t be too similar to your email.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul>            
+        </div>   -->
+        <div class="pass_info">
+          <ul><li>Your password can’t be too similar to your email.</li><li>Your password must contain at least 8 characters.</li><li>Your password can’t be a commonly used password.</li><li>Your password can’t be entirely numeric.</li></ul>            
+        </div> 
+        
         {% if form.password1.errors %}
           <div class="text-danger">
             {{ form.password1.errors }}

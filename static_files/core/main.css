@@ -91,3 +91,8 @@ body{
 #id_category li{
     padding: 5px 10px 5px 0px;
 }
+
+.pass_info{
+    position: relative;
+    padding-top: 5px;
+}
