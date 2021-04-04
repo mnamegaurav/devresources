@@ -30,3 +30,24 @@ jobs:
     - name: Run Tests
       run: |
         python manage.py test
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using key
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.SSH_HOST }}
+        username: ${{ secrets.SSH_USERNAME }}
+        key: ${{ secrets.SSH_KEY }}
+        passphrase: ${{ secrets.SSH_PASSPHRASE }}
+        script_stop: true
+        script: |
+          cd /home/gaurav/devresources
+          git pull origin main
+          source env/bin/activate
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          python manage.py collectstatic --noinput
+          echo "${{ secrets.SSH_PASSPHRASE }}" | sudo -S systemctl restart nginx gunicorn
+          exit
