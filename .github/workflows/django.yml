@@ -13,9 +13,9 @@ jobs:
       SECRET_KEY: ${{ secrets.SECRET_KEY }}
       DEBUG: true
     strategy:
-      max-parallel: 4
+      max-parallel: 3
       matrix:
-        python-version: [3.8, 3.9]
+        python-version: [3.9]
 
     steps:
     - uses: actions/checkout@v2
@@ -49,5 +49,5 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
           python manage.py collectstatic --noinput
-          echo "${{ secrets.SSH_PASSPHRASE }}" | sudo -S systemctl restart nginx gunicorn
+          echo ${{ secrets.SSH_PASSPHRASE }} | sudo -S systemctl restart nginx gunicorn
           exit
