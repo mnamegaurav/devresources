@@ -57,7 +57,15 @@
     <script data-ad-client="ca-pub-8029093240606005" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
   </head>
-  <body>
+  <body onload=preloader()>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+      <div class="preloader-inner">
+        <img src="{% static 'img/spinner.svg' %}" alt="Loading...">
+      </div>
+    </div>
+    <!-- End Preloader -->
 
     {% block body %}{% endblock %}
     
@@ -71,6 +79,14 @@
         var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl)
         })
+    </script>
+
+    <script>
+        var preload = document.getElementById("preloader");
+
+        function preloader(){
+          preload.style.display = 'none';
+        }
     </script>
 
   </body>
