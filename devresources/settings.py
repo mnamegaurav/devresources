@@ -44,14 +44,18 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sitemaps',
+
+    'corsheaders',
+    'hitcount',
+
     'core.apps.CoreConfig',
     'accounts.apps.AccountsConfig',
-    'hitcount',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -130,6 +134,8 @@ MEDIA_ROOT = BASE_DIR/'media'
 
 AUTH_USER_MODEL = 'accounts.User'
 LOGIN_URL = 'signin_view'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Imports below are intentionally placed here to override the existing values. e.g: DEBUG
 try:
