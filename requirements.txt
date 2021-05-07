@@ -1,10 +1,11 @@
-asgiref==3.3.1
+asgiref==3.3.4
 certifi==2020.12.5
 cffi==1.14.5
 chardet==4.0.0
 cryptography==3.4.6
 defusedxml==0.6.0
-Django==3.1.7
+Django==3.2.2
+django-cors-headers==3.7.0
 django-crum==0.7.9
 django-etc==1.3.0
 django-hitcount==1.3.3
