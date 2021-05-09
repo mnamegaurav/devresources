@@ -6,9 +6,22 @@
     </a>
     {% if request.user.is_authenticated %}
       <div class="navbar-brand d-flex me-0">
-        <a href="{% url 'resource_create_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add More Resources">
-          <i class="bi bi-plus-circle-fill"></i>
-        </a>
+
+        <div class="dropdown text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2">
+          <button class="btn p-0" type="button" id="addButtons" data-bs-toggle="dropdown" aria-expanded="false">
+            <i class="bi bi-plus-circle-fill"></i>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="addButtons">
+            <li>
+              <a href="{% url 'resource_create_view' %}" class="dropdown-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add More Resources">Add a Resource</a>
+            </li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <a href="{% url 'github_gist_create_view' %}" class="dropdown-item" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add More GitHub  Gist">Add a GitHub Gist</a>
+            </li>
+          </ul>
+        </div>
+        
         <a href="{% url 'profile_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile">
           <i class="bi bi-person-fill"></i>
         </a>
