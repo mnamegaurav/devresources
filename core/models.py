@@ -105,7 +105,7 @@ class GitHubGist(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     added_by = models.ForeignKey(
         User,
-        related_name="githubgist_cb",
+        related_name="github_gist_cb",
         on_delete=models.PROTECT,
         null=True,
         blank=True,
@@ -114,7 +114,7 @@ class GitHubGist(models.Model):
     )
     updated_by = models.ForeignKey(
         User,
-        related_name="githubgist_ub",
+        related_name="github_gist_ub",
         on_delete=models.PROTECT,
         null=True,
         blank=True,
