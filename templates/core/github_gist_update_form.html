@@ -1,0 +1,92 @@
+{% extends 'core/base.html' %}
+{% block title %} {{page_title}} {% endblock %}
+{% block extra_css %}
+<link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+{% endblock %}
+
+{% block content %}
+
+<div class="container px-0">
+
+  <div class="row px-md-5">
+    <div class="col-12 pb-1 border-bottom">
+      <p class="text-center display-4 text-danger">Dev Resources</p>
+      <p class="text- text-center h4">One destination for all the developer's learning resources</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12 col-md-10 mx-auto">
+      <form method="POST">
+        {% csrf_token %}
+        <div class="card neumorphic__card bg-light text-dark mt-3">
+          <div class="card-header">
+            <p class="text-dark text-center text-muted my-auto">Edit a GitHub Gist</p>
+          </div>
+          <div class="card-body row">
+
+            {% if form.non_field_errors %}
+            <div class="col-12 mb-2">
+              <p class="text-danger text-center">
+                <i class="bi bi-exclamation-circle"></i>
+                {{ form.non_field_errors }}
+              </p>
+            </div>
+            {% endif %}
+            
+            <div class="col-12 mb-3">
+              {{ form.title }}
+              {% if form.title.errors %}
+                <div class="text-danger">
+                  {{ form.title.errors }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="col-12 mb-3">
+              {{ form.url }}
+              {% if form.url.errors %}
+                <div class="text-danger">
+                  {{ form.url.errors }}
+                </div>
+              {% endif %}
+            </div>
+
+            <div class="col-12 mb-3">
+              <label for="{{ form.category.auto_id }}" class="form-label border-bottom w-100 pb-2 text-muted">
+                Select what can we learn from this GitHub Gist ?
+              </label>
+              {{ form.category }}
+              {% if form.category.errors %}
+                <div class="text-danger">
+                  {{ form.category.errors }}
+                </div>
+              {% endif %}
+            </div>            
+          </div>
+          <div class="card-footer text-end">
+            <a class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-danger" href="{% url 'github_gist_list_by_me_view' %}" aria-label="cancel updatng the GitHub Gist button">
+              <i class="bi bi-x-circle-fill"></i> Cancel
+            </a>
+            <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success" aria-label="update the GitHub Gist button"><i class="bi bi-check-circle-fill"></i> Save</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://code.jquery.com/jquery-3.6.0.slim.min.js" integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+<script type="text/javascript">
+  $('#id_category').select2({
+    placeholder: 'Choose multiple technologies...',
+    width: '100%',
+  });
+</script>
+{% endblock %}
