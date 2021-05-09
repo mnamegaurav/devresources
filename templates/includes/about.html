@@ -1,0 +1,72 @@
+{% load static %}
+
+<div class="col-12 col-lg-4 text-center" style="background: linear-gradient(#e66465, #9198e5);">
+  <!-- About Section Start -->
+  <section class="sticky-top pt-4 about__section">
+    <!-- <h3 class="text-light pt-4"><strong>about</strong></h3> -->
+    <div class="container">
+
+      <div class="row">
+        <div class="col-12 my-3">
+          <img src="{% static 'img/logo.png' %}" class="rounded-circle mx-auto"  style="height: 100px; width: auto;object-fit: cover;" alt="Dev Junction Logo">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 my-3">
+          <h6 class="text-dark"><strong>Who or What is DevResources ?</strong></h6>
+          <p class="text-light">DevResources is an <strong>Open Source</strong>, collaboration initiative started with the intention to share all the learning resources needed by <strong>beginner developer</strong> to a <strong>professional</strong> in one place.</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 my-3 ">
+          <h6 class="text-dark"><strong>How can you add more resources ?</strong></h6>
+          {% if request.user.is_authenticated %}
+            <p class="text-light">Click on Plus icon at the right corner, or <a href="{% url 'resource_create_view' %}" class="text-decoration-none">Click here.</a></p>
+          {% else %}
+            <p class="text-light"><a href="{% url 'signin_view' %}" class="text-decoration-none"><strong>Sign in</strong></a> and you are ready to add.</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12 my-3">
+          <div class="m-auto">
+            <p class="m-auto">Want to contribute ?</p>
+            <a target="_blank" rel="noreferrer" class="text-light btn btn-sm btn-dark" href="https://github.com/hamhaingaurav/devresources">
+              <i class="bi bi-github"></i>
+              <strong>Github</strong>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mb-4 mb-lg-auto">
+        <div class="col-12">
+          <div class="m-auto">
+            <a target="_blank" rel="noreferrer" class="text-decoration-none text-dark" href="https://www.linkedin.com/in/hamhaingaurav/">
+              <span style="font-size: 14px;">Made with <i class="bi bi-suit-heart-fill text-danger"></i> by Gaurav Sharma <i class="bi bi-linkedin"></i></span>
+            </a><br>
+            <a class="text-decoration-none text-dark" href="{% url 'about_view' %}">
+              <span style="font-size: 14px;"><u>About Us</u> |</span> 
+            </a>
+            <a class="text-decoration-none text-dark" href="{% url 'contact_view' %}">
+              <span style="font-size: 14px;">  <u>Contact Us</u></span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-4 mb-lg-auto">
+        <div class="col-12">
+          <div class="m-auto">
+            <script data-name="BMC-Widget" data-cfasync="false" src="https://cdnjs.buymeacoffee.com/1.0.0/widget.prod.min.js" data-id="hamhaingaurav" data-description="Support me on Buy me a coffee!" data-message="Hey, thanks for supporting me, it keeps me motivated to build more." data-color="#FFDD00" data-position="Right" data-x_margin="18" data-y_margin="18"></script>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+  <!-- About Section End -->
+</div>

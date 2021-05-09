@@ -1,0 +1,34 @@
+<!-- Navbar Start -->
+<nav class="navbar pb-3 pt-4 mb-4">
+  <div class="container px-0 px-md-5">
+    <a class="navbar-brand text-reset text-decoration-none round__button neumorphic__button" href="/">
+      <i class="bi bi-house-fill"></i>
+    </a>
+    {% if request.user.is_authenticated %}
+      <div class="navbar-brand d-flex me-0">
+        <a href="{% url 'resource_create_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add More Resources">
+          <i class="bi bi-plus-circle-fill"></i>
+        </a>
+        <a href="{% url 'profile_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Profile">
+          <i class="bi bi-person-fill"></i>
+        </a>
+        <form method="POST" action="{% url 'signout_view' %}">
+          {% csrf_token %}
+          <button class="px-3 py-2 neumorphic__button ms-2 btn btn-lg" data-bs-toggle="tooltip" data-bs-placement="bottom" title="SignOut" aria-label="signout button">
+            <i class="bi bi-box-arrow-right"></i>
+          </button>
+        </form>
+      </div>
+    {% else %}
+      <div class="navbar-brand d-flex me-0">
+        <a href="{% url 'signin_view' %}" class="ms-2 text-reset text-decoration-none px-3 py-2 neumorphic__button">
+          <i class="bi bi-box-arrow-in-left"></i> Sign in
+        </a>
+        <a href="{% url 'signup_view' %}" class="ms-2 text-reset text-decoration-none px-3 py-2 neumorphic__button">
+          <i class="bi bi-person-fill"></i> Sign up
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</nav>
+<!-- Navbar End -->
