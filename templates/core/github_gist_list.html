@@ -28,30 +28,26 @@
 
         {% if all_github_gists %}
         {% for github_gist in all_github_gists %}
-        <div class="col-12 col-md-6 col-xl-4 pb-4 pt-3">
-          <a target="_blank" rel="noreferrer" href="{{ github_gist.url }}" class="text-decoration-none text-reset">
+        <div class="col-12 col-xl-6 pb-4 pt-3">
             <div
-              class="card neumorphic__card text-center text-{% cycle 'light' 'light' 'light' 'light' 'dark' 'light' %} bg-{% cycle 'success' 'dark' 'primary' 'danger' 'warning' 'secondary' 'info' %}"
+              class="card neumorphic__card text-center text-light bg-dark"
               style="height: 100%;">
               <div class="card-header d-flex flex-wrap justify-content-center align-items-center">
-                <h5 class="card-title w-100">{{ github_gist.title }} <i class="bi bi-folder-symlink-fill px-1"></i></h5>
-                <!-- {% if github_gist.thumbnail %}
-                    <img src="{{ github_gist.thumbnail.url }}" class="github_gist__image my-2" alt="thumbnail">
-                  {% endif %} -->
-                <!-- {% if github_gist.description %}
-                    <p class="card-text">{{ github_gist.description }}</p>
-                  {% endif %} -->
+                <h5 class="card-title w-100">{{ github_gist.title }}</h5>
+                {% if github_gist.embed_code %}
+                  {{ github_gist.embed_code|safe }}
+                {% endif %}
               </div>
               <div class="card-body pb-4 d-flex align-items-center justify-content-center flex-wrap"
                 style="height: 100%;">
-                {% for category_name in github_gist.category.all %}
+                {% comment %}{% for category_name in github_gist.category.all %}
                 <a rel="noreferrer" href="{% url 'github_gist_list_view' category_name.slug %}"
                   class="text-decoration-none text-reset me-1">
                   <small class="text-muted badge rounded-pill bg-light">
                     {{ category_name }}
                   </small>
                 </a>
-                {% endfor %}
+                {% endfor %}{% endcomment %}
               </div>
               {% if github_gist.added_by.full_name %}
               <div class="card-footer p-1 d-flex align-items-end justify-content-center flex-wrap"
@@ -65,7 +61,6 @@
               </div>
               {% endif %}
             </div>
-          </a>
         </div>
         {% endfor %}
         <div class="col-12 text-center py-4">

@@ -42,7 +42,7 @@ class GitHubGistForm(forms.ModelForm):
         model = GitHubGist
         fields = (
             "title",
-            "url",
+            "embed_code",
             "category",
         )
 
@@ -55,7 +55,7 @@ class GitHubGistForm(forms.ModelForm):
                 "placeholder": "Give it a simple Title...",
             }
         )
-        self.fields["url"].widget.attrs.update(
+        self.fields["embed_code"].widget.attrs.update(
             {
                 "class": "form-control form-control-sm",
                 "placeholder": "Provide a Gist Link...",

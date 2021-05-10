@@ -38,7 +38,7 @@
               {% for github_gist in all_github_gists %}
               <tr class="table-{% cycle 'primary' 'secondary' 'danger' 'warning' 'info' 'success' %}">
                 <th class="ps-3">
-                  <a href="{{ github_gist.url }}" class="text-decoration-none text-reset">
+                  <a href="{{ github_gist.embed_code }}" class="text-decoration-none text-reset">
                     {{ github_gist.title }}
                     <i class="bi bi-folder-symlink-fill px-1"></i>
                   </a>

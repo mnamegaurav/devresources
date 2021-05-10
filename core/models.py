@@ -99,7 +99,7 @@ class GitHubGist(models.Model):
     category = models.ManyToManyField(
         ResourceCategory, verbose_name=_("Resource Category")
     )
-    url = models.URLField(verbose_name=_("Link to the GitHub Gist"))
+    embed_code = models.TextField(verbose_name=_("GitHub Gist Embed Code with Script Tag"))
     is_active = models.BooleanField(default=True, verbose_name=_("Active?"))
     added_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)

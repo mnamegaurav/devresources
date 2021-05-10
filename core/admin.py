@@ -44,7 +44,7 @@ class GitHubGistModelAdmin(admin.ModelAdmin):
     filter_horizontal = ("category",)
     list_display = (
         "title",
-        "url",
+        "embed_code",
         "is_active",
         "added_on",
         "updated_on",
