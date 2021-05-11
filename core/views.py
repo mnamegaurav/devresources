@@ -31,7 +31,7 @@ class HomeView(View):
             is_active=True
         ).order_by("-hit_count__hits")[:3]
 
-        parsed_website_url = parse.urlparse(request.build_absolute_uri("/"))
+        # parsed_website_url = parse.urlparse(request.build_absolute_uri("/"))
 
         if request.user.is_authenticated:
             page_title = "Home"
@@ -41,7 +41,7 @@ class HomeView(View):
         context = {
             "all_resource_categories": all_resource_categories,
             "top_resource_categories": top_resource_categories,
-            "hostname": f"{parsed_website_url.hostname}{parsed_website_url.path}",
+            # "hostname": f"{parsed_website_url.hostname}{parsed_website_url.path}",
             "page_title": page_title,
         }
 
