@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     # 3rd party apps
     "corsheaders",
     "hitcount",
-    "crispy_forms",
     # local apps
     "core.apps.CoreConfig",
     "accounts.apps.AccountsConfig",
@@ -141,8 +140,6 @@ AUTH_USER_MODEL = "accounts.User"
 LOGIN_URL = "signin_view"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
-CRISPY_TEMPLATE_PACK = "bootstrap4"
 
 # Imports below are intentionally placed here to override the existing values. e.g: DEBUG
 try:
