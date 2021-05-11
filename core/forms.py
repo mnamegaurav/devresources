@@ -58,7 +58,7 @@ class GitHubGistForm(forms.ModelForm):
         self.fields["embed_code"].widget.attrs.update(
             {
                 "class": "form-control form-control-sm",
-                "placeholder": "Provide a Gist Link...",
+                "placeholder": f"Please write a valid Embed code of a Github Gist, something like this:-\n<script src='https://gist.github.com/username/751dd0fe34a6a8f9ec1597a96e4a665f.js'></script>",
             }
         )
         self.fields["category"].widget.attrs.update(
