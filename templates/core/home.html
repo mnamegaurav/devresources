@@ -20,7 +20,7 @@
     </div> -->
     {% for resource_category in top_resource_categories %}
     <div class="col-12 col-sm-6 col-xl-4 mx-auto mb-2" id="{{ resource_category.slug }}">
-      <a href="{% url 'resource_list_view' resource_category.slug %}" class="text-decoration-none">
+      <a href="javascript:void(0);" class="text-decoration-none">
         <div class="neumorphic__card card bg-{% cycle 'success' 'dark' 'primary' 'danger' 'warning' 'secondary' 'info' %} mb-3">
           <div class="card-body text-{% cycle 'light' 'light' 'light' 'light' 'dark' 'light' %} d-flex align-middle flex-wrap">
 
@@ -39,6 +39,16 @@
               </span>
             </p>
 
+          </div>
+          <div class="card-footer">
+            <ul class="list-group list-group-flush bg-transparent">
+              <li class="list-group-item bg-transparent">
+                <a href="{% url 'resource_list_view' resource_category.slug %}" class="row btn btn-sm btn-light m-auto text-dark w-100">Learning Resources</a>
+              </li>
+              <li class="list-group-item bg-transparent">
+                <a href="{% url 'github_gist_list_view' resource_category.slug %}"  class="row btn btn-sm btn-light m-auto text-dark w-100">Code Snippets</a>
+              </li>
+            </ul>
           </div>
         </div>
       </a>
@@ -86,7 +96,7 @@
         <div class="col-12 row justify-content-center    px-0 m-auto">
           {% for resource_category in resource_category_group.list %}
           <div class="col-12 col-md-6 col-xxl-4 mb-2 resource_category_card     px-auto" id="{{ resource_category.slug }}">
-            <a href="{% url 'resource_list_view' resource_category.slug %}" class="text-decoration-none">
+            <a href="javascript:void(0);" class="text-decoration-none">
               <div class="neumorphic__card card bg-{% cycle 'warning' 'primary' 'secondary' 'danger' 'dark' %} mb-3">
                 <div class="card-body text-{% cycle 'dark' 'light' 'light' 'light' 'light' %} d-flex align-middle flex-wrap">
 
@@ -104,6 +114,18 @@
                   </p>
 
                 </div>
+
+                <div class="card-footer">
+                  <ul class="list-group list-group-flush bg-transparent">
+                    <li class="list-group-item bg-transparent">
+                      <a href="{% url 'resource_list_view' resource_category.slug %}" class="row btn btn-sm btn-light m-auto text-dark w-100">Learning Resources</a>
+                    </li>
+                    <li class="list-group-item bg-transparent">
+                      <a href="{% url 'github_gist_list_view' resource_category.slug %}"  class="row btn btn-sm btn-light m-auto text-dark w-100">Code Snippets</a>
+                    </li>
+                  </ul>
+                </div>
+
               </div>
             </a>
           </div>
