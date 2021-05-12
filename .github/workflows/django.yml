@@ -45,11 +45,10 @@ jobs:
         script_stop: true
         script: |
           cd /home/gaurav/devresources
-          git pull origin main
+          echo ${{ secrets.SSH_PASSPHRASE }} | git pull origin main
           source env/bin/activate
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          python manage.py makemigrations --merge --noinput
           python manage.py migrate
           python manage.py collectstatic --noinput
           echo ${{ secrets.SSH_PASSPHRASE }} | sudo -S systemctl restart nginx gunicorn
