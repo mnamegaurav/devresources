@@ -45,7 +45,7 @@ jobs:
         script_stop: true
         script: |
           cd /home/gaurav/devresources
-          echo ${{ secrets.GIT_SSH_PASSPHRASE }} | git pull origin main
+          git pull origin main
           source env/bin/activate
           python -m pip install --upgrade pip
           pip install -r requirements.txt
