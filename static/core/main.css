@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: #f1f1f1;
+}
+
+.about__section{
+    min-height: 100vh;
+    display: grid;
+    align-content: center;
+}
+
+.height__100vh{
+    height: 100vh;
+}
+
+.neumorphic__card.card .count__shape{
+    min-width: 40px;
+    border-radius: 10% 0 100% 0;
+    background-color: white;
+    height: 30px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: black;
+    padding-left: 7px;
+}
+
+.neumorphic__card.card .count__shape span{
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.neumorphic__card.card .count__shape .dot{
+    font-weight: bolder;
+    font-size: x-large;
+    position: absolute;
+    color: green;
+    top: -7px;
+    margin-left: 2px;
+}
+
+.neumorphic__card{
+    box-shadow: 5px 5px 14px 0px #9b9b9b;
+    transition-duration: 600ms;
+}
+
+.neumorphic__card:hover{
+    box-shadow: 8px 14px 20px 0px #9b9b9b;
+}
+
+.neumorphic__button{
+    border-radius: 16px;
+    background: #e0e0e0;
+    box-shadow:  12px 12px 24px #9b9b9b,
+             -12px -12px 24px #ffffff;
+    transition-duration: 400ms;
+}
+
+.neumorphic__button:hover{
+    box-shadow:  12px 12px 24px #9b9b9bb8,
+             -12px -12px 24px #ffffff9e;
+}
+
+.neumorphic__button:focus{
+    outline: none;
+}
+
+.round__button{
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    transition-duration: 400ms;
+}
+
+.form-control:focus, 
+.btn:focus, 
+.btn-close:focus,
+.btn-check:focus+.btn-outline-dark, 
+.btn-outline-dark:focus {
+    box-shadow: none !important;
+}
+
+.hidden{
+    display: none;
+}
+
+#id_category li{
+    padding: 5px 10px 5px 0px;
+}
+
+.pass_info{
+    position: relative;
+    padding-top: 5px;
+}
+
+/* Preloader */
+.preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999999999;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  .preloader-inner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+  }
+  .preloader-icon {
+    display: inline-block;
+    padding: 0px;
+  }
