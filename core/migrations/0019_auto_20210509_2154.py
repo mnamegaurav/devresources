@@ -9,18 +9,34 @@ class Migration(migrations.Migration):
 
     dependencies = [
         migrations.swappable_dependency(settings.AUTH_USER_MODEL),
-        ('core', '0018_auto_20210509_1451'),
+        ("core", "0018_auto_20210509_1451"),
     ]
 
     operations = [
         migrations.AlterField(
-            model_name='githubgist',
-            name='added_by',
-            field=models.ForeignKey(blank=True, editable=False, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='github_gist_cb', to=settings.AUTH_USER_MODEL, verbose_name='Added By'),
+            model_name="githubgist",
+            name="added_by",
+            field=models.ForeignKey(
+                blank=True,
+                editable=False,
+                null=True,
+                on_delete=django.db.models.deletion.PROTECT,
+                related_name="github_gist_cb",
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="Added By",
+            ),
         ),
         migrations.AlterField(
-            model_name='githubgist',
-            name='updated_by',
-            field=models.ForeignKey(blank=True, editable=False, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='github_gist_ub', to=settings.AUTH_USER_MODEL, verbose_name='Updated By'),
+            model_name="githubgist",
+            name="updated_by",
+            field=models.ForeignKey(
+                blank=True,
+                editable=False,
+                null=True,
+                on_delete=django.db.models.deletion.PROTECT,
+                related_name="github_gist_ub",
+                to=settings.AUTH_USER_MODEL,
+                verbose_name="Updated By",
+            ),
         ),
     ]

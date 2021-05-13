@@ -6,18 +6,20 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '0017_auto_20210509_1449'),
+        ("core", "0017_auto_20210509_1449"),
     ]
 
     operations = [
         migrations.RenameField(
-            model_name='githubgist',
-            old_name='embed_url',
-            new_name='url',
+            model_name="githubgist",
+            old_name="embed_url",
+            new_name="url",
         ),
         migrations.AddField(
-            model_name='githubgist',
-            name='category',
-            field=models.ManyToManyField(to='core.ResourceCategory', verbose_name='Resource Category'),
+            model_name="githubgist",
+            name="category",
+            field=models.ManyToManyField(
+                to="core.ResourceCategory", verbose_name="Resource Category"
+            ),
         ),
     ]

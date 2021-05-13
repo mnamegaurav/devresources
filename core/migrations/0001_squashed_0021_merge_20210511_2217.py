@@ -7,7 +7,33 @@ import django.db.models.deletion
 
 class Migration(migrations.Migration):
 
-    replaces = [('core', '0001_initial'), ('core', '0002_auto_20210301_2336'), ('core', '0003_resourcecategory_slug'), ('core', '0004_auto_20210302_1624'), ('core', '0005_auto_20210303_0045'), ('core', '0006_auto_20210304_1420'), ('core', '0007_auto_20210304_1648'), ('core', '0008_auto_20210306_1154'), ('core', '0009_auto_20210306_1158'), ('core', '0010_auto_20210306_1158'), ('core', '0011_resource_updated_by'), ('core', '0012_auto_20210308_1308'), ('core', '0013_auto_20210314_1916'), ('core', '0014_contactus'), ('core', '0015_auto_20210326_1238'), ('core', '0016_auto_20210507_1344'), ('core', '0017_auto_20210509_1449'), ('core', '0018_auto_20210509_1451'), ('core', '0019_auto_20210509_2154'), ('core', '0020_auto_20210510_2209'), ('core', '0013_auto_20210314_1810'), ('core', '0015_merge_20210325_1156'), ('core', '0016_auto_20210325_1202'), ('core', '0017_merge_20210326_1240'), ('core', '0021_merge_20210511_2217')]
+    replaces = [
+        ("core", "0001_initial"),
+        ("core", "0002_auto_20210301_2336"),
+        ("core", "0003_resourcecategory_slug"),
+        ("core", "0004_auto_20210302_1624"),
+        ("core", "0005_auto_20210303_0045"),
+        ("core", "0006_auto_20210304_1420"),
+        ("core", "0007_auto_20210304_1648"),
+        ("core", "0008_auto_20210306_1154"),
+        ("core", "0009_auto_20210306_1158"),
+        ("core", "0010_auto_20210306_1158"),
+        ("core", "0011_resource_updated_by"),
+        ("core", "0012_auto_20210308_1308"),
+        ("core", "0013_auto_20210314_1916"),
+        ("core", "0014_contactus"),
+        ("core", "0015_auto_20210326_1238"),
+        ("core", "0016_auto_20210507_1344"),
+        ("core", "0017_auto_20210509_1449"),
+        ("core", "0018_auto_20210509_1451"),
+        ("core", "0019_auto_20210509_2154"),
+        ("core", "0020_auto_20210510_2209"),
+        ("core", "0013_auto_20210314_1810"),
+        ("core", "0015_merge_20210325_1156"),
+        ("core", "0016_auto_20210325_1202"),
+        ("core", "0017_merge_20210326_1240"),
+        ("core", "0021_merge_20210511_2217"),
+    ]
 
     initial = True
 
@@ -17,73 +43,192 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='ResourceCategory',
+            name="ResourceCategory",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=140, verbose_name='Title')),
-                ('is_active', models.BooleanField(default=False, verbose_name='Active?')),
-                ('added_on', models.DateTimeField(auto_now_add=True)),
-                ('updated_on', models.DateTimeField(auto_now=True)),
-                ('added_by', models.ForeignKey(blank=True, editable=False, null=True, on_delete=django.db.models.deletion.PROTECT, to=settings.AUTH_USER_MODEL, verbose_name='Added By')),
-                ('slug', models.SlugField(unique=True, verbose_name='Slug')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=140, verbose_name="Title")),
+                (
+                    "is_active",
+                    models.BooleanField(default=False, verbose_name="Active?"),
+                ),
+                ("added_on", models.DateTimeField(auto_now_add=True)),
+                ("updated_on", models.DateTimeField(auto_now=True)),
+                (
+                    "added_by",
+                    models.ForeignKey(
+                        blank=True,
+                        editable=False,
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Added By",
+                    ),
+                ),
+                ("slug", models.SlugField(unique=True, verbose_name="Slug")),
             ],
             options={
-                'verbose_name': 'Resource Category',
-                'verbose_name_plural': 'Resource Categories',
-                'ordering': ['title'],
+                "verbose_name": "Resource Category",
+                "verbose_name_plural": "Resource Categories",
+                "ordering": ["title"],
             },
         ),
         migrations.CreateModel(
-            name='ContactUs',
+            name="ContactUs",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('full_name', models.CharField(max_length=140, verbose_name='Your Full Name')),
-                ('email', models.EmailField(max_length=254, verbose_name='Your Email')),
-                ('message', models.CharField(max_length=255, verbose_name='Write somethig to us...')),
-                ('added_on', models.DateTimeField(auto_now_add=True)),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "full_name",
+                    models.CharField(max_length=140, verbose_name="Your Full Name"),
+                ),
+                ("email", models.EmailField(max_length=254, verbose_name="Your Email")),
+                (
+                    "message",
+                    models.CharField(
+                        max_length=255, verbose_name="Write somethig to us..."
+                    ),
+                ),
+                ("added_on", models.DateTimeField(auto_now_add=True)),
             ],
             options={
-                'verbose_name': 'Contact Us',
-                'verbose_name_plural': 'Contact Us',
-                'ordering': ['-added_on'],
+                "verbose_name": "Contact Us",
+                "verbose_name_plural": "Contact Us",
+                "ordering": ["-added_on"],
             },
         ),
         migrations.CreateModel(
-            name='GitHubGist',
+            name="GitHubGist",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=140, verbose_name='Title')),
-                ('is_active', models.BooleanField(default=True, verbose_name='Active?')),
-                ('added_on', models.DateTimeField(auto_now_add=True)),
-                ('updated_on', models.DateTimeField(auto_now=True)),
-                ('added_by', models.ForeignKey(blank=True, editable=False, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='github_gist_cb', to=settings.AUTH_USER_MODEL, verbose_name='Added By')),
-                ('updated_by', models.ForeignKey(blank=True, editable=False, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='github_gist_ub', to=settings.AUTH_USER_MODEL, verbose_name='Updated By')),
-                ('category', models.ManyToManyField(to='core.ResourceCategory', verbose_name='Resource Category')),
-                ('embed_code', models.TextField(default='a', verbose_name='GitHub Gist Embed Code with Script Tag')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=140, verbose_name="Title")),
+                (
+                    "is_active",
+                    models.BooleanField(default=True, verbose_name="Active?"),
+                ),
+                ("added_on", models.DateTimeField(auto_now_add=True)),
+                ("updated_on", models.DateTimeField(auto_now=True)),
+                (
+                    "added_by",
+                    models.ForeignKey(
+                        blank=True,
+                        editable=False,
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="github_gist_cb",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Added By",
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        editable=False,
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="github_gist_ub",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Updated By",
+                    ),
+                ),
+                (
+                    "category",
+                    models.ManyToManyField(
+                        to="core.ResourceCategory", verbose_name="Resource Category"
+                    ),
+                ),
+                (
+                    "embed_code",
+                    models.TextField(
+                        default="a",
+                        verbose_name="GitHub Gist Embed Code with Script Tag",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'GitHub Gist',
-                'verbose_name_plural': 'GitHub Gists',
-                'ordering': ['-updated_on'],
+                "verbose_name": "GitHub Gist",
+                "verbose_name_plural": "GitHub Gists",
+                "ordering": ["-updated_on"],
             },
         ),
         migrations.CreateModel(
-            name='Resource',
+            name="Resource",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=140, verbose_name='Title')),
-                ('url', models.URLField(max_length=500, verbose_name='Resource Link')),
-                ('is_active', models.BooleanField(default=True, verbose_name='Active?')),
-                ('added_on', models.DateTimeField(auto_now_add=True)),
-                ('updated_on', models.DateTimeField(auto_now=True)),
-                ('added_by', models.ForeignKey(blank=True, editable=False, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='resource_cb', to=settings.AUTH_USER_MODEL, verbose_name='Added By')),
-                ('category', models.ManyToManyField(to='core.ResourceCategory', verbose_name='Resource Category')),
-                ('updated_by', models.ForeignKey(blank=True, editable=False, null=True, on_delete=django.db.models.deletion.PROTECT, related_name='resource_ub', to=settings.AUTH_USER_MODEL, verbose_name='Updated By')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("title", models.CharField(max_length=140, verbose_name="Title")),
+                ("url", models.URLField(max_length=500, verbose_name="Resource Link")),
+                (
+                    "is_active",
+                    models.BooleanField(default=True, verbose_name="Active?"),
+                ),
+                ("added_on", models.DateTimeField(auto_now_add=True)),
+                ("updated_on", models.DateTimeField(auto_now=True)),
+                (
+                    "added_by",
+                    models.ForeignKey(
+                        blank=True,
+                        editable=False,
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="resource_cb",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Added By",
+                    ),
+                ),
+                (
+                    "category",
+                    models.ManyToManyField(
+                        to="core.ResourceCategory", verbose_name="Resource Category"
+                    ),
+                ),
+                (
+                    "updated_by",
+                    models.ForeignKey(
+                        blank=True,
+                        editable=False,
+                        null=True,
+                        on_delete=django.db.models.deletion.PROTECT,
+                        related_name="resource_ub",
+                        to=settings.AUTH_USER_MODEL,
+                        verbose_name="Updated By",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'Resource',
-                'verbose_name_plural': 'Resources',
-                'ordering': ['-updated_on'],
+                "verbose_name": "Resource",
+                "verbose_name_plural": "Resources",
+                "ordering": ["-updated_on"],
             },
         ),
     ]

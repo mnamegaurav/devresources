@@ -94,18 +94,18 @@ class Resource(models.Model):
         return self.title[0]
 
 
-class GitHubGist(models.Model):
+class CodeSnippet(models.Model):
     title = models.CharField(max_length=140, verbose_name=_("Title"))
     category = models.ManyToManyField(
         ResourceCategory, verbose_name=_("Resource Category")
     )
-    embed_code = models.TextField(verbose_name=_("GitHub Gist Embed Code with Script Tag"))
+    code = models.TextField(verbose_name=_("Code Snippet"))
     is_active = models.BooleanField(default=True, verbose_name=_("Active?"))
     added_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
     added_by = models.ForeignKey(
         User,
-        related_name="github_gist_cb",
+        related_name="code_snippet_cb",
         on_delete=models.PROTECT,
         null=True,
         blank=True,
@@ -114,7 +114,7 @@ class GitHubGist(models.Model):
     )
     updated_by = models.ForeignKey(
         User,
-        related_name="github_gist_ub",
+        related_name="code_snippet_ub",
         on_delete=models.PROTECT,
         null=True,
         blank=True,
@@ -124,8 +124,8 @@ class GitHubGist(models.Model):
 
     class Meta:
         ordering = ["-updated_on"]
-        verbose_name = "GitHub Gist"
-        verbose_name_plural = "GitHub Gists"
+        verbose_name = "Code Snippet"
+        verbose_name_plural = "Code Snippets"
 
     def __str__(self):
         return self.title

@@ -2,7 +2,7 @@ from django.contrib import admin
 from core.models import (
     ResourceCategory,
     Resource,
-    GitHubGist,
+    CodeSnippet,
     ContactUs,
 )
 
@@ -38,13 +38,13 @@ class ResourceModelAdmin(admin.ModelAdmin):
     search_fields = ("title",)
 
 
-@admin.register(GitHubGist)
-class GitHubGistModelAdmin(admin.ModelAdmin):
-    model = GitHubGist
+@admin.register(CodeSnippet)
+class CodeSnippetModelAdmin(admin.ModelAdmin):
+    model = CodeSnippet
     filter_horizontal = ("category",)
     list_display = (
         "title",
-        "embed_code",
+        "code",
         "is_active",
         "added_on",
         "updated_on",

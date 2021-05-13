@@ -15,9 +15,9 @@ from hitcount.models import HitCount
 from core.models import (
     ResourceCategory,
     Resource,
-    GitHubGist,
+    CodeSnippet,
 )
-from core.forms import ResourceForm, GitHubGistForm, ContactForm
+from core.forms import ResourceForm, CodeSnippetForm, ContactForm
 
 
 class HomeView(View):
@@ -139,8 +139,8 @@ class ResourceDeleteView(View):
         return redirect(self.success_url)
 
 
-class GitHubGistListByCategoryView(View, HitCountMixin):
-    template_name = "core/github_gist_list.html"
+class CodeSnippetListByCategoryView(View, HitCountMixin):
+    template_name = "core/code_snippet_list.html"
     url_kwarg = "category_slug"
 
     def get(self, request, *args, **kwargs):
@@ -155,12 +155,12 @@ class GitHubGistListByCategoryView(View, HitCountMixin):
             print("Error: ", e)
 
         # filtering the resources by is_active and current url slug
-        all_github_gists = GitHubGist.objects.filter(
+        all_code_snippets = CodeSnippet.objects.filter(
             is_active=True, category__slug=category_slug
         )
 
         context = {
-            "all_github_gists": all_github_gists,
+            "all_code_snippets": all_code_snippets,
             "category_slug": category_slug,
             "page_title": category_slug.capitalize(),
         }
@@ -168,61 +168,64 @@ class GitHubGistListByCategoryView(View, HitCountMixin):
         return render(request, self.template_name, context)
 
 
-class GitHubGistListAddedByUserView(View):
-    template_name = "core/github_gist_list_added_by_user.html"
+class CodeSnippetListAddedByUserView(View):
+    template_name = "core/code_snippet_list_added_by_user.html"
     url_kwarg = "tag"
-    page_title = "My GitHub Gists"
+    page_title = "My Code Snippets"
 
     def get(self, request, *args, **kwargs):
         category = request.GET.get(self.url_kwarg)
 
         if category:
             # filtering the resources by current user
-            all_github_gists = GitHubGist.objects.filter(
+            all_code_snippets = CodeSnippet.objects.filter(
                 added_by=request.user, category__slug=category, is_active=True
             )
         else:
             # filtering the resources by current user
-            all_github_gists = GitHubGist.objects.filter(
+            all_code_snippets = CodeSnippet.objects.filter(
                 added_by=request.user, is_active=True
             )
 
-        context = {"all_github_gists": all_github_gists, "page_title": self.page_title}
+        context = {
+            "all_code_snippets": all_code_snippets,
+            "page_title": self.page_title,
+        }
 
         return render(request, self.template_name, context)
 
 
-class GitHubGistCreateView(SuccessMessageMixin, CreateView):
-    template_name = "core/github_gist_create_form.html"
+class CodeSnippetCreateView(SuccessMessageMixin, CreateView):
+    template_name = "core/code_snippet_create_form.html"
     success_message = "Successfully added"
-    success_url = reverse_lazy("github_gist_list_by_me_view")
-    form_class = GitHubGistForm
-    extra_context = {"page_title": "Create A New GitHub Gist"}
+    success_url = reverse_lazy("code_snippet_list_by_me_view")
+    form_class = CodeSnippetForm
+    extra_context = {"page_title": "Create A New Code Snippet"}
 
 
-class GitHubGistUpdateView(SuccessMessageMixin, UpdateView):
-    template_name = "core/github_gist_update_form.html"
+class CodeSnippetUpdateView(SuccessMessageMixin, UpdateView):
+    template_name = "core/code_snippet_update_form.html"
     success_message = "Successfully updated"
-    success_url = reverse_lazy("github_gist_list_by_me_view")
-    form_class = GitHubGistForm
-    extra_context = {"page_title": "Update GitHub Gist"}
+    success_url = reverse_lazy("code_snippet_list_by_me_view")
+    form_class = CodeSnippetForm
+    extra_context = {"page_title": "Update Code Snippet"}
 
     def get_queryset(self):
-        queryset = GitHubGist.objects.filter(added_by=self.request.user)
+        queryset = CodeSnippet.objects.filter(added_by=self.request.user)
         return queryset
 
 
-class GitHubGistDeleteView(View):
+class CodeSnippetDeleteView(View):
     success_message = "Successfully deleted"
-    success_url = reverse_lazy("github_gist_list_by_me_view")
+    success_url = reverse_lazy("code_snippet_list_by_me_view")
 
     def post(self, request, *args, **kwargs):
-        github_gist_pk = kwargs.get("pk")
+        code_snippet_pk = kwargs.get("pk")
 
         try:
-            github_gist_obj = GitHubGist.objects.get(pk=github_gist_pk)
-            github_gist_obj.is_active = False
-            github_gist_obj.save()
+            code_snippet_obj = CodeSnippet.objects.get(pk=code_snippet_pk)
+            code_snippet_obj.is_active = False
+            code_snippet_obj.save()
             messages.success(request, self.success_message, extra_tags="success")
         except Exception as e:
             pass

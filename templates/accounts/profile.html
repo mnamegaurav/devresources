@@ -15,7 +15,7 @@
 			<a href="{% url 'resource_list_by_me_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button btn btn-lg ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Resources Added By You"><i class="bi bi-list-task"></i> My Resources</a>
 		</div>
 		<div class="col-6 pb-1 justify-content-center text-center">
-			<a href="{% url 'github_gist_list_by_me_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button btn btn-lg ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Resources Added By You"><i class="bi bi-list-task"></i> My GitHub Gists</a>
+			<a href="{% url 'code_snippet_list_by_me_view' %}" class="text-reset text-decoration-none px-3 py-2 neumorphic__button btn btn-lg ms-2" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Resources Added By You"><i class="bi bi-list-task"></i> My Code Snippets</a>
 		</div>
 	</div>
 	<div class="row px-md-5 my-5">
@@ -36,11 +36,11 @@
 			<div class="col-12 col-md-6">
 				<div class="neumorphic__card mb-2">
 					<div class="card-header bg-success">
-						<p class="text-light m-auto text-center">GitHub Gists</p>
+						<p class="text-light m-auto text-center">Code Snippets</p>
 					</div>
 					<div class="col-11 mx-auto">
 						<p class="text-dark m-auto p-2 text-center">
-							<strong>{{ request.user.added_github_gist_count }}</strong>&nbsp;<i class="bi bi-check-circle-fill"></i></p>
+							<strong>{{ request.user.added_code_snippet_count }}</strong>&nbsp;<i class="bi bi-check-circle-fill"></i></p>
 					</div>
 				</div>
 			</div>

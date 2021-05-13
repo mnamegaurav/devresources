@@ -31,8 +31,8 @@ class User(AbstractUser):
 
     # Number of github gists count added by a user
     @property
-    def added_github_gist_count(self):
-        return self.github_gist_cb.count()
+    def added_code_snippet_count(self):
+        return self.code_snippet_cb.count()
 
     # Number of resource categiry view count added by a user
     @property

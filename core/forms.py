@@ -1,6 +1,6 @@
 from django import forms
 
-from core.models import Resource, GitHubGist, ContactUs
+from core.models import Resource, CodeSnippet, ContactUs
 
 
 class ResourceForm(forms.ModelForm):
@@ -37,12 +37,12 @@ class ResourceForm(forms.ModelForm):
         )
 
 
-class GitHubGistForm(forms.ModelForm):
+class CodeSnippetForm(forms.ModelForm):
     class Meta:
-        model = GitHubGist
+        model = CodeSnippet
         fields = (
             "title",
-            "embed_code",
+            "code",
             "category",
         )
 
@@ -55,10 +55,10 @@ class GitHubGistForm(forms.ModelForm):
                 "placeholder": "Give it a simple Title...",
             }
         )
-        self.fields["embed_code"].widget.attrs.update(
+        self.fields["code"].widget.attrs.update(
             {
                 "class": "form-control form-control-sm",
-                "placeholder": f"Please write a valid Embed code of a Github Gist, something like this:-\n<script src='https://gist.github.com/username/751dd0fe34a6a8f9ec1597a96e4a665f.js'></script>",
+                "placeholder": f"Write your Code here...",
             }
         )
         self.fields["category"].widget.attrs.update(

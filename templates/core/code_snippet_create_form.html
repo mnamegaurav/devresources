@@ -11,7 +11,7 @@
   <div class="row px-md-5">
     <div class="col-12 pb-1 border-bottom">
       <p class="text-center display-4 text-danger">Dev Resources</p>
-      <p class="text- text-center h4">One destination for all the developer's learning resources</p>
+      <p class="text- text-center h4">One destination for all the developer's learning resources.</p>
     </div>
   </div>
 
@@ -21,7 +21,7 @@
         {% csrf_token %}
         <div class="card neumorphic__card bg-light text-dark mt-3">
           <div class="card-header">
-            <p class="text-dark text-center text-muted my-auto">Edit a GitHub Gist</p>
+            <p class="text-dark text-center text-muted my-auto">Create A New Code Snippet</p>
           </div>
           <div class="card-body row">
 
@@ -44,17 +44,17 @@
             </div>
 
             <div class="col-12 mb-3">
-              {{ form.embed_code }}
-              {% if form.embed_code.errors %}
+              {{ form.code }}
+              {% if form.code.errors %}
                 <div class="text-danger">
-                  {{ form.embed_code.errors }}
+                  {{ form.code.errors }}
                 </div>
               {% endif %}
             </div>
 
             <div class="col-12 mb-3">
               <label for="{{ form.category.auto_id }}" class="form-label border-bottom w-100 pb-2 text-muted">
-                Select what can we learn from this GitHub Gist ?
+                Select what can we learn from this Code Snippet ?
               </label>
               {{ form.category }}
               {% if form.category.errors %}
@@ -65,10 +65,10 @@
             </div>            
           </div>
           <div class="card-footer text-end">
-            <a class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-danger" href="{% url 'github_gist_list_by_me_view' %}" aria-label="cancel updatng the GitHub Gist button">
+            <a class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-danger" href="{% url 'code_snippet_list_by_me_view' %}" aria-label="cancel saving a Code Snippet button">
               <i class="bi bi-x-circle-fill"></i> Cancel
             </a>
-            <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success" aria-label="update the GitHub Gist button"><i class="bi bi-check-circle-fill"></i> Save</button>
+            <button class="text-decoration-none neumorphic__buttton btn btn-outline-dark text-success"><i class="bi bi-check-circle-fill" aria-label="save a Code Snippet button"></i> Save</button>
           </div>
         </form>
       </div>

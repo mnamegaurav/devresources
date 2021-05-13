@@ -7,10 +7,10 @@
 {% block content %}
 
 <div class="container px-0 px-md-5">
-  {% if not all_github_gists %}
+  {% if not all_code_snippets %}
   <div class="row">
     <div class="col-12 text-center pb-4">
-      <a href="{% url 'github_gist_create_view' %}" class="text-success text-decoration-none neumorphic__button btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add more GitHub Gist">
+      <a href="{% url 'code_snippet_create_view' %}" class="text-success text-decoration-none neumorphic__button btn" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Add more Code Snippet">
         <i class="bi bi-plus-circle-fill display-6"></i>
       </a>
     </div>
@@ -21,7 +21,7 @@
 
       <div class="neumorphic__card">
         <div class="card-header bg-dark">
-          <p class="text-light m-auto text-center my-2">My GitHub Gist</p>
+          <p class="text-light m-auto text-center my-2">My Code Snippet</p>
         </div>
         <div class="table-responsive">
           <table class="table table-hover mx-auto my-auto" id="gitHubGistTable">
@@ -35,18 +35,18 @@
             </thead>
             <tbody class="text-center">
 
-              {% for github_gist in all_github_gists %}
+              {% for code_snippet in all_code_snippets %}
               <tr class="table-{% cycle 'primary' 'secondary' 'danger' 'warning' 'info' 'success' %}">
                 <th class="ps-3">
-                  <a href="{{ github_gist.embed_code }}" class="text-decoration-none text-reset">
-                    {{ github_gist.title }}
+                  <a href="{{ code_snippet.code }}" class="text-decoration-none text-reset">
+                    {{ code_snippet.title }}
                     <i class="bi bi-folder-symlink-fill px-1"></i>
                   </a>
                 </th>
-                <!-- <td>{{ github_gist.added_on }}</td> -->
+                <!-- <td>{{ code_snippet.added_on }}</td> -->
                 <td style="width: 50%">
-                  {% for category_name in github_gist.category.all %}
-                  <a href="{% url 'github_gist_list_view' category_name.slug %}" class="text-reset text-decoration-none">
+                  {% for category_name in code_snippet.category.all %}
+                  <a href="{% url 'code_snippet_list_view' category_name.slug %}" class="text-reset text-decoration-none">
                     <small class="text-muted badge rounded-pill bg-light">
                       {{ category_name }}
                     </small>
@@ -54,21 +54,21 @@
                   {% endfor %}
                 </td>
                 <td class="text-success">
-                  <a href="{% url 'github_gist_update_view' github_gist.pk %}" class="text-decoration-none text-reset">
+                  <a href="{% url 'code_snippet_update_view' code_snippet.pk %}" class="text-decoration-none text-reset">
                     <i class="bi bi-pencil-square"></i>
                   </a>
                 </td>
                 <td class="text-danger">
-                  <a href="#" class="text-decoration-none text-reset mx-2" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ github_gist.pk }}">
+                  <a href="#" class="text-decoration-none text-reset mx-2" data-bs-toggle="modal" data-bs-target="#deleteModal-{{ code_snippet.pk }}">
                     <i class="bi bi-trash-fill"></i>
                   </a>
-                  <div class="modal fade" id="deleteModal-{{ github_gist.pk }}" tabindex="-1" aria-labelledby="deleteModal-{{ github_gist.pk }}" aria-hidden="true">
+                  <div class="modal fade" id="deleteModal-{{ code_snippet.pk }}" tabindex="-1" aria-labelledby="deleteModal-{{ code_snippet.pk }}" aria-hidden="true">
                     <div class="modal-dialog modal-dialog modal-dialog-centered">
                       <div class="modal-content">
                         <div class="modal-body">
                           <h5>Are you sure you want to delete it right now ?</h5>
 
-                          <form method="POST" action="{% url 'github_gist_delete_view' github_gist.pk %}">
+                          <form method="POST" action="{% url 'code_snippet_delete_view' code_snippet.pk %}">
                             {% csrf_token %}
                             <button class="text-decoration-none neumorphic__buttton btn btn-lg text-success" data-bs-dismiss="modal" aria-label="do not delete button">
                               <i class="bi bi-arrow-left-circle-fill"></i>

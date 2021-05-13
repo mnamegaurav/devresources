@@ -10,11 +10,11 @@ from core.views import (
     ResourceCreateView,
     ResourceUpdateView,
     ResourceDeleteView,
-    GitHubGistListByCategoryView,
-    GitHubGistListAddedByUserView,
-    GitHubGistCreateView,
-    GitHubGistUpdateView,
-    GitHubGistDeleteView,
+    CodeSnippetListByCategoryView,
+    CodeSnippetListAddedByUserView,
+    CodeSnippetCreateView,
+    CodeSnippetUpdateView,
+    CodeSnippetDeleteView,
 )
 
 urlpatterns = [
@@ -28,8 +28,8 @@ urlpatterns = [
     ),
     path(
         "category/gists/<str:category_slug>/",
-        GitHubGistListByCategoryView.as_view(),
-        name="github_gist_list_view",
+        CodeSnippetListByCategoryView.as_view(),
+        name="code_snippet_list_view",
     ),
     # URls for only authenticated users
     path(
@@ -54,22 +54,22 @@ urlpatterns = [
     ),
     path(
         "gist/list/",
-        login_required(GitHubGistListAddedByUserView.as_view()),
-        name="github_gist_list_by_me_view",
+        login_required(CodeSnippetListAddedByUserView.as_view()),
+        name="code_snippet_list_by_me_view",
     ),
     path(
         "gist/create/",
-        login_required(GitHubGistCreateView.as_view()),
-        name="github_gist_create_view",
+        login_required(CodeSnippetCreateView.as_view()),
+        name="code_snippet_create_view",
     ),
     path(
         "gist/update/<int:pk>/",
-        login_required(GitHubGistUpdateView.as_view()),
-        name="github_gist_update_view",
+        login_required(CodeSnippetUpdateView.as_view()),
+        name="code_snippet_update_view",
     ),
     path(
         "gist/delete/<int:pk>/",
-        login_required(GitHubGistDeleteView.as_view()),
-        name="github_gist_delete_view",
+        login_required(CodeSnippetDeleteView.as_view()),
+        name="code_snippet_delete_view",
     ),
 ]
