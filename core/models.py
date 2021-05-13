@@ -99,7 +99,7 @@ class CodeSnippet(models.Model):
     category = models.ManyToManyField(
         ResourceCategory, verbose_name=_("Resource Category")
     )
-    code = models.TextField(verbose_name=_("Code Snippet"))
+    code = models.TextField(verbose_name=_("Your Code Snippet"))
     is_active = models.BooleanField(default=True, verbose_name=_("Active?"))
     added_on = models.DateTimeField(auto_now_add=True)
     updated_on = models.DateTimeField(auto_now=True)
