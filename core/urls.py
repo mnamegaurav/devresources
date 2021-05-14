@@ -27,7 +27,7 @@ urlpatterns = [
         name="resource_list_view",
     ),
     path(
-        "category/gists/<str:category_slug>/",
+        "category/snippets/<str:category_slug>/",
         CodeSnippetListByCategoryView.as_view(),
         name="code_snippet_list_view",
     ),
@@ -53,22 +53,22 @@ urlpatterns = [
         name="resource_delete_view",
     ),
     path(
-        "gist/list/",
+        "snippet/list/",
         login_required(CodeSnippetListAddedByUserView.as_view()),
         name="code_snippet_list_by_me_view",
     ),
     path(
-        "gist/create/",
+        "snippet/create/",
         login_required(CodeSnippetCreateView.as_view()),
         name="code_snippet_create_view",
     ),
     path(
-        "gist/update/<int:pk>/",
+        "snippet/update/<int:pk>/",
         login_required(CodeSnippetUpdateView.as_view()),
         name="code_snippet_update_view",
     ),
     path(
-        "gist/delete/<int:pk>/",
+        "snippet/delete/<int:pk>/",
         login_required(CodeSnippetDeleteView.as_view()),
         name="code_snippet_delete_view",
     ),
