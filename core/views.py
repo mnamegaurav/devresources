@@ -24,7 +24,8 @@ class HomeView(View):
     template_name = "core/home.html"
 
     def get(self, request, *args, **kwargs):
-        all_resource_categories = ResourceCategory.objects.filter(is_active=True)
+        all_resource_categories = ResourceCategory.objects.filter(
+            is_active=True)
 
         # filtering the resource categories by hit count and is_active field
         top_resource_categories = ResourceCategory.objects.filter(
@@ -57,7 +58,8 @@ class ResourceListByCategoryView(View, HitCountMixin):
 
         # Counting the number of hits on resource categories
         try:
-            resource_category = ResourceCategory.objects.get(slug=category_slug)
+            resource_category = ResourceCategory.objects.get(
+                slug=category_slug)
             hit_count_obj = HitCount.objects.get_for_object(resource_category)
             hit_count_response = self.hit_count(request, hit_count_obj)
         except Exception as e:
@@ -96,7 +98,8 @@ class ResourceListAddedByUserView(View):
                 added_by=request.user, is_active=True
             )
 
-        context = {"all_resources": all_resources, "page_title": self.page_title}
+        context = {"all_resources": all_resources,
+                   "page_title": self.page_title}
 
         return render(request, self.template_name, context)
 
@@ -132,7 +135,8 @@ class ResourceDeleteView(View):
             resource_obj = Resource.objects.get(pk=resource_pk)
             resource_obj.is_active = False
             resource_obj.save()
-            messages.success(request, self.success_message, extra_tags="success")
+            messages.success(request, self.success_message,
+                             extra_tags="success")
         except Exception as e:
             pass
 
@@ -148,7 +152,8 @@ class CodeSnippetListByCategoryView(View, HitCountMixin):
 
         # Counting the number of hits on resource categories
         try:
-            resource_category = ResourceCategory.objects.get(slug=category_slug)
+            resource_category = ResourceCategory.objects.get(
+                slug=category_slug)
             hit_count_obj = HitCount.objects.get_for_object(resource_category)
             hit_count_response = self.hit_count(request, hit_count_obj)
         except Exception as e:
@@ -226,7 +231,8 @@ class CodeSnippetDeleteView(View):
             code_snippet_obj = CodeSnippet.objects.get(pk=code_snippet_pk)
             code_snippet_obj.is_active = False
             code_snippet_obj.save()
-            messages.success(request, self.success_message, extra_tags="success")
+            messages.success(request, self.success_message,
+                             extra_tags="success")
         except Exception as e:
             pass
 
