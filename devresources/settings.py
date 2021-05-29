@@ -30,7 +30,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", False)
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "devresources.guru"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "devresources.guru", "https://devjunction-devresources.herokuapp.com"]
 
 
 # Application definition
@@ -148,6 +148,11 @@ try:
 except ImportError as e:
     pass
 
+CORS_ALLOWED_ORIGINS = [
+    "https://devjunction-devresources.herokuapp.com"
+]
+
+CORS_ALLOW_ALL_ORIGINS = False
 
 if DEBUG:
     DATABASES = {
