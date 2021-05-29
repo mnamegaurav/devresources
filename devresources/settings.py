@@ -30,7 +30,7 @@ SECRET_KEY = os.environ["SECRET_KEY"]
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DEBUG", False)
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "devresources.guru", "https://devjunction-devresources.herokuapp.com"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "devresources.guru", "devjunction-devresources.herokuapp.com"]
 
 
 # Application definition
@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "django.contrib.sitemaps",
     # 3rd party apps
-    "corsheaders",
+    # "corsheaders",
     "hitcount",
     # local apps
     "core.apps.CoreConfig",
@@ -56,7 +56,7 @@ MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",
     'whitenoise.middleware.WhiteNoiseMiddleware',
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
+    # "corsheaders.middleware.CorsMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
     "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -148,11 +148,6 @@ try:
 except ImportError as e:
     pass
 
-CORS_ALLOWED_ORIGINS = [
-    "https://devjunction-devresources.herokuapp.com"
-]
-
-CORS_ALLOW_ALL_ORIGINS = False
 
 if DEBUG:
     DATABASES = {
