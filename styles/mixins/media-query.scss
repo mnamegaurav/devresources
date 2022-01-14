@@ -1,0 +1,94 @@
+@import "/node_modules/bootstrap/scss/mixins/breakpoints";
+
+//
+//  MEDIA QUERIES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// A map of breakpoints.
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+//
+//  ABOVE
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include above(sm) {}
+// OR
+// @include above(375px) {}
+@mixin above($breakpointOrValue) {
+  @if (map-has-key($grid-breakpoints, $breakpointOrValue)) {
+    @include media-breakpoint-up($breakpointOrValue, $grid-breakpoints) {
+      @content;
+    }
+  } @else {
+    @media (min-width: $breakpointOrValue) {
+      @content;
+    }
+  }
+}
+
+//
+//  BELOW
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include below(sm) {}
+// OR
+// @include below(375px) {}
+@mixin below($breakpointOrValue) {
+  $value: $breakpointOrValue;
+
+  @if (map-has-key($grid-breakpoints, $breakpointOrValue)) {
+    @include media-breakpoint-down($breakpointOrValue, $grid-breakpoints) {
+      @content;
+    }
+  } @else {
+    @media (max-width: ($breakpointOrValue - 0.02)) {
+      @content;
+    }
+  }
+}
+
+//
+//  BETWEEN
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// @include between(sm, md) {}
+// OR
+// @include between(sm, 1024px) {}
+// OR
+// @include between(375px, md) {}
+// OR
+// @include between(375px, 1024px) {}
+@mixin between($lower, $upper) {
+  $lower-value: $lower;
+  $upper-value: $upper;
+  @include above($lower) {
+    @include below($upper) {
+      @content;
+    }
+  }
+}
+
+@mixin mobile {
+  @include media-breakpoint-only(xs) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @include media-breakpoint-only(md, $grid-breakpoints) {
+    @content;
+  }
+}
+
+@mixin wide {
+  @include media-breakpoint-up(lg) {
+    @content;
+  }
+}
